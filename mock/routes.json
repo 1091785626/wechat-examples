@@ -1,0 +1,20 @@
+{
+	"/api/reset":"/reset",
+	"/api/global":"/global",
+	"/api/goods":"/goods",
+	"/api/list":"/list",
+	"/api/home":"/home",
+	"/api/cart":"/cart",
+	"/api/sku":"/sku",
+	"/api/order":"/order",
+	"/api/addr":"/addr",
+	"/api/district":"/district",
+	"/api/logis":"/logis",
+	"/api/payment":"/payment",
+	"/api/user":"/user",
+	"/api/orderList":"/orderList",
+	"/api/orderDetail":"/orderDetail",
+	"/api/category":"/category",
+	"/api/categoryList":"/categoryList",
+	"/api/goodsList":"/goodsList"
+}

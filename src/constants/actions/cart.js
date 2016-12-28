@@ -1,0 +1,2 @@
+export const CART_MAIN_GET = 'CART_MAIN_GET';
+export const CART_MAIN_SELECT = 'CART_MAIN_SELECT';
