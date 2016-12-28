@@ -1,7 +1,9 @@
 import { DEV_WITH_PHP } from './constants';
 import cart from './api/cart';
+import sku from './api/sku';
 const API = Object.assign({},
-	cart
+	cart,
+	sku
 );
 let baseUrl;
 if (!DEV_WITH_PHP) {

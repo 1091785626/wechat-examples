@@ -1,0 +1,5 @@
+<template name="toast">
+	<view bindtap="_toastClick">
+		toast
+	</view>
+</template>

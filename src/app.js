@@ -3,7 +3,7 @@ import configureStore from './stores/configureStore';
 import { initialState } from './stores/stores';
 const store = configureStore(initialState);
 App({
-	onLaunch: () => {
+	onLaunch() {
 		console.log("onLaunch");
 	},
 	store

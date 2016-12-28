@@ -1,8 +1,240 @@
-/**app.wxss**/
-.container {
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	padding: 10px;
-	box-sizing: border-box;
+ @import "./iconfont.wxss";
+ /**
+ * g-disabled 
+ * 禁用事件
+ */
+.g-disabled {
+	pointer-events:none;
+}
+/**
+ * g-noanimate 
+ * 禁用动画
+ */
+.g-noanimate {
+	animation: 0;
+}
+/**
+ * g-oneline 
+ * 一行文字
+ */
+.g-oneline {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+}
+/**
+ * g-twoline 
+ * 两行文字
+ */
+.g-twoline {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+/**
+ * g-two-lh 
+ * 两行文字 限高
+ */
+.g-two-lh{
+	height:72rpx;
+	line-height: 32rpx;
+}
+/**
+ * g-two-lh 
+ * 一行文字 限高
+ */
+.g-one-lh{
+	height:32rpx;
+	line-height: 32rpx;
+}
+/**
+ * g-nowrap 
+ * 一行文字 强制不换行
+ */
+.g-nowrap {
+	white-space: nowrap;
+}
+/**
+ * g-tc 
+ * 文本居中
+ */
+.g-tc {
+	text-align: center;
+}
+/**
+ * g-tl 
+ * 文本居左
+ */
+.g-tl {
+	text-align: left;
+}
+/**
+ * g-tr 
+ * 文本居右
+ */
+.g-tr {
+	text-align: right;
+}
+/**
+ * g-td-lh 
+ * 文本删除线
+ */
+.g-td-lh {
+	text-decoration:line-through;
+}
+/**
+ * g-td-ul 
+ * 文本下划线
+ */
+.g-td-ul {
+	text-decoration:underline;
+}
+/**
+ * line-height
+ */
+.g-lh-44{
+	line-height: 44rpx;
+}
+.g-lh-60{
+	line-height: 60rpx;
+}
+.g-lh-72{
+	line-height: 72rpx;
+}
+.g-lh-80{
+	line-height: 80rpx;
+}
+.g-lh-88{
+	line-height: 88rpx;
+}
+.g-lh-120{
+	line-height: 120rpx;
+}
+/**
+ * font-size
+ */
+.g-fs-10{
+	font-size: 10rpx!important;
+}
+.g-fs-20{
+	font-size: 20rpx!important;
+}
+.g-fs-22{
+	font-size: 22rpx!important;
+}
+.g-fs-24{
+	font-size: 24rpx!important;
+}
+.g-fs-26{
+	font-size: 26rpx!important;
+}
+.g-fs-28{
+	font-size: 28rpx!important;
+}
+.g-fs-34{
+	font-size: 34rpx!important;
+}
+.g-fs-40{
+	font-size: 40rpx!important;
+}
+.g-fs-50{
+	font-size: 50rpx!important;
 } 
+.g-fs-100{
+	font-size: 100rpx!important;
+}
+/**
+ * iconfont 
+ * 初始化，无视
+ */
+.iconfont{
+	font-size: 32rpx;
+}
+/*layout*/
+.g-flex {
+	display: flex;
+	box-sizing: border-box;
+}
+.g-fd-c {
+	flex-direction: column;
+}
+.g-fd-r {
+	flex-direction: row;
+}
+/*gird*/
+.g-col {
+	flex:1
+}
+.g-full {
+  	flex: 0 0 100%;
+}
+
+.g-1of2 {
+  	flex: 0 0 50%;
+}
+
+.g-1of3 {
+  	flex: 0 0 33.3333%;
+}
+
+.g-1of4 {
+  	flex: 0 0 25%;
+}
+/*圣杯布局*/
+.g-flex-holy {
+  	display: flex;
+  	box-sizing: border-box;
+  	min-height: 100vh;
+  	flex-direction: column;
+}
+/**
+ * 布局辅助
+ */
+.g-pd {
+	padding: 20rpx;
+}
+.g-pd-l {
+	padding-left:20rpx;
+}
+.g-pd-r {
+	padding-right:20rpx;
+}
+.g-pd-t {
+	padding-top: 20rpx;
+}
+.g-pd-b {
+	padding-bottom: 20rpx;
+}
+.g-m-t {
+	margin-top:10rpx;
+}
+.g-m-b {
+	margin-bottom:10rpx;
+}
+.g-m-t-20{
+	margin-top:20rpx;
+}
+.g-m-b-20{
+	margin-bottom:20rpx;
+}
+/**
+ * bd 辅助线
+ */
+.g-br{
+	border-radius: 8rpx;
+}
+.g-br-circle{
+	border-radius: 100%;
+}
+.g-bb{
+	border-bottom: 1rpx solid #d9d9d9;
+}
+.g-bt{
+	border-top: 1rpx solid #d9d9d9;
+}
+
+

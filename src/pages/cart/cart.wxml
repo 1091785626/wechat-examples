@@ -1,3 +1,10 @@
-<view>
-	<text bindtap="handleClick">{{cart.text}}</text>
+<import src="../../components/footer/footer.wxml" />
+<import src="../../components/_common/sku/sku.wxml" />
+
+<view class="g-f g-fd-c g-pd g-fs-24">
+	<text bindtap="aaa">{{cart.text}}</text>
+	<text class="g-oneline">下滑页面即可刷新下滑页面即可刷新下滑页面即可刷新下滑页面即可刷新下滑页面即可刷新下滑页面即可刷新</text>
 </view>
+
+<template is="footer" />
+<template is="sku" />

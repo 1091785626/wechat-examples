@@ -1,9 +1,12 @@
 import {connect} from '../../libs/wechat-redux.js';
 import {bindActionCreators} from '../../libs/redux.js';
 import * as cartActions from '../../actions/cart';
+import skuConfig from '../../components/_common/sku/sku';
 function mapStateToData(state) {
 	return {
-		cart: state.cart
+		cart: state.cart,
+		sku:state.sku,
+		toast:state.toast
 	};
 }
 
@@ -19,12 +22,14 @@ const pageConfig = {
 	onLoad(){
 		console.log(this.data);
 	},
-	handleClick(){
+	handleClick(event){
 		this.actions.cartSelect(1);
+		return;
 		wx.navigateTo({
-  			url: '/pages/test/test?id=1'
+			url: '/pages/test/test?id=1'
 		});
 	}
 };
-const nextPageConfig = connect(mapStateToData, mapDispatchToActions)(pageConfig);
-Page(nextPageConfig);
+const combineConfig = Object.assign({},skuConfig,pageConfig);
+const resultConfig = connect(mapStateToData, mapDispatchToActions)(combineConfig);
+Page(resultConfig);

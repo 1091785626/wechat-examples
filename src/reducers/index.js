@@ -1,11 +1,11 @@
-import * as types from '../constants/actions/cart';
+import * as types from '../constants/actions/index';
 const initialState = {
 	isFetching: 0,      //是否已经获取 
 	text:"test"
 };
 export default function(state = initialState, action) {
 	switch (action.type) {
-		case types.CART_MAIN_SELECT:
+		case types.INDEX_MAIN_CLICK:
 			state = {
 				isFetching: 0,      //是否已经获取 
 				text:"2"

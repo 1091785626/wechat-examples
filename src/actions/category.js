@@ -1,4 +1,4 @@
-import * as types from '../constants/actions/index';
+import * as types from '../constants/actions/category';
 /**
  * 引入共用的action
  * ajax

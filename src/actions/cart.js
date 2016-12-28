@@ -4,6 +4,8 @@ import * as types from '../constants/actions/cart';
  * ajax
  */
 export { request } from './_common/request';
+export { sku } from './_common/sku';
+export { toast } from './_common/toast';
 /**
  * 购物车选择
  * 全选/单选
