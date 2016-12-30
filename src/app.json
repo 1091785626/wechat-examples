@@ -1,9 +1,9 @@
 {
 	"pages":[
-		"pages/index/index",
-		"pages/category/category",
 		"pages/cart/cart",
 		"pages/user/user",
+		"pages/index/index",
+		"pages/category/category",
 		"pages/test/test"
 	],
 	"window":{
@@ -14,7 +14,7 @@
 	"tabBar": {
 		"color": "#a9b7b7",
 		"selectedColor": "#eb4f38",
-		"borderStyle": "white",
+		"borderStyle": "black",
 		"backgroundColor": "#ffffff",
 		"list": [
 			{

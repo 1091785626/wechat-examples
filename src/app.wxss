@@ -1,4 +1,10 @@
  @import "./iconfont.wxss";
+ @import "./ui.wxss";
+ @import "./components/toast/toast.wxss";
+page{
+	font-size:30rpx;
+	background:#EFEFF4;
+}
  /**
  * g-disabled 
  * 禁用事件
@@ -147,13 +153,6 @@
 .g-fs-100{
 	font-size: 100rpx!important;
 }
-/**
- * iconfont 
- * 初始化，无视
- */
-.iconfont{
-	font-size: 32rpx;
-}
 /*layout*/
 .g-flex {
 	display: flex;
@@ -164,6 +163,12 @@
 }
 .g-fd-r {
 	flex-direction: row;
+}
+.g-jc-sb{
+	justify-content: space-between;
+}
+.g-ai-c{
+	align-items:center;
 }
 /*gird*/
 .g-col {
@@ -191,11 +196,20 @@
   	min-height: 100vh;
   	flex-direction: column;
 }
+/*水平垂直对齐*/
+.g-flex-cc{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
 /**
  * 布局辅助
  */
 .g-pd {
 	padding: 20rpx;
+}
+.g-pd-btn{
+	padding: 15rpx 20rpx;
 }
 .g-pd-l {
 	padding-left:20rpx;
@@ -209,6 +223,9 @@
 .g-pd-b {
 	padding-bottom: 20rpx;
 }
+.g-pd-t-15{
+	padding-top: 15rpx;
+}
 .g-m-t {
 	margin-top:10rpx;
 }
@@ -220,6 +237,12 @@
 }
 .g-m-b-20{
 	margin-bottom:20rpx;
+}
+.g-pdr-15{
+	padding-right:15rpx;
+}
+.g-full-h{
+	height:100vh
 }
 /**
  * bd 辅助线
@@ -236,5 +259,6 @@
 .g-bt{
 	border-top: 1rpx solid #d9d9d9;
 }
+
 
 

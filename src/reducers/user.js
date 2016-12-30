@@ -5,11 +5,10 @@ const initialState = {
 };
 export default function(state = initialState, action) {
 	switch (action.type) {
-		case types.USER_MAIN_CLICK:
-			state = {
-				isFetching: 0,      //是否已经获取 
-				text:"2"
-			};
+		case types.USER_MAIN_GET + '_SUCCESS':
+			state = Object.assign({}, state, action.data, {
+				isFetching: 1
+			});
 			return state;
 		default:
 			return state;

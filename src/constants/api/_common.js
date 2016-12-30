@@ -1,4 +1,4 @@
 const api = {
-	'SKU_GET'				:'/api/sku',
+	'_SKU_MAIN_GET'				:'/api/sku',
 };
 export default api;

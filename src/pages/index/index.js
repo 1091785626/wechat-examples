@@ -3,7 +3,8 @@ import {bindActionCreators} from '../../libs/redux.js';
 import * as testActions from '../../actions/test';
 function mapStateToData(state) {
 	return {
-		test: state.test
+		test: state.test,
+		toast:state.toast
 	};
 }
 

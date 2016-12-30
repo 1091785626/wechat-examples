@@ -1,5 +1,5 @@
 <template name="sku">
-	<view bindtap="_skuClick">
+	<view bindtap="_skuClose">
 		sku
 	</view>
 </template>

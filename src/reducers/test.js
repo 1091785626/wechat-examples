@@ -1,7 +1,7 @@
 import * as types from '../constants/actions/test';
 const initialState = {
-	isFetching: 0,      //是否已经获取 
-	text:"test"
+	isShow:1,
+	title:"test"
 };
 export default function(state = initialState, action) {
 	switch (action.type) {

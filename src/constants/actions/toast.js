@@ -1,1 +1,0 @@
-export const TOAST_SELECT = 'TOAST_SELECT';

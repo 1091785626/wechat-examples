@@ -1,6 +1,6 @@
 import net from '../utils/net';
-//import API_ROOT from 'apiRoot';
-const API_ROOT ={};
+import API_ROOT from '../constants/apiRoot';
+import {DEV_WITH_PHP} from '../constants/constants';
 export default store => next => action => {
 	let API_OPT = action['API'];
 
@@ -46,7 +46,13 @@ export default store => next => action => {
 	params = Object.assign({},params,{data: null});
 	// 触发正在请求的action
 	let result = next(nextAction(apiName + '_ON', params, opts));
-
+	//因为json-server是rest的接口；本地测试做个判断
+	if (!DEV_WITH_PHP && ajaxType != 'GET') { 
+		params = Object.assign({},params,{data: {status:1}});
+		console.info(apiName);
+		onSuccess && onSuccess(params.data);
+		return next(nextAction(apiName + '_SUCCESS', params, opts));
+	}
 	net.ajax({
 		url: API_ROOT[apiName],
 		type: ajaxType,

@@ -11,6 +11,7 @@
 	});
 
 **/
+import { GUID } from "../config";
 function ajax(options) {
 	//console.log(options);
 	let url = options.url;
@@ -25,6 +26,7 @@ function ajax(options) {
 	}
 
 	let onDataReturn = data => {
+		wx.hideToast();
 		switch (data.status) {
 			case 1:
 			case true:
@@ -45,21 +47,34 @@ function ajax(options) {
 	}
 
 	try {
-		wx.request({
-			url,
-			data: paramObj,
-			header: {
-				'content-type': 'application/json'
-			},
-			success: (res) => {
-				//微信封装后的参数
-				onDataReturn(res.data);
-			},
-			fail: (res) => { //接口调用失败的回调函数
-				error_cb && error_cb({
-					msg: '数据异常->(The xhrStatus is not 200)'
-				});
-			}
+		const app = getApp();
+		app.getUserInfo((res = {}) => { //获取用户信息
+			wx.showToast({
+			  title: '加载中',
+			  icon: 'loading',
+			  duration: 10000
+			});
+			//更新数据
+			wx.request({
+				url,
+				data: paramObj,
+				header: {
+					'content-type': 'application/json',
+					'encryptedData': res.encryptedData,
+					'iv': res.iv,
+					GUID
+				},
+				method,
+				success: (res) => {
+					//微信封装后的参数
+					onDataReturn(res.data);
+				},
+				fail: (res) => { //接口调用失败的回调函数
+					error_cb && error_cb({
+						msg: '数据异常->(The xhrStatus is not 200)'
+					});
+				}
+			});
 		});
 	} catch (e) {
 		console.error(e);

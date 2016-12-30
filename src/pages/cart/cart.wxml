@@ -1,10 +1,81 @@
-<import src="../../components/footer/footer.wxml" />
-<import src="../../components/_common/sku/sku.wxml" />
-
-<view class="g-f g-fd-c g-pd g-fs-24">
-	<text bindtap="aaa">{{cart.text}}</text>
-	<text class="g-oneline">下滑页面即可刷新下滑页面即可刷新下滑页面即可刷新下滑页面即可刷新下滑页面即可刷新下滑页面即可刷新</text>
-</view>
-
-<template is="footer" />
-<template is="sku" />
+<import src="../../components/toast/toast.wxml" />
+<template is="toast" data="{{...$toast}}"/>
+<block wx:if="{{_count}}">
+	<!--编辑区域商品-->
+	<block wx:for="{{carts_temp}}" wx:key="*this">
+		<view class="g-flex {{edit?'g-bg-gray':'g-bg-white'}}" id="{{item}}">
+			<text class="g-pdr-15 g-flex-cc {{itemObj[item].select?'icon-select g-pink':'icon-not-select'}}" bindtap="handleSelect" id="{{item}}"/>
+			<image class="g-pdr-15" src="{{itemObj[item].img}}" />
+			<view class="g-fd-c" hidden="{{edit}}">
+				<view class="g-twoline">{{itemObj[item].title}}</view>
+				<view class="g-m-t g-gray">
+					<text class="g-pdr-15">{{itemObj[item].prop}}</text>
+				</view>
+				<view class="g-flex g-jc-sb">
+					<text class="g-pink">￥{{itemObj[item].price}}</text>
+					<text>X{{itemObj[item].quantity}}</text>
+				</view>
+			</view>
+			<view class="section g-flex-cc" hidden="{{!edit}}">
+				<text class="icon-minus g-gray" bindtap="handleQuantity" id="minus_{{item}}"/>
+				<input 
+					type="number" 
+					value="{{itemObj[item].quantity}}" 
+					bindblur="handleQuantity" 
+					id="input_{{item}}"
+				/>
+				<text class="icon-plus g-gray" bindtap="handleQuantity" id="plus_{{item}}" />
+			</view>
+			<view class="g-bg-pink del g-flex-cc" hidden="{{!edit}}" bindtap="handleDel" id="{{item}}">删除</view>
+		</view>
+	</block>
+	<!--失效商品-->
+	<view class="g-pd" wx:if="{{_invalid}}">失效商品</view>
+	<block wx:for="{{carts_lose}}" wx:key="*this">
+		<view class="g-flex g-pd g-bg-gray g-gray">
+			<image class="g-pdr-15" src="{{itemObj[item].img}}" />
+			<view class="g-fd-c">
+				<view class="g-twoline">{{itemObj[item].title}}</view>
+				<view class="g-m-t">
+					<text class="g-pdr-15">{{itemObj[item].prop}}</text>
+				</view>
+				<view class="g-flex g-jc-sb">
+					<text class="g-pink">￥{{itemObj[item].price}}</text>
+					<text>X{{itemObj[item].quantity}}</text>
+				</view>
+			</view>
+		</view>
+	</block>
+	<view class="g-pd g-flex-cc" bindtap="handleDel" id="lose">
+		<text class="icon-rubbish" />
+		<text>清空所有失效商品</text>
+	</view>
+	<view class="g-item g-fixed g-bb">
+		<view class="g-flex g-flex-cc">
+			<view bindtap="handleSelect" id="all">
+				<text class="g-pink {{_select?'icon-select':'icon-not-select'}}" />
+				<text class="g-pdr-15 g-pink">全选</text>
+			</view>
+			<text bindtap="handleEdit">{{edit?"完成":"编辑"}}</text>
+		</view>
+		<view class="g-flex g-fd-c g-tr g-pdr-15" hidden="{{edit}}">
+			<text>合计：￥{{_price}}</text>
+			<text class="g-gray">不含运费</text>
+		</view>
+		<view class="g-bg-pink g-white g-flex-cc g-pd" hidden="{{edit}}" bindtap="handleBuy">结算（{{_quantity}}）</view>
+		<view class="g-bg-pink g-white g-flex-cc g-pd" hidden="{{!edit}}" bindtap="handleDel" id="all">删除</view>
+	</view>
+</block>
+<!--没有商品-->
+<block wx:if="{{_count==0}}">
+	<view class="g-flex-cc g-fd-c g-full-h">
+		<view class="g-gray g-tc">
+			<view class="line">
+				<view class="icon-cartadd" />
+			</view>
+			<text class="g-m-t-20">您的购物车空空如也</text>
+			<text>快去添加商品吧</text>
+		</view>	
+		<navigator class="g-bg-pink g-pd-btn g-m-t-20 g-br" url="/pagas/index/index" open-type="switchTab">去逛商场</navigator>
+	</view>
+</block>

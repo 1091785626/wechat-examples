@@ -1,0 +1,42 @@
+.user {
+	height:200rpx;
+	background-color:#EB4F38;
+	color:#fff;
+	padding:50rpx 0;
+}
+image{
+	width: 140rpx;
+	height: 140rpx;
+	border-radius: 100%
+}
+.avatar {
+	width: 128rpx;
+	height: 128rpx;
+	margin: 20rpx;
+	border-radius: 50%;
+}
+
+.motto {
+	margin-top: 200rpx;
+}
+.order navigator{
+	display: flex;
+	flex-direction:column;
+	justify-content: center;
+	align-items: center;
+	padding:20rpx;
+	position:relative;
+}
+.num{
+	position: absolute;
+    top: 5%;
+    right: 15%;
+    color: #fff;
+    font-size: 28rpx;
+    background-color: red;
+    border-radius: 100%;
+    width: 36rpx;
+    height: 36rpx;
+    line-height: 36rpx;
+    text-align:center;
+}
