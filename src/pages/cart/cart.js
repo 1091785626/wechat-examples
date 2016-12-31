@@ -48,10 +48,11 @@ const pageConfig = {
 		};
 		let params = {
 			param: param,
-			ajaxType: 'DELETE',
+			ajaxType: 'POST',
 			onSuccess: (res) => {
 			},
 			onError: (res) => {
+				this.$toastInfo(res.msg);
 			}
 		};
 		if(param.id instanceof Array &&param.id.length==0){
@@ -108,11 +109,26 @@ const pageConfig = {
 			onSuccess: (res) => {
 			},
 			onError: (res) => {
+				this.$toastInfo(res.msg);
 			}
 		};
 		if(curQuantity != quantity){//数量变化时
 			this.actions.request(url,params);
 		}
+	},
+	handleSku(event){
+		const info = (event.currentTarget.id).split("_");
+		const id = info[0];
+		const product_id = info[1];
+		this.$skuPopup({
+			product_id,
+			sku_id:this.data.itemObj[id].sku_id,
+			btnType:3
+		}).then((res)=>{
+
+		}).catch((res)=>{
+
+		});
 	},
 	handleBuy(){
 		let {carts}=this.data;
@@ -132,9 +148,7 @@ const pageConfig = {
 				onError: (res) => {
 				}
 			};
-			Toast.hide();//hack
-			Toast.loading(null, 0);
-			this.props.actions.request(url, params);
+			this.actions.request(url, params);
 		}
 	},
 	_compareWithStock(quantity,itemData){

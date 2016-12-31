@@ -1,3 +1,43 @@
+const isAvailable = (function isAvailableIffe() {
+	const test = 'test';
+	try {
+		wx.setStorageSync(test, test);
+		wx.removeStorageSync(test);
+		return true;
+	} catch (e) {
+		return false;
+	}
+}());
+/**
+ * 设置缓存
+ * @param key 保存的键值
+ * @param val 保存的内容
+ */
+export function setItem(key, val) {
+	if (isAvailable) {
+		wx.setStorageSync(key, val);
+	}
+}
+/**
+ * 获取缓存
+ * @param  {[String]} key 获取的键值
+ * @return {Object}
+ */
+export function getItem(key) {
+	if (isAvailable) {
+		return wx.getStorageSync(key);
+	}
+}
+/**
+ * 删除缓存
+ * @param  {[String]} key 删除的键值
+ */
+export function delItem(key) {
+	if (isAvailable) {
+		wx.removeStorageSync('key');
+	}
+}
+
 /**
  * 初始化数据
  * @param  {String} res 传入的数据
@@ -47,3 +87,24 @@ export const initObj = {
 	itemArr: [],
 	itemObj: {}
 };
+/**
+ * show
+ */
+export function showAnimate(){
+	let animation = wx.createAnimation({
+      	duration: 600,
+        timingFunction: 'easa-in',
+    });
+	animation.top(0).step();
+	animation.backgroundColor("rgba(0,0,0,.5)").step();
+
+	return animation.export();
+}
+export function hideAnimate(){
+	let animation = wx.createAnimation({
+      	duration: 600,
+        timingFunction: 'ease',
+    });
+	animation.backgroundColor("rgba(0,0,0,0)").top("100vh").step();
+	return animation.export();
+}

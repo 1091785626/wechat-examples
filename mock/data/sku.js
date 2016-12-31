@@ -6,7 +6,7 @@ let data = {
         "max_price": "17.00",
         "stock": "99",
         "show_inventory": 0,
-        "goods_props": {
+        "product_props": {
             "617": {
                 "id": "617",
                 "name": "呗",
@@ -53,10 +53,10 @@ let data = {
                 ]
             }
         },
-        "products": [
+        "skus": [
             {
                 "id": "167861",
-                "goods_id": "2009",
+                "product_id": "2009",
                 "img": "http://wx.qlogo.cn/mmopen/6mXOeYa4HU856QyIE4wprRFhvpHafqX2H9icVQ5UPvhqhVOlBGHp2DQl2s9f6TVZg8amPyAiccluo3TTMYIQdVlg/0",
                 "price": "17.00",
                 "stock": 0,
@@ -65,7 +65,7 @@ let data = {
             },
             {
                 "id": "167864",
-                "goods_id": "2009",
+                "product_id": "2009",
                 "img": "http://wx.qlogo.cn/mmopen/6mXOeYa4HU856QyIE4wprRFhvpHafqX2H9icVQ5UPvhqhVOlBGHp2DQl2s9f6TVZg8amPyAiccluo3TTMYIQdVlg/0",
                 "price": "17.00",
                 "stock": "20",
@@ -74,7 +74,7 @@ let data = {
             },
             {
                 "id": "167862",
-                "goods_id": "2009",
+                "product_id": "2009",
                 "img": "http://wx.qlogo.cn/mmopen/6mXOeYa4HU856QyIE4wprRFhvpHafqX2H9icVQ5UPvhqhVOlBGHp2DQl2s9f6TVZg8amPyAiccluo3TTMYIQdVlg/0",
                 "price": "17.00",
                 "stock": 19,
@@ -83,7 +83,7 @@ let data = {
             },
             {
                 "id": "167865",
-                "goods_id": "2009",
+                "product_id": "2009",
                 "img": "http://wx.qlogo.cn/mmopen/6mXOeYa4HU856QyIE4wprRFhvpHafqX2H9icVQ5UPvhqhVOlBGHp2DQl2s9f6TVZg8amPyAiccluo3TTMYIQdVlg/0",
                 "price": "17.00",
                 "stock": 20,
@@ -92,7 +92,7 @@ let data = {
             },
             {
                 "id": "167863",
-                "goods_id": "2009",
+                "product_id": "2009",
                 "img": "http://wx.qlogo.cn/mmopen/6mXOeYa4HU856QyIE4wprRFhvpHafqX2H9icVQ5UPvhqhVOlBGHp2DQl2s9f6TVZg8amPyAiccluo3TTMYIQdVlg/0",
                 "price": "17.00",
                 "stock": 20,
@@ -101,7 +101,7 @@ let data = {
             },
             {
                 "id": "167866",
-                "goods_id": "2009",
+                "product_id": "2009",
                 "img": "http://wx.qlogo.cn/mmopen/6mXOeYa4HU856QyIE4wprRFhvpHafqX2H9icVQ5UPvhqhVOlBGHp2DQl2s9f6TVZg8amPyAiccluo3TTMYIQdVlg/0",
                 "price": "17.00",
                 "stock": 20,

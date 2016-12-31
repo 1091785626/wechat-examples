@@ -1,29 +1,45 @@
 //app.js
 import configureStore from './stores/configureStore';
 import { initialState } from './stores/stores';
+import { getItem, setItem ,delItem } from './utils/utils';
 const store = configureStore(initialState);
 
 App({
 	onLaunch() {
-		console.log("app start!");
 	},
 	getUserInfo(cb) {
-		if (!this.userInfo) {
+		const sessionId = getItem('sessionId')||null;
+		if (!sessionId&&!this.userInfo) {
 			//调用登录接口
 			wx.login({
-				success: () => {
+				success: (loginRes) => {
 					wx.getUserInfo({
 						success: (res) => {
 							this.userInfo = res;
+							this.userInfo.code = loginRes.code;
 							typeof cb == "function" && cb(this.userInfo);
 						}
 					});
 				}
 			});
 		} else {
+			typeof cb == "function" && cb(this.userInfo,sessionId);
+		}
+	},
+	getSystemInfo (){
+		//设备的长宽高
+		if (!this.userInfo) {
+			wx.getSystemInfo({
+				success: (res) => {
+					this.systemInfo = res;
+					typeof cb == "function" && cb(this.systemInfo);
+				}
+			});
+		} else {
 			typeof cb == "function" && cb(this.userInfo);
 		}
 	},
+	systemInfo:null,
 	userInfo: null,
 	store
 });

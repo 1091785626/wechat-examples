@@ -1,5 +1,37 @@
 <template name="sku">
-	<view bindtap="_skuClose">
-		sku
+	<view class="g-popup" animation="{{$skuAnimation}}" bindtap="$skuClose" id="close">
+		<view class="g-bg-white g-sku g-col">
+			<view class="g-flex _header">
+				<image src="{{$skuState.selectInfo.img}}"/>
+				<view class="g-col g-flex g-fd-c g-pd">
+					<text class="g-oneline">{{$skuData.data}}</text>
+					<text class="g-pink g-fs-24 g-lh-44">￥{{$skuState.selectInfo.price}}</text>
+					<text class="g-gray g-fs-24">库存：{{$skuState.stock}}件</text>
+				</view>
+				<view class="icon-false g-pd" id="close"/>
+			</view>
+			<view class="g-pd" >
+				<block wx:for="{{$skuData.product_props}}" wx:key="dt.id" wx:for-item="dt">
+					<view>
+						<text class="_dt">{{dt.name}}</text>
+						<view class="g-flex" style="flex-wrap:wrap">
+							<block wx:for="{{dt.gps}}" wx:key="dd.prop_vid" wx:for-item="dd">
+								<text class="_dd {{$skuState.selected[dt.id]==dd.prop_vid?'_sel':''}} {{$skuUnStock[dd.prop_vid]<=0||dd.stock<=0?'_none':''}}" bindtap="$skuHandleLabel" id="{{dt.id}}_{{dd.prop_vid}}">{{dd.prop_value}}</text>
+							</block>
+						</view>
+					</view>
+				</block>
+			</view>
+			<view class="g-step g-pd g-jc-fe" wx:if="{{$skuBtnType!=3}}">
+				<text class="icon-minus" />
+				<input type="number" value="1"/>
+				<text class="icon-plus" />
+			</view>
+			<view class="g-bg-pink g-tc g-lh-80">确认</view>
+			<view class="g-flex" wx:if="{{$skuBtnType!=3}}">
+				<view class="g-bg-pink g-tc g-lh-80 g-1of2">加入购物车</view>
+				<view class="g-bg-orange g-tc g-lh-80 g-1of2">立即购买</view>
+			</view>
+		</view>
 	</view>
 </template>

@@ -1,9 +1,14 @@
  @import "./iconfont.wxss";
  @import "./ui.wxss";
  @import "./components/toast/toast.wxss";
+ @import "./components/sku/sku.wxss";
 page{
 	font-size:30rpx;
 	background:#EFEFF4;
+}
+image{
+	width:auto;
+	height:auto;
 }
  /**
  * g-disabled 
@@ -46,7 +51,7 @@ page{
  * 两行文字 限高
  */
 .g-two-lh{
-	height:72rpx;
+	height:63rpx;
 	line-height: 32rpx;
 }
 /**
@@ -167,12 +172,25 @@ page{
 .g-jc-sb{
 	justify-content: space-between;
 }
+.g-jc-c{
+	justify-content: center;
+}
+.g-jc-fe{
+	justify-content: flex-end;
+}
 .g-ai-c{
 	align-items:center;
+}
+
+.g-ai-fe{
+	align-items:flex-end;
 }
 /*gird*/
 .g-col {
 	flex:1
+}
+.g-col-2 {
+	flex:2
 }
 .g-full {
   	flex: 0 0 100%;
@@ -217,10 +235,18 @@ page{
 .g-pd-r {
 	padding-right:20rpx;
 }
+.g-pd-lr {
+	padding-left:20rpx;
+	padding-right:20rpx;
+}
 .g-pd-t {
 	padding-top: 20rpx;
 }
 .g-pd-b {
+	padding-bottom: 20rpx;
+}
+.g-pd-tb {
+	padding-top: 20rpx;
 	padding-bottom: 20rpx;
 }
 .g-pd-t-15{
@@ -259,6 +285,3 @@ page{
 .g-bt{
 	border-top: 1rpx solid #d9d9d9;
 }
-
-
-

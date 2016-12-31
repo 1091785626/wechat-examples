@@ -1,0 +1,35 @@
+.g-sku image{
+    flex:0 0 180rpx;
+    height:180rpx;
+    border-radius:10rpx;
+    margin-top:-60rpx;
+}
+.g-sku ._header{
+    padding-left:60rpx
+}
+.g-sku ._dt{
+    width: 100%;
+    font-size: 32rpx;
+    line-height: 60rpx;
+    font-weight: bold;
+}
+.g-sku ._dd{
+    margin:0 16rpx 10rpx 0;
+    color:#333;
+    background:#ddd;
+    padding:10rpx 20rpx;
+    font-size: 28rpx;
+    line-height: 56rpx;
+    border-radius: 4rpx;
+}
+.g-sku ._dd._none{
+    pointer-events:none;
+    color:#999;
+    text-decoration: line-through;
+    background:#EFEEEE;
+}
+.g-sku ._sel{
+    background:#ff6765;
+    color:white;
+}
+

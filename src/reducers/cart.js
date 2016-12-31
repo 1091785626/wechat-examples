@@ -146,7 +146,7 @@ export default function(state = initialState, action) {
 			id = parseInt(action.param.cart_id);
 			//暂时先用浅复制
 			state.itemObj[id].img = action.param.img;
-			state.itemObj[id].prop = action.param.props_str;
+			state.itemObj[id].props_str = action.param.props_str;
 			state.itemObj[id].sku_id = action.param.sku_id;
 			state.itemObj[id].price = action.param.price;
 			carts = state.carts; // carts 选中的id数组

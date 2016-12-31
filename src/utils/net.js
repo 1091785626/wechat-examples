@@ -12,6 +12,7 @@
 
 **/
 import { GUID } from "../config";
+import { getItem, setItem ,delItem } from './utils';
 function ajax(options) {
 	//console.log(options);
 	let url = options.url;
@@ -27,10 +28,22 @@ function ajax(options) {
 
 	let onDataReturn = data => {
 		wx.hideToast();
+		data.sessionId&&setItem('sessionId',data.sessionId);
 		switch (data.status) {
 			case 1:
 			case true:
 				success_cb && success_cb(data);
+				return;
+			case -1://登录失败
+				delItem('sessionId',data.sessionId);
+				wx.showModal({
+					content: data.msg,
+					success:()=>{
+						wx.switchTab({
+							url: '/pages/index/index'
+						});
+					}
+				});
 				return;
 			default:
 				error_cb && error_cb(data);
@@ -48,30 +61,41 @@ function ajax(options) {
 
 	try {
 		const app = getApp();
-		app.getUserInfo((res = {}) => { //获取用户信息
+		app.getUserInfo((res = {},sessionId) => { //获取用户信息
 			wx.showToast({
 			  title: '加载中',
 			  icon: 'loading',
 			  duration: 10000
 			});
+			let header;
+			if(sessionId){
+				header={
+					'content-type': 'application/json',
+					'cookie': sessionId,
+					GUID
+				};
+			}else{
+				header={
+					'content-type': 'application/json',
+					'encryptedData': res.encryptedData,
+					'iv': res.iv,
+					'code':res.code,
+					GUID
+				};
+			}
 			//更新数据
 			wx.request({
 				url,
 				data: paramObj,
-				header: {
-					'content-type': 'application/json',
-					'encryptedData': res.encryptedData,
-					'iv': res.iv,
-					GUID
-				},
+				header,
 				method,
 				success: (res) => {
 					//微信封装后的参数
 					onDataReturn(res.data);
 				},
 				fail: (res) => { //接口调用失败的回调函数
-					error_cb && error_cb({
-						msg: '数据异常->(The xhrStatus is not 200)'
+					wx.showModal({
+						content: '数据异常->(The xhrStatus is not 200)'
 					});
 				}
 			});

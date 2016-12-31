@@ -33,14 +33,14 @@
 		</navigator>
 	</view>	
 	<view class="g-item g-m-t g-bb g-pd">
-		<navigator url="/pages/user-addr/user-addr">
+		<navigator url="/pages/user-addr/user-addr" class="g-col">
 			<text class="icon-location g-pdr-15"/>
 			<text>地址管理</text>
 		</navigator>
 		<text class="icon-right"/>
 	</view>
 	<view class="g-item g-pd" bindtap="_calling">
-		<view>
+		<view class="g-col">
 			<text class="icon-tel g-pdr-15"/>
 			<text>联系客服</text>
 		</view>

@@ -1,7 +1,9 @@
 import { DEV_WITH_PHP } from './constants';
+import _common from './api/_common';
 import cart from './api/cart';
 import user from './api/user';
 const API = Object.assign({},
+	_common,
 	cart,
 	user
 );
