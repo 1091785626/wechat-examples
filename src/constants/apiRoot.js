@@ -1,11 +1,20 @@
 import { DEV_WITH_PHP } from './constants';
 import _common from './api/_common';
+import index from './api/index';
+import category from './api/category';
 import cart from './api/cart';
 import user from './api/user';
+import order from './api/order';
+import goods from './api/goods';
+import list from './api/list';
 const API = Object.assign({},
 	_common,
+	index,
+	category,
 	cart,
-	user
+	order,
+	goods,
+	list
 );
 let baseUrl;
 if (!DEV_WITH_PHP) {

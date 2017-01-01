@@ -1,16 +1,13 @@
 import {connect} from '../../libs/wechat-redux.js';
 import {bindActionCreators} from '../../libs/redux.js';
-import * as testActions from '../../actions/test';
+import * as indexActions from '../../actions/index';
 function mapStateToData(state) {
-	return {
-		test: state.test,
-		toast:state.toast
-	};
+	return state.index;
 }
 
 function mapDispatchToActions(dispatch) {
 	return {
-		actions:bindActionCreators(testActions, dispatch)
+		actions:bindActionCreators(indexActions, dispatch)
 	};
 }
 const pageConfig = {

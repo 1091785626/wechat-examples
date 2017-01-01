@@ -1,21 +1,21 @@
-.cart-view image{
+.v-cart image{
 	flex:0 0 145rpx;
 	height:145rpx;
 }
-.cart-view ._del{
+.v-cart ._del{
 	flex:0 0 110rpx;
 	color:#fff;
 }
-.cart-view input[type="number"]{
+.v-cart input[type="number"]{
 	width: 220rpx;
 	text-align:center;
 }
-.cart-view ._line{
+.v-cart ._line{
 	line-height: 2rpx;
 	border-left: 130rpx solid #ddd;
 	border-right: 130rpx solid #ddd;
 }
-.cart-view ._line .icon-cartadd{
+.v-cart ._line .icon-cartadd{
 	margin: 50rpx;
 	font-size:50rpx;
 }

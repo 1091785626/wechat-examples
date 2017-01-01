@@ -1,0 +1,6 @@
+<!-- goods.wxml -->
+<template name="goods">
+	<view class="diy-goods">
+		goods
+	</view>
+</template>

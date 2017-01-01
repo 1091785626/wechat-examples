@@ -224,11 +224,6 @@ const skuConfig = {
 		}
 	},
 	$skuHandleLabel(event){
-		this.setData({
-			$sku:{
-				isShow:0
-			}
-		});
 		const {$skuData,$skuState} = this.data;
 		const info = (event.currentTarget.id).split("_");
 		const type = info[0];

@@ -11,29 +11,29 @@
 		</view>	
 	</navigator>
 	<view class="order g-flex g-pd g-jc-sb g-bg-white">
-		<navigator url="pages/order-list/order-list?type=topay">
+		<navigator url="pages/order/list/list?type=topay">
 			<text class="icon-topay"/>
 			<text class="g-m-t">待付款</text>
 			<text class="num" hidden="{{!order.topay}}">{{order.topay}}</text>
 		</navigator>
-		<navigator url="pages/order-list/order-list?type=tosend">
+		<navigator url="pages/order/list/list?type=tosend">
 			<text class="icon-tosend"/>
 			<text class="g-m-t">待发货</text>
 			<text class="num" hidden="{{!order.tosend}}">{{order.tosend}}</text>
 		</navigator>
-		<navigator url="pages/order-list/order-list?type=torec">
+		<navigator url="pages/order/list/list?type=torec">
 			<text class="icon-torec"/>
 			<text class="g-m-t">待收货</text>
 			<text class="num" hidden="{{!order.torec}}">{{order.torec}}</text>
 		</navigator>
-		<navigator url="pages/order-list/order-list?type=tocomment">
+		<navigator url="pages/order/list/list?type=tocomment">
 			<text class="icon-tocomment"/>
 			<text class="g-m-t">待评价</text>
 			<text class="num" hidden="{{!order.tocomment}}">{{order.tocomment}}</text>
 		</navigator>
 	</view>	
 	<view class="g-item g-m-t g-bb g-pd">
-		<navigator url="/pages/user-addr/user-addr" class="g-col">
+		<navigator url="/pages/user/addr/addr" class="g-col">
 			<text class="icon-location g-pdr-15"/>
 			<text>地址管理</text>
 		</navigator>

@@ -1,0 +1,1 @@
+export const ORDER_MAIN_GET = 'ORDER_MAIN_GET';

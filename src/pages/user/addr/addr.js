@@ -1,13 +1,13 @@
-import {connect} from '../../libs/wechat-redux.js';
-import {bindActionCreators} from '../../libs/redux.js';
-import * as categoryActions from '../../actions/category';
+import {connect} from '../../../libs/wechat-redux.js';
+import {bindActionCreators} from '../../../libs/redux.js';
+import * as userAddrActions from '../../../actions/user';
 function mapStateToData(state) {
-	return state.category;
+	return state.userAddr;
 }
 
 function mapDispatchToActions(dispatch) {
 	return {
-		actions:bindActionCreators(categoryActions, dispatch)
+		actions:bindActionCreators(userAddrActions, dispatch)
 	};
 }
 const pageConfig = {

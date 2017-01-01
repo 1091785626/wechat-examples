@@ -1,0 +1,1 @@
+export const GOODS_MAIN_GET = 'GOODS_MAIN_GET';

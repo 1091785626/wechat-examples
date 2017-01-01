@@ -1,9 +1,10 @@
  @import "./iconfont.wxss";
  @import "./ui.wxss";
+ @import "./components/diy/diy.wxss";
  @import "./components/toast/toast.wxss";
  @import "./components/sku/sku.wxss";
 page{
-	font-size:30rpx;
+	font-size:26rpx;
 	background:#EFEFF4;
 }
 image{
@@ -166,9 +167,6 @@ image{
 .g-fd-c {
 	flex-direction: column;
 }
-.g-fd-r {
-	flex-direction: row;
-}
 .g-jc-sb{
 	justify-content: space-between;
 }
@@ -181,9 +179,11 @@ image{
 .g-ai-c{
 	align-items:center;
 }
-
 .g-ai-fe{
 	align-items:flex-end;
+}
+.g-fw-w{
+	flex-wrap:wrap;
 }
 /*gird*/
 .g-col {

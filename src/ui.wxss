@@ -34,7 +34,9 @@
 [class*="g-bg-"]{
 	color:white; 
 }
-
+[class*="g-bg-"] input{
+	color:black; 
+}
 .g-bg-white{
 	background:#fff;
 	color:inherit;
@@ -95,7 +97,6 @@
  */
 .g-step{
     display:flex;
-    align-items: flex-end;
 }
 .g-step text{
     width: 70rpx;

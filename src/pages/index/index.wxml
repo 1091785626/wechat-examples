@@ -1,3 +1,13 @@
+<import src="../../components/diy/goods/goods.wxml" />
+<import src="../../components/diy/showcase/showcase.wxml" />
+<import src="../../components/diy/slide/slide.wxml" />
+<import src="../../components/diy/title/title.wxml" />
+
 <view>
-	<text>1</text>
+	<text>shop</text>
 </view>
+
+<template is="goods" />
+<template is="showcase" />
+<template is="slide" />
+<template is="title" />

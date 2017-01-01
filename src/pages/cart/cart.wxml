@@ -6,13 +6,13 @@
 <block wx:if="{{_count}}">
 	<!--编辑区域商品-->
 	<block wx:for="{{carts_temp}}" wx:key="*this">
-		<view class="cart-view g-bb g-flex {{edit?'g-bg-gray':'g-bg-white'}}" id="{{item}}">
+		<view class="v-cart g-bb g-flex {{edit?'g-bg-gray':'g-bg-white'}}" id="{{item}}">
 			<text class="g-pdr-15 g-pd g-flex-cc {{itemObj[item].select?'icon-select g-pink':'icon-not-select'}}" bindtap="handleSelect" id="{{item}}"/>
 			<image class="g-pdr-15 g-pd" src="{{itemObj[item].img}}" />
 			<view class="g-col g-pd" hidden="{{edit}}">
 				<view class="g-twoline g-two-lh">{{itemObj[item].title}}</view>
 				<view class="g-m-t g-gray">
-					<text class="g-pdr-15">{{itemObj[item].props_str}}</text>
+					<text class="g-pdr-15 g-oneline">{{itemObj[item].props_str}}</text>
 				</view>
 				<view class="g-flex g-jc-sb g-m-t">
 					<text class="g-pink">￥{{itemObj[item].price}}</text>
@@ -31,7 +31,7 @@
 					<text class="icon-plus g-gray" bindtap="handleQuantity" id="plus_{{item}}" />
 				</view>
 				<view class="g-m-t g-gray g-flex g-jc-sb" hidden="{{!itemObj[item].props_str||!edit}}" bindtap="handleSku" id="{{item}}_{{itemObj[item].product_id}}">
-					<text class="g-pdr-15">{{itemObj[item].props_str}}</text>
+					<text class="g-pdr-15 g-oneline">{{itemObj[item].props_str}}</text>
 					<text class="icon-down" />
 				</view>
 			</view>
@@ -42,12 +42,12 @@
 	<!--失效商品-->
 	<view class="g-pd" wx:if="{{_invalid}}">失效商品</view>
 	<block wx:for="{{carts_lose}}" wx:key="*this" wx:if="{{_invalid}}">
-		<view class="g-flex g-pd g-bg-gray g-gray g-bb cart-view">
+		<view class="g-flex g-pd g-bg-gray g-gray g-bb v-cart">
 			<image class="g-pdr-15" src="{{itemObj[item].img}}" />
 			<view class="g-col">
 				<view class="g-twoline g-two-lh">{{itemObj[item].title}}</view>
 				<view class="g-m-t">
-					<text class="g-pdr-15">{{itemObj[item].props_str}}</text>
+					<text class="g-pdr-15 g-oneline">{{itemObj[item].props_str}}</text>
 				</view>
 				<view class="g-flex g-jc-sb g-m-t">
 					<text class="g-pink">￥{{itemObj[item].price}}</text>
@@ -78,7 +78,7 @@
 </block>
 <!--没有商品-->
 <block wx:if="{{_count==0}}">
-	<view class="g-flex-cc g-fd-c g-full-h cart-view">
+	<view class="g-flex-cc g-fd-c g-full-h v-cart">
 		<view class="g-gray g-tc">
 			<view class="_line">
 				<view class="icon-cartadd" />

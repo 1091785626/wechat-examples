@@ -1,0 +1,6 @@
+<!-- slide.wxml -->
+<template name="slide">
+	<view class="diy-slide">
+		slide
+	</view>
+</template>

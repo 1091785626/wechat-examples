@@ -1,0 +1,6 @@
+<!-- showcase.wxml -->
+<template name="showcase">
+	<view class="diy-showcase">
+		showcase
+	</view>
+</template>

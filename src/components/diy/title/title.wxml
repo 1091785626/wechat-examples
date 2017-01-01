@@ -1,0 +1,9 @@
+<!-- title.wxml -->
+<template name="title">
+	<view class="diy-title-1">
+		title
+	</view>
+	<view class="diy-title-2">
+		title
+	</view>
+</template>
