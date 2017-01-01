@@ -12,6 +12,7 @@ const API = Object.assign({},
 	index,
 	category,
 	cart,
+	user,
 	order,
 	goods,
 	list

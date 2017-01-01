@@ -27,8 +27,8 @@ const pageConfig = {
 			this.actions.request(url, params, {});
 		}
 	},
-	_calling(){
-		wx.makePhoneCall({phoneNumber: '15968763535'});
+	handleCalling(){
+		wx.makePhoneCall({phoneNumber: this.data.shop.tel});
 	}
 };
 const resultConfig = connect(mapStateToData, mapDispatchToActions)(pageConfig);

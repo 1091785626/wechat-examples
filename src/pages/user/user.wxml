@@ -39,7 +39,7 @@
 		</navigator>
 		<text class="icon-right"/>
 	</view>
-	<view class="g-item g-pd" bindtap="_calling">
+	<view class="g-item g-pd" bindtap="handleCalling">
 		<view class="g-col">
 			<text class="icon-tel g-pdr-15"/>
 			<text>联系客服</text>
