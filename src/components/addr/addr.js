@@ -8,11 +8,7 @@ import API_ROOT from '../../constants/apiRoot';
 const addrConfig = {
 	$addrPopup(options){
 		console.log("options",options);
-		//让用户禁止点击，还要依赖微信的渲染速度
-		this.setData({$addr:{isShow:1}});
 		return new Promise((resolve, reject) => {
-			this.$addrResolve  = null;
-			this.$addrReject = null;
 			this.$addrResolve  = resolve;
 			this.$addrReject = reject;
 			let localData = getItem('areaData')||"";
@@ -26,6 +22,7 @@ const addrConfig = {
 					this.$addrAllDistrict = res.data;
 					const {$addrDistrict,$addrPicker} = this.$addrInit(options.data);
 					this.setData({
+						$addr:{isShow:1},
 						$addrOptions:options,
 						$addrData:options.data,
 						$addrAnimation: showAnimate(),
@@ -63,7 +60,7 @@ const addrConfig = {
 				itemData[1] = itemData[0][select_0].children;
 				label[0] = itemData[0][select_0].label;
 				value[0] = itemData[0][select_0].value;
-				index[0] = select_0;
+				index[0] = Number(select_0);
 				break;
 			}
 		}
@@ -80,7 +77,7 @@ const addrConfig = {
 				itemData[2] = itemData[1][select_1].children;
 				label[1] = itemData[1][select_1].label;
 				value[1] = itemData[1][select_1].value;
-				index[1] = select_1;
+				index[1] = Number(select_1);
 				break;
 			}
 		}
@@ -101,7 +98,7 @@ const addrConfig = {
 			if(itemData[2][select_2].value==value[2]){
 				label[2] = itemData[2][select_2].label;
 				value[2] = itemData[2][select_2].value;
-				index[2] = select_2;
+				index[2] = Number(select_2);
 				break;
 			}
 		}
@@ -126,36 +123,41 @@ const addrConfig = {
 		}
 		this.$addrReject(res);
 	},
-	$addrProvinceChange(event){
-		this.$addrHandleChange(event);
-	},
-	$addrCityChange(event){
-		this.$addrHandleChange(event);
-	},
-	$addrDistrictChange(event){
-		this.$addrHandleChange(event);
-	},
 	$addrHandleChange(event){
-		const index = event.detail.value;
-		const i = event.currentTarget.id;
+		const values = event.detail.value;
 		let {$addrPicker,$addrDistrict} = this.data;
-		$addrPicker.value[i] =  $addrDistrict[i][index].value;
+		const i = values.findIndex((value, index) => {
+			return value != $addrPicker.index[index];
+		});
+		$addrPicker.value[i] =  $addrDistrict[i][values[i]].value;
 		const data = this.$addrInitDistrict($addrPicker.value,i);
 		this.setData({
 			$addrDistrict:data.$addrDistrict,
 			$addrPicker:data.$addrPicker
 		});
 	},
+	// $addrHandleChange(event){
+	// 	const index = event.detail.value;
+	// 	const i = event.currentTarget.id;
+	// 	let {$addrPicker,$addrDistrict} = this.data;
+	// 	$addrPicker.value[i] =  $addrDistrict[i][index].value;
+	// 	const data = this.$addrInitDistrict($addrPicker.value,i);
+	// 	this.setData({
+	// 		$addrDistrict:data.$addrDistrict,
+	// 		$addrPicker:data.$addrPicker
+	// 	});
+	// },
 	$addrSubmit(event){
+
 		let value = event.detail.value;
 		let {$addrPicker,$addrDistrict} = this.data;
 		let formData = Object.assign(
 					{},
 					event.detail.value,
 					{
-						province:$addrDistrict[0][value.province].value,
-						city:$addrDistrict[1][value.city].city,
-						district:$addrDistrict[2][value.district].district
+						province:$addrDistrict[0][value.district[0]].value,
+						city:$addrDistrict[1][value.district[1]].value,
+						district:$addrDistrict[2][value.district[2]].value
 					}
 				);
 		/**

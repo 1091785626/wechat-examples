@@ -166,7 +166,7 @@
 .g-form ._none{
 	margin:0;
 }
-.g-form picker view{
+.g-form ._picker{
 	padding:10rpx;
 	color:#9c9c9c;
 }
@@ -189,4 +189,11 @@
 .g-form input{
 	flex: 1;
 	color:#9c9c9c;
+}
+.g-form picker-view view{
+	line-height:68rpx;
+}
+.g-form picker-view{
+	width: 100%; 
+	height: 200rpx;
 }

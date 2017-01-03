@@ -17,7 +17,7 @@
 				</view>
 				<view class="_colum">
 					<text>选择地区：</text>
-					<picker name="province" bindchange="$addrProvinceChange" value="{{$addrPicker.index[0]}}" range="{{$addrDistrict[0]}}" range-key="label" id="0">
+					<!-- <picker name="province" bindchange="$addrProvinceChange" value="{{$addrPicker.index[0]}}" range="{{$addrDistrict[0]}}" range-key="label" id="0">
 						<view class="_left"> {{$addrPicker.label[0]}} </view>
 					</picker>
 					<picker name="city" bindchange="$addrCityChange" value="{{$addrPicker.index[1]}}" range="{{$addrDistrict[1]}}" range-key="label" id="1">
@@ -25,7 +25,18 @@
 					</picker>
 					<picker name="district" bindchange="$addrDistrictChange" value="{{$addrPicker.index[2]}}" range="{{$addrDistrict[2]}}" range-key="label" id="2">
 						<view> {{$addrPicker.label[2]}} </view>
-					</picker>
+					</picker> -->
+					<picker-view indicator-style="height: 50rpx;" name="district" value="{{$addrPicker.index}}" bindchange="$addrHandleChange" wx:if="{{$addr.isShow}}">
+					    <picker-view-column>
+					      	<view wx:for="{{$addrDistrict[0]}}" wx:key="{{item.value}}">{{item.label}}</view>
+					    </picker-view-column>
+					    <picker-view-column>
+					      	<view wx:for="{{$addrDistrict[1]}}" wx:key="{{item.value}}">{{item.label}}</view>
+					    </picker-view-column>
+					    <picker-view-column>
+					      	<view wx:for="{{$addrDistrict[2]}}" wx:key="{{item.value}}">{{item.label}}</view>
+					    </picker-view-column>
+					</picker-view>
 				</view>
 				<view class="_colum">
 					<text>详细地址：</text>

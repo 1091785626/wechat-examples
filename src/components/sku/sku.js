@@ -9,10 +9,8 @@ const skuConfig = {
 	$skuPopup(options){
 		//console.log(options);
 		//让用户禁止点击，还要依赖微信的渲染速度
-		this.setData({$sku:{isShow:1}});
+		//this.setData({$sku:{isShow:1}});
 		return new Promise((resolve, reject) => {
-			this.$skuResolve  = null;
-			this.$skuReject = null;
 			this.$skuResolve  = resolve;
 			this.$skuReject = reject;
 			let param = {
@@ -34,6 +32,7 @@ const skuConfig = {
 					const {stock,selected,selectInfo} = this.$skuInit(data,options.sku_id);
 					const {$skuUnStock} =this.$getUnStock(selected,data);
 					this.setData({
+						$sku:{isShow:1},
 						$skuOptions:options,
 						$skuData:data,
 						$skuState:{
