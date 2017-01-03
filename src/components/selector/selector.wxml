@@ -1,0 +1,22 @@
+<template name="selector">
+	<view class="g-popup" animation="{{$selectorAnimation}}" bindtap="$selectorClose" id="close">
+		<view class="g-col g-bg-white">
+			<view class="__title">
+				<text>确认付款</text>
+				<view class="icon-false" id="close"/>
+			</view>
+			<view class="g-flex g-jc-c">
+				<text>还需要支付</text>
+				<text class="g-pink">￥111.00</text>
+			</view>
+			<scroll-view class="g-pd g-h-300 g-fd-c" scroll-y="true">
+				<view class="g-flex-ac g-bb g-lh-88">
+					<text class="icon-wechat g-green"/>
+					<text class="g-col g-pd-l">微信支付</text>
+					<text class="icon-past g-orange"/>
+				</view>
+			</scroll-view>
+			<view class="g-tc g-lh-80 g-bg-pink">确认付款</view>
+		</view>
+	</view>
+</template>

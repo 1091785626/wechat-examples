@@ -1,0 +1,6 @@
+<!-- voice.wxml -->
+<template name="voice">
+	<view class="diy-voice">
+		voice
+	</view>
+</template>

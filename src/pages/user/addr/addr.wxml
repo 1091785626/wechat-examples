@@ -1,3 +1,29 @@
-<view>
-	addr
+<import src="../../../components/toast/toast.wxml" />
+<import src="../../../components/addr/addr.wxml" />
+<template is="toast" data="{{$toast}}"/>
+<template is="addr" data="{{$addr,$addrOptions,$addrData,$addrAnimation,$addrDistrict,$addrPicker}}"/>
+<view class="v-user-addr">
+	<block wx:for="{{itemArr}}" wx:key="{{item}}_{{index}}" wx:for-index="index">
+		<view class="g-m-b">
+			<view class="g-bg-white g-pd g-bb">
+				<view class="g-flex g-jc-sb g-lh-44">
+					<text>收货人：{{itemObj[item].consignee}}</text>
+					<text>{{itemObj[item].mobile}}</text>
+				</view>
+				<text class="g-twoline g-gray g-two-lh">{{itemObj[item].province_name}} {{itemObj[item].city_name}} {{itemObj[item].district_name}} {{itemObj[item].address}}</text>
+			</view>	
+			<view class="g-flex g-bg-white g-pd g-ai-c">
+				<view class="g-col g-flex-ac" bindtap="handleSelect" id="{{index}}_{{item}}">
+					<text class="g-pdr-15 {{index==0?'icon-selected g-pink':'icon-select'}}" />
+					<text>设置默认</text>
+				</view>
+				<view>
+					<text bindtap="handleEdit" id="{{item}}">编辑 |</text>
+					<text bindtap="handleDelete" id="{{item}}"> 删除</text>
+				</view>
+			</view>
+		</view>
+	</block>
+	<view style="height:88rpx"/>
+	<view class="g-fixed g-bg-blue g-tc g-lh-88" bindtap="handleCreate">新建地址列表</view>
 </view>

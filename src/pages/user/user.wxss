@@ -1,25 +1,15 @@
-.user {
+.v-user ._user {
 	height:200rpx;
 	background-color:#EB4F38;
 	color:#fff;
 	padding:50rpx 0;
 }
-image{
+.v-user image{
 	width: 140rpx;
 	height: 140rpx;
 	border-radius: 100%
 }
-.avatar {
-	width: 128rpx;
-	height: 128rpx;
-	margin: 20rpx;
-	border-radius: 50%;
-}
-
-.motto {
-	margin-top: 200rpx;
-}
-.order navigator{
+.v-user ._order navigator{
 	display: flex;
 	flex-direction:column;
 	justify-content: center;
@@ -27,7 +17,7 @@ image{
 	padding:20rpx;
 	position:relative;
 }
-.num{
+.v-user ._num{
 	position: absolute;
     top: 5%;
     right: 15%;

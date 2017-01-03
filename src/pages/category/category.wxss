@@ -1,0 +1,31 @@
+.v-category ._goods{
+	 margin-left: 10rpx; 
+}
+.v-category ._nav .g-1of4{
+	border-bottom:1px solid #EBEBEB;
+	background: #fff;
+}
+.v-category ._nav .g-1of4 view{
+	height:80rpx;
+	line-height: 80rpx;
+}
+.v-category ._active{
+	background: #EFEFF4;
+	color:#F5374D;
+}
+.v-category ._list {
+	display: flex;
+	flex-flow: row wrap;
+	align-content: flex-start;
+	background-color: white;
+}
+.v-category ._child {
+	box-sizing: border-box;	
+	flex: 0 0 33%;
+	text-align: center;
+	margin-bottom:10px;
+}
+.v-category ._child image{
+	width:140rpx;
+	height:140rpx;
+} 

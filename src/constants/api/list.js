@@ -1,4 +1,7 @@
 const api = {
-	'LIST_MAIN_GET'				:'/api/cart',
+	/**
+	 * 用户端的商品列表
+	 */
+	'LIST_MAIN_GET'			:'/agent-product/index',
 };
 export default api;

@@ -1,0 +1,43 @@
+<template name="addr">
+	<view class="g-popup-bg" hidden="{{!$addr.isShow}}"/>
+	<view class="g-popup" animation="{{$addrAnimation}}" bindtap="$addrClose" id="close">
+		<view class="g-col g-bg-white">
+			<view class="__title">
+				<text>{{$addrOptions.type=="edit"?"地址编辑":"新建地址"}}</text>
+				<view class="icon-false" id="close"/>
+			</view>
+			<form class="g-form" bindsubmit="$addrSubmit">
+				<view class="_colum">
+					<text>收货人：</text>
+					<input name="consignee" type="text" placeholder="请填写收货人姓名" value="{{$addrData.consignee}}" />
+				</view>
+				<view class="_colum">
+					<text>手机号码：</text>
+					<input name="mobile" type="text" placeholder="请填写手机号码"  value="{{$addrData.mobile}}"/>
+				</view>
+				<view class="_colum">
+					<text>选择地区：</text>
+					<picker name="province" bindchange="$addrProvinceChange" value="{{$addrPicker.index[0]}}" range="{{$addrDistrict[0]}}" range-key="label" id="0">
+						<view class="_left"> {{$addrPicker.label[0]}} </view>
+					</picker>
+					<picker name="city" bindchange="$addrCityChange" value="{{$addrPicker.index[1]}}" range="{{$addrDistrict[1]}}" range-key="label" id="1">
+						<view> {{$addrPicker.label[1]}} </view>
+					</picker>
+					<picker name="district" bindchange="$addrDistrictChange" value="{{$addrPicker.index[2]}}" range="{{$addrDistrict[2]}}" range-key="label" id="2">
+						<view> {{$addrPicker.label[2]}} </view>
+					</picker>
+				</view>
+				<view class="_colum">
+					<text>详细地址：</text>
+					<input name="address" type="text" placeholder="请输入街道门牌信息"  value="{{$addrData.address}}" />
+				</view>
+				<view class="_colum">
+					<text>邮政编码：</text>
+					<input name="zipcode" type="text" placeholder="请输入邮政编码" value="{{$addrData.zipcode}}" />
+				</view>
+				<button formType="submit">保存</button>
+			</form>
+			<view class="g-tc g-lh-80 g-bg-deep g-m-t" hidden="{{true}}">删除</view>
+		</view>
+	</view>
+</template>

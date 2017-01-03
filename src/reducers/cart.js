@@ -1,4 +1,5 @@
 import * as types from '../constants/actions/cart';
+import { USER_CART_ADD } from '../constants/actions/_common';
 const initialState = {
 	isFetching: 0,      //是否已经获取 
 	itemArr:[],        //拆分出来的id
@@ -91,9 +92,12 @@ export default function(state = initialState, action) {
 	let newState, items, isTrue, carts, carts_temp, carts_lose, itemArr, id, sum, _count, _invalid, deleteData, quantity;
 	switch (action.type) {
 		case types.CART_MAIN_GET + '_SUCCESS':
-			state = Object.assign({}, state, initItemMain(action.data), {
-				isFetching: 1
-			});
+			state = Object.assign(
+						{}, 
+						state, 
+						initItemMain(action.data), 
+						{isFetching: 1}
+					);
 			return state;
 		case types.CART_MAIN_SELECT:
 			//选择
@@ -154,6 +158,10 @@ export default function(state = initialState, action) {
 			sum = sumCommon(carts,carts_temp,state.itemObj);
 			state = Object.assign({}, state, sum);
 			return state;
+		case USER_CART_ADD:
+		case types.CART_MAIN_POST + '_SUCCESS':
+			//结算；为了方便，暂时考虑是清空购物车数据
+			return initialState;
 		default:
 			return state;
 	}

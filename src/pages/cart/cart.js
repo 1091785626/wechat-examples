@@ -18,8 +18,8 @@ const pageConfig = {
 	data:{
 		edit:!1,//编辑状态
 	},
-	onLoad(){
-		console.log('cart start');
+	onShow(){
+		console.log("cart show");
 		if (this.data.isFetching === 0) {
 			let url = types.CART_MAIN_GET;
 			let param = {};
@@ -123,11 +123,11 @@ const pageConfig = {
 		this.$skuPopup({
 			product_id,
 			sku_id:this.data.itemObj[id].sku_id,
+			cart_id:id,
 			btnType:3
 		}).then((res)=>{
-
+			this.actions.cartProps(res);
 		}).catch((res)=>{
-
 		});
 	},
 	handleBuy(){

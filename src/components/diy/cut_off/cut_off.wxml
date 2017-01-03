@@ -1,0 +1,6 @@
+<!-- cut_off.wxml -->
+<template name="cut_off">
+	<view class="diy-cut-off">
+		cut_off
+	</view>
+</template>

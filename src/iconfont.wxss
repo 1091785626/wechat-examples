@@ -6,14 +6,20 @@
 }
 
 
+
+
 @font-face {font-family: "iconfont";
-  src: url('//at.alicdn.com/t/font_lpa69zd772lw61or.eot?t=1483060632021'); /* IE9*/
-  src: url('//at.alicdn.com/t/font_lpa69zd772lw61or.eot?t=1483060632021#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('//at.alicdn.com/t/font_lpa69zd772lw61or.woff?t=1483060632021') format('woff'), /* chrome, firefox */
-  url('//at.alicdn.com/t/font_lpa69zd772lw61or.ttf?t=1483060632021') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-  url('//at.alicdn.com/t/font_lpa69zd772lw61or.svg?t=1483060632021#iconfont') format('svg'); /* iOS 4.1- */
+  src: url('//at.alicdn.com/t/font_ajm6gls7eamunmi.eot?t=1483372329638'); /* IE9*/
+  src: url('//at.alicdn.com/t/font_ajm6gls7eamunmi.eot?t=1483372329638#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('//at.alicdn.com/t/font_ajm6gls7eamunmi.woff?t=1483372329638') format('woff'), /* chrome, firefox */
+  url('//at.alicdn.com/t/font_ajm6gls7eamunmi.ttf?t=1483372329638') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('//at.alicdn.com/t/font_ajm6gls7eamunmi.svg?t=1483372329638#iconfont') format('svg'); /* iOS 4.1- */
 }
 
+
+.icon-wechat:before { content: "\e661"; }
+
+.icon-balance:before { content: "\e663"; }
 
 .icon-warning:before { content: "\e662"; }
 
@@ -27,17 +33,21 @@
 
 .icon-refund:before { content: "\e6ac"; }
 
+.icon-past:before { content: "\e655"; }
+
 .icon-fllow:before { content: "\e600"; }
 
 .icon-minus:before { content: "\e613"; }
 
-.icon-viewgallery:before { content: "\e6b4"; }
+.icon-category:before { content: "\e6b4"; }
 
-.icon-account:before { content: "\e6b8"; }
+.icon-user:before { content: "\e6b8"; }
 
 .icon-tel:before { content: "\e61b"; }
 
 .icon-plus:before { content: "\e680"; }
+
+.icon-alipay:before { content: "\e63d"; }
 
 .icon-shop:before { content: "\e736"; }
 
@@ -79,14 +89,12 @@
 
 .icon-voice:before { content: "\e687"; }
 
-.icon-survey:before { content: "\e74e"; }
+.icon-edit:before { content: "\e74e"; }
 
-.icon-not-select:before { content: "\e658"; }
+.icon-select:before { content: "\e658"; }
 
-.icon-select:before { content: "\e65a"; }
+.icon-selected:before { content: "\e65a"; }
 
 .icon-collect:before { content: "\e62a"; }
 
 .icon-collected:before { content: "\e62b"; }
-
-

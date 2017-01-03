@@ -1,4 +1,5 @@
 <template name="sku">
+	<view class="g-popup-bg" hidden="{{!$sku.isShow}}"/>
 	<view class="g-popup" animation="{{$skuAnimation}}" bindtap="$skuClose" id="close">
 		<view class="g-bg-white c-sku g-col">
 			<view class="g-flex _header">
@@ -22,16 +23,27 @@
 					</view>
 				</block>
 			</view>
-			<view class="g-step g-pd g-jc-fe" wx:if="{{$skuBtnType==3}}">
-				<text class="icon-minus" />
-				<input type="number" value="1"/>
-				<text class="icon-plus" />
+			<view class="g-step g-pd g-jc-fe" wx:if="{{$skuBtnType!=3}}">
+				<text class="icon-minus" bindtap="$skuHandleQuantity" id="minus"/>
+				<input 
+					type="number" 
+					value="{{$skuState.value}}" 
+					bindblur="$skuHandleQuantity" 
+					id="input"
+				/>
+				<text class="icon-plus" bindtap="$skuHandleQuantity" id="plus"/>
 			</view>
-			<view class="g-bg-pink g-tc g-lh-80">确认</view>
-			<view class="g-flex" wx:if="{{$skuBtnType==3}}">
-				<view class="g-bg-pink g-tc g-lh-80 g-1of2">加入购物车</view>
-				<view class="g-bg-orange g-tc g-lh-80 g-1of2">立即购买</view>
+			<!--购物车点击-->
+			<view class="g-bg-pink g-tc g-lh-80" bindtap="$skuHandleSure" wx:if="{{$skuBtnType==3}}">确认修改</view>
+			<!--加入购物车 立即购买 其他地方-->
+			<view class="g-flex" wx:elif="{{$skuBtnType==0}}">
+				<view class="g-bg-pink g-tc g-lh-80 g-1of2" bindtap="$skuHandleCartBuy" id="0">加入购物车</view>
+				<view class="g-bg-orange g-tc g-lh-80 g-1of2" bindtap="$skuHandleCartBuy" id="1">立即购买</view>
 			</view>
+			<!--加入购物车 从商品详情底部点击-->
+			<view class="g-bg-pink g-tc g-lh-80" bindtap="$skuHandleCartBuy" id="0" wx:elif="{{$skuBtnType==4}}">确认</view>
+			<!--立即购买 从商品详情底部点击-->
+			<view class="g-bg-pink g-tc g-lh-80" bindtap="$skuHandleCartBuy" id="1" wx:elif="{{$skuBtnType==5}}">确认</view>
 		</view>
 	</view>
 </template>

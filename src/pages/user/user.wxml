@@ -1,51 +1,51 @@
-<view>
-	<view class="user g-flex-cc g-fd-c">
+<view class="v-user">
+	<view class="_user g-flex-cc g-fd-c">
 		<image src="{{user.avatar}}"/>
-		<text class="nickname">{{user.name}}</text>
+		<text>{{user.name}}</text>
 	</view>
-	<navigator class="g-flex g-ai-c g-jc-sb g-bg-white g-pd g-bb " url="/pages/test/test">
+	<navigator class="g-flex-ac g-jc-sb g-bg-white g-pd g-bb " url="/pages/test/test">
 		<text>我的订单</text>
-		<view>
-			<text>全部订单</text>
-			<text class="icon-right"/>
+		<view class="g-flex-ac">
+			<text class="g-gray">全部订单</text>
+			<text class="icon-right g-gray"/>
 		</view>	
 	</navigator>
-	<view class="order g-flex g-pd g-jc-sb g-bg-white">
+	<view class="_order g-flex g-pd g-jc-sb g-bg-white">
 		<navigator url="pages/order/list/list?type=topay">
 			<text class="icon-topay"/>
 			<text class="g-m-t">待付款</text>
-			<text class="num" hidden="{{!order.topay}}">{{order.topay}}</text>
+			<text class="_num" hidden="{{!order.topay}}">{{order.topay}}</text>
 		</navigator>
 		<navigator url="pages/order/list/list?type=tosend">
 			<text class="icon-tosend"/>
 			<text class="g-m-t">待发货</text>
-			<text class="num" hidden="{{!order.tosend}}">{{order.tosend}}</text>
+			<text class="_num" hidden="{{!order.tosend}}">{{order.tosend}}</text>
 		</navigator>
 		<navigator url="pages/order/list/list?type=torec">
 			<text class="icon-torec"/>
 			<text class="g-m-t">待收货</text>
-			<text class="num" hidden="{{!order.torec}}">{{order.torec}}</text>
+			<text class="_num" hidden="{{!order.torec}}">{{order.torec}}</text>
 		</navigator>
 		<navigator url="pages/order/list/list?type=tocomment">
 			<text class="icon-tocomment"/>
 			<text class="g-m-t">待评价</text>
-			<text class="num" hidden="{{!order.tocomment}}">{{order.tocomment}}</text>
+			<text class="_num" hidden="{{!order.tocomment}}">{{order.tocomment}}</text>
 		</navigator>
 	</view>	
 	<view class="g-item g-m-t g-bb g-pd">
-		<navigator url="/pages/user/addr/addr" class="g-col">
+		<navigator url="/pages/user/addr/addr" class="g-col g-flex-ac">
 			<text class="icon-location g-pdr-15"/>
 			<text>地址管理</text>
 		</navigator>
-		<text class="icon-right"/>
+		<text class="icon-right g-gray"/>
 	</view>
 	<view class="g-item g-pd" bindtap="handleCalling">
-		<view class="g-col">
+		<view class="g-col g-flex-ac">
 			<text class="icon-tel g-pdr-15"/>
 			<text>联系客服</text>
 		</view>
-		<text>{{shop.tel}}</text>
-		<text class="icon-right"/>
+		<text class="g-gray">{{shop.tel}}</text>
+		<text class="icon-right g-gray"/>
 	</view>
 </view>
 

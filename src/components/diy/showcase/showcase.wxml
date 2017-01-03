@@ -1,6 +1,12 @@
 <!-- showcase.wxml -->
 <template name="showcase">
-	<view class="diy-showcase">
-		showcase
+	<view class="diy-showcase-1">
+		<view class="g-flex-ac g-m-b-20">
+			<navigator class="g-col">下单页面1</navigator>
+			<view class="g-col">
+				<navigator class="">下单页面2</navigator>
+				<navigator class="">下单页面3</navigator>
+			</view>
+		</view>
 	</view>
 </template>

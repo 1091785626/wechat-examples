@@ -1,15 +1,15 @@
 {
 	"pages":[
-		"pages/cart/cart",
+		"pages/user/addr/addr",
+		"pages/user/user",
+		"pages/category/category",
 		"pages/order/order",
+		"pages/cart/cart",
+		"pages/index/index",
 		"pages/order/list/list",
 		"pages/order/detail/detail",
 		"pages/goods/goods",
 		"pages/list/list",
-		"pages/index/index",
-		"pages/category/category",
-		"pages/user/user",
-		"pages/user/addr/addr",
 		"pages/test/test"
 	],
 	"window":{

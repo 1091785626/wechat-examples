@@ -1,13 +1,13 @@
 <import src="../../components/toast/toast.wxml" />
 <import src="../../components/sku/sku.wxml" />
-<template is="toast" data="{{...$toast}}"/>
-<template is="sku" data="{{...$sku,$skuData,$skuState,$skuAnimation,$skuBtnType,$skuUnStock}}"/>
+<template is="toast" data="{{$toast}}"/>
+<template is="sku" data="{{$sku,$skuData,$skuState,$skuAnimation,$skuBtnType,$skuUnStock}}"/>
 
 <block wx:if="{{_count}}">
 	<!--编辑区域商品-->
 	<block wx:for="{{carts_temp}}" wx:key="*this">
 		<view class="v-cart g-bb g-flex {{edit?'g-bg-gray':'g-bg-white'}}" id="{{item}}">
-			<text class="g-pdr-15 g-pd g-flex-cc {{itemObj[item].select?'icon-select g-pink':'icon-not-select'}}" bindtap="handleSelect" id="{{item}}"/>
+			<text class="g-pdr-15 g-pd g-flex-cc {{itemObj[item].select?'icon-selected g-pink':'icon-select'}}" bindtap="handleSelect" id="{{item}}"/>
 			<image class="g-pdr-15 g-pd" src="{{itemObj[item].img}}" />
 			<view class="g-col g-pd" hidden="{{edit}}">
 				<view class="g-twoline g-two-lh">{{itemObj[item].title}}</view>
@@ -61,16 +61,16 @@
 		<text>清空所有失效商品</text>
 	</view>
 	<view class="g-item g-fixed">
-		<view class="g-flex g-ai-c g-col">
-			<view bindtap="handleSelect" id="all">
-				<text class="g-pink g-pd {{_select?'icon-select':'icon-not-select'}}" />
+		<view class="g-flex-ac g-col">
+			<view bindtap="handleSelect" id="all" class="g-flex-ac">
+				<text class="g-pink g-pd {{_select?'icon-selected':'icon-select'}}" />
 				<text class="g-pdr-15 g-pink">全选</text>
 			</view>
 			<view bindtap="handleEdit">{{edit?"完成":"编辑"}}</view>
 		</view>
 		<view class="g-flex g-fd-c g-tr g-pdr-15" hidden="{{edit}}">
 			<text>合计：￥{{_price}}</text>
-			<text class="g-gray">不含运费</text>
+			<text class="g-gray g-fs-22">不含运费</text>
 		</view>
 		<view class="g-bg-pink g-white g-pd g-flex-cc g-col" hidden="{{edit}}" bindtap="handleBuy">结算（{{_quantity}}）</view>
 		<view class="g-bg-pink g-white g-flex-cc g-pd g-col" hidden="{{!edit}}" bindtap="handleDel" id="all">删除</view>
@@ -78,7 +78,7 @@
 </block>
 <!--没有商品-->
 <block wx:if="{{_count==0}}">
-	<view class="g-flex-cc g-fd-c g-full-h v-cart">
+	<view class="g-flex-cc g-fd-c g-h-full v-cart">
 		<view class="g-gray g-tc">
 			<view class="_line">
 				<view class="icon-cartadd" />
@@ -86,6 +86,6 @@
 			<text class="g-m-t-20">您的购物车空空如也</text>
 			<text>快去添加商品吧</text>
 		</view>	
-		<navigator class="g-bg-pink g-pd-btn g-m-t-20 g-br" url="/pagas/index/index" open-type="switchTab">去逛商场</navigator>
+		<navigator class="g-bg-pink g-pd-btn g-m-t-20 g-br" url="/pages/index/index" open-type="switchTab">去逛商场</navigator>
 	</view>
 </block>

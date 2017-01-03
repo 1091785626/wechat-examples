@@ -108,3 +108,60 @@ export function hideAnimate(){
 	animation.backgroundColor("rgba(0,0,0,0)").top("100vh").step();
 	return animation.export();
 }
+function validity(rule) {
+    return rule.required ?
+        obj[rule.type].regex.test(rule.value) :
+        rule.value == "" || obj[rule.type].regex.test(rule.value);
+}
+let obj = {
+    validNum: {
+        regex: /^\d+(\.\d+)?$/,
+        error: "请输入正确数字"
+    },
+    validId: {
+        regex: /(^\d{15}$)|(^\d{17}([0-9]|X)$)/,
+        error: "身份证格式不正确"
+    },
+    validMobile:{
+        regex:  /^(13[0-9]|14[5|7]|15[^4]|17[0|3|6|7|8]|18[0-9])\d{8}$/,
+        error: "请填写正确的手机号码"
+    },
+    validPostalCode:{
+        regex: /^\d{4}$/,
+        error: "请输入4位短信验证码"
+    },
+    validZipCode:{
+        regex: /^\d{6}$/,
+        error: "请输入6位邮政编console.log(result)码"
+    },
+    validWeChat: {
+		regex: /^[a-zA-Z\d_]{5,}$/,
+		error: "请输入正确的微信号"
+	}
+};
+export function dataValidity(rules) {
+    let state = {
+        status: !0
+    };
+    for (let i in rules) {
+        let type = rules[i].type;
+        if (typeof obj[type] == "undefined") {
+            if (rules[i].required && rules[i].value == "") {
+                state = {
+                    status: !1,
+                    error: rules[i].name + "必填",
+                    index: i
+                };
+                break;
+            }
+        } else if (!validity(rules[i])) {
+            state = {
+                status: !1,
+                error: obj[type].error,
+                index: i
+            };
+            break;
+        }
+    }
+    return state;
+};

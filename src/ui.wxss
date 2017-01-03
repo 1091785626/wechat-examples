@@ -16,17 +16,37 @@
 	position:fixed;
 	bottom:0;
 	width:100%;
-	line-height:35rpx;
+	line-height:30rpx;
+}
+.g-popup-bg{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 999;
+	background:rgba(0,0,0,0);
+	top:0
 }
 .g-popup {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: flex-end;
-    z-index: 1999;
-    background:rgba(0,0,0,0);
-    top:100vh
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: flex-end;
+	z-index: 1999;
+	background:rgba(0,0,0,0);
+	top:100vh
+}
+.g-popup .__title{
+	display: flex;
+	line-height:60rpx;
+	padding-right:10rpx;
+}
+.g-popup .__title text{
+	flex:1;
+	text-align:center;
+}
+.g-popup .__title view {
+	flex:0 0 40rpx;
 }
 /**
  * 背景颜色
@@ -49,7 +69,9 @@
 .g-bg-gray{
 	background:#EBEBEB;
 }
-
+.g-bg-deep{
+	background:#9C9C9C;
+}
 .g-bg-green{
 	background: #28c192;
 }
@@ -74,11 +96,19 @@
 .g-white{
 	color:#fff;
 }
-
+.g-orange{
+	color:#f60;
+}
+.g-green{
+	color:#06bf04;
+}
+.g-blue{
+	color:#10aeff;
+}
 /**
  * 搜索框
  */
-.g-search .section input{
+.g-search input,.diy-search input{
 	background: #fff;
 	color: #000;
 	height: 70rpx;
@@ -88,7 +118,7 @@
 	padding:0 80rpx;
 	position: relative;
 }
-.g-search .section text{
+.g-search .icon-search,.diy-search .icon-search{
 	position: absolute;
 	left:5%;
 }
@@ -96,21 +126,67 @@
  * 按钮
  */
 .g-step{
-    display:flex;
+	display:flex;
 }
 .g-step text{
-    width: 70rpx;
-    height: 50rpx;
-    line-height: 50rpx;
-    border-radius: 6rpx;
-    border: 2rpx solid #e6e9ed;
-    text-align: center;
-    color: #333;
-    margin: 0 2rpx
+	width: 70rpx;
+	height: 50rpx;
+	line-height: 50rpx;
+	border-radius: 6rpx;
+	border: 2rpx solid #e6e9ed;
+	text-align: center;
+	color: #333;
+	margin: 0 2rpx
 }
 .g-step input {
-    width: 100rpx;
-    height: 48rpx;
-    text-align: center;
-    border: 2rpx solid #e6e9ed;
+	width: 100rpx;
+	height: 48rpx;
+	text-align: center;
+	border: 2rpx solid #e6e9ed;
+}
+/**
+ * 表单
+ */
+.g-form{
+	width:100%;
+	display:block;/*hack*/
+	background:white;
+}
+.g-form ._colum{
+	display:flex;
+	background:white;
+	align-items: center;
+	margin:0 20rpx;
+	padding:10rpx 0;
+	border-bottom: 1rpx solid #d9d9d9;
+}
+.g-form ._colum:last-child{
+	border-bottom: none;
+}
+.g-form ._none{
+	margin:0;
+}
+.g-form picker view{
+	padding:10rpx;
+	color:#9c9c9c;
+}
+.g-form ._left{
+	padding-left:0;
+}
+.g-form button{
+	padding:0;
+	margin:0;
+	color:white;
+	background:#F5374D;
+	justify-content:center;
+	line-height:80rpx;
+	border-radius:0rpx;
+	font-size:26rpx;
+}
+.g-form text{
+	flex: 0 0 160rpx;
+}
+.g-form input{
+	flex: 1;
+	color:#9c9c9c;
 }

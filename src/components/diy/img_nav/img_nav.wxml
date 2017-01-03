@@ -1,0 +1,7 @@
+<!-- img_nav.wxml -->
+<template name="img_nav">
+	<view class="g-pd diy-img-nav">
+		<text class="g-fs-50">点击编辑图片广告</text>
+		<text class="g-fs-34 g-m-t-20">图片推荐宽度640px</text>	
+	</view>
+</template>

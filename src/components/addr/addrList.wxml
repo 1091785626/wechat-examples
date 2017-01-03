@@ -1,0 +1,24 @@
+<template name="addrList">
+	<view class="g-popup" animation="{{$addrListAnimation}}" bindtap="$addrListClose" id="close">
+		<view class="g-col g-bg-white">
+			<view class="__title">
+				<text>选择地址</text>
+				<view class="icon-false" id="close"/>
+			</view>
+			<scroll-view class="g-pd g-h-600 g-fd-c" scroll-y="true">
+				<view class="g-flex-ac g-bb g-pd">
+					<text class="icon-selected g-pink g-pd-lr"/>
+					<view class="g-flex g-fd-c g-pd-lr g-col">
+						<view class="g-flex g-jc-sb g-lh-44">
+							<text>收货人：2222222</text>
+							<text>22222</text>
+						</view>
+						<text class="g-twoline g-gray g-two-lh">sssss</text>
+					</view>
+					<text class="icon-edit g-orange g-pd-lr"/>
+				</view>
+			</scroll-view>
+			<view class="g-tc g-lh-80 g-bg-pink">新增地址</view>
+		</view>
+	</view>
+</template>

@@ -1,3 +1,70 @@
-<view>
-	order
+<import src="../../components/toast/toast.wxml" />
+<import src="../../components/pay/pay.wxml" />
+<import src="../../components/addr/addr.wxml" />
+<import src="../../components/addr/addrList.wxml" />
+<template is="toast" data="{{$toast}}"/>
+<template is="addrList" data="{{$addrList}}"/>
+<view class="v-order">
+	<navigator class="g-bg-white g-m-b-20 g-bb g-pd attr-lh">
+		<view class="g-flex g-jc-sb">
+			<text class="icon-location g-pdr-15"/>
+			<text class="">请选择地址</text>
+			<text class="icon-right"/>
+		</view>
+	</navigator>
+	<navigator class="g-item g-bb g-pd">
+		<view class="g-col g-pdr-15">
+			<view class="g-flex g-jc-sb g-ai-c">
+				<view class="g-1of2 g-flex-ac">
+					<text class="icon-location g-pdr-15"/>
+					<text>收货人：李清照</text>	
+				</view>
+				<text class="g-gray g-tr g-col">15267569852</text>
+			</view>
+			<view class="g-m-t-20">浙江省杭州市拱墅区祥园路浙报印务15号浙江省杭州市拱墅区祥园路浙报印务15号</view>
+		</view>
+		<text class="icon-right"/>
+	</navigator>
+	<view>
+		<view class="g-flex g-pd g-bg-white g-bb">
+			<image class="g-pdr-15" src="http://wx.qlogo.cn/mmhead/Q3auHgzwzM5NdjgpiaEWCztrSDiaAOxuMORdont0TbtBp0wSH5OuG85Q/132" />
+			<view class="g-col">
+				<view class="g-twoline g-two-lh">洗面奶洗面奶洗面奶洗面奶</view>
+				<view class="g-m-t g-oneline g-one-lh">
+					<text class="g-pdr-15 g-gray">净含量:120g</text>
+				</view>
+				<view class="g-flex g-jc-sb g-m-t">
+					<text class="g-pink">￥460</text>
+					<text>X1</text>
+				</view>
+			</view>
+		</view>
+		<navigator class="g-item g-bb g-pd g-ai-c">
+			<view class="g-col">
+				<text>配送方式</text>
+			</view>
+			<view class="g-gray g-tr g-flex-ac">
+				<text>快递 ￥5.00</text>
+				<text class="icon-right"/>
+			</view>
+		</navigator>
+		<view class="g-form g-bb">
+			<view>
+				<text>买家留言：</text>
+				<input type="text" placeholder="选填，对本次交易的要求" />
+			</view>
+		</view>
+		<view class="g-pd g-bg-white g-col g-tr">
+			<text>共1件商品 小计:</text>
+			<text class="g-pink">￥155598.00</text>
+		</view>
+	</view>
+	<view style="height:88rpx"/>
+	<view class="g-item g-fixed">
+		<view class="g-tr g-pdr-15 g-flex g-fd-c g-col">
+			<text>合计：￥155598.00</text>
+			<text class="g-gray g-m-t g-fs-22">含运费</text>
+		</view>
+		<view class="g-bg-pink g-flex-cc g-1of4 g-lh-88">确认订单</view>
+	</view>
 </view>

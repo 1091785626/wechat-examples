@@ -1,6 +1,10 @@
 import {connect} from '../../libs/wechat-redux.js';
 import {bindActionCreators} from '../../libs/redux.js';
 import * as orderActions from '../../actions/order';
+import toastConfig from '../../components/toast/toast';
+import payConfig from '../../components/pay/pay';
+import addrConfig from '../../components/addr/addr';
+import addrListConfig from '../../components/addr/addrList';
 function mapStateToData(state) {
 	return state.order;
 }
@@ -15,5 +19,6 @@ const pageConfig = {
 		console.log(this.data);
 	}
 };
-const resultConfig = connect(mapStateToData, mapDispatchToActions)(pageConfig);
+const combineConfig = Object.assign({},toastConfig,payConfig,addrConfig,addrListConfig,pageConfig);
+const resultConfig = connect(mapStateToData, mapDispatchToActions)(combineConfig);
 Page(resultConfig);

@@ -2,12 +2,54 @@
 <import src="../../components/diy/showcase/showcase.wxml" />
 <import src="../../components/diy/slide/slide.wxml" />
 <import src="../../components/diy/title/title.wxml" />
+<import src="../../components/diy/top_nav/top_nav.wxml" />
+<import src="../../components/diy/text_nav/text_nav.wxml" />
+<import src="../../components/diy/tel/tel.wxml" />
+<import src="../../components/diy/search/search.wxml" />
+<import src="../../components/diy/notice/notice.wxml" />
+<import src="../../components/diy/space/space.wxml" />
+<import src="../../components/diy/cut_off/cut_off.wxml" />
+<import src="../../components/diy/voice/voice.wxml" />
+<import src="../../components/diy/video/video.wxml" />
+<import src="../../components/diy/rtf/rtf.wxml" />
+<import src="../../components/diy/img_nav/img_nav.wxml" />
+<image src="http://wx.qlogo.cn/mmhead/Q3auHgzwzM5NdjgpiaEWCztrSDiaAOxuMORdont0TbtBp0wSH5OuG85Q/132" mode="widthFix" style="width:100%"></image>
 
-<view>
-	<text>shop</text>
+<view style="">
+	<!-- 图片广告 -->
+	<template is="img_nav" />
+	<!-- 标题 -->
+	<template is="title" />
+	<!-- 商品搜索 -->
+	<template is="search" />
+	<!-- 公告 -->
+	<template is="notice" />
+	<!-- 客服电话 -->
+	<template is="tel" />
+	<!-- 橱窗 -->
+	<template is="showcase" />
+	<!-- 顶部菜单 -->
+	<template is="top_nav" />
+	<!-- 文本导航 -->
+	<template is="text_nav" />
+	<!-- 商品 -->
+	<template is="goods" />
+	<!-- 富文本 -->
+	<template is="rtf" />
+	<!-- 音频 -->
+	<template is="voice" />
+	<!-- 分割线 -->
+	<template is="cut_off" />
+	<!-- 辅助空白 -->
+	<template is="space" />
+	<!-- 视频 -->
+	<template is="video" />
+	<!-- 轮播图 -->
+	<template is="slide" />
 </view>
 
-<template is="goods" />
-<template is="showcase" />
-<template is="slide" />
-<template is="title" />
+
+
+
+
+

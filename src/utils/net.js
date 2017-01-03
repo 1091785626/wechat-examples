@@ -13,6 +13,7 @@
 **/
 import { GUID } from "../config";
 import { getItem, setItem ,delItem } from './utils';
+import {DEV_WITH_PHP} from '../constants/constants';
 function ajax(options) {
 	//console.log(options);
 	let url = options.url;
@@ -25,7 +26,17 @@ function ajax(options) {
 	if (!url) {
 		console.error('请求地址不存在');
 	}
-
+	/**
+	 * 因为json-server是rest的接口；本地测试做个判断
+	 */
+	if (!DEV_WITH_PHP && method != 'GET') { 
+		let params = {};
+		params.data = {
+			status: 1
+		};
+		success_cb && success_cb(params.data);
+		return ;
+	}
 	let onDataReturn = data => {
 		wx.hideToast();
 		data.sessionId&&setItem('sessionId',data.sessionId);

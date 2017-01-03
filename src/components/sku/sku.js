@@ -7,8 +7,12 @@ import { getItem, setItem ,delItem,showAnimate,hideAnimate } from '../../utils/u
 import API_ROOT from '../../constants/apiRoot';
 const skuConfig = {
 	$skuPopup(options){
-		console.log(options);
+		//console.log(options);
+		//让用户禁止点击，还要依赖微信的渲染速度
+		this.setData({$sku:{isShow:1}});
 		return new Promise((resolve, reject) => {
+			this.$skuResolve  = null;
+			this.$skuReject = null;
 			this.$skuResolve  = resolve;
 			this.$skuReject = reject;
 			let param = {
@@ -30,9 +34,7 @@ const skuConfig = {
 					const {stock,selected,selectInfo} = this.$skuInit(data,options.sku_id);
 					const {$skuUnStock} =this.$getUnStock(selected,data);
 					this.setData({
-						$sku:{
-							isShow:1
-						},
+						$skuOptions:options,
 						$skuData:data,
 						$skuState:{
 							stock,
@@ -52,6 +54,24 @@ const skuConfig = {
 				}
 			});
 		});
+	},
+	$skuClose(event){
+		if(event.target.id =="close"){
+			this.$skuHide();
+		}
+	},
+	$skuHide(type,res){
+		this.setData({
+			$sku:{
+				isShow:0
+			},
+			$skuAnimation: hideAnimate()
+		});
+		if(type) {
+			this.$skuResolve(res);
+			return;
+		}
+		this.$skuReject(res);
 	},
 	/*初始化数据*/
 	$skuInit(data,sku_id){
@@ -78,19 +98,6 @@ const skuConfig = {
 		let stock = this.$getStock(selected,data);
 		let selectInfo = this.$getSkuInfo(selected,data);
 		return {stock,selected,selectInfo};
-	},
-	$skuHide(type,res){
-		this.setData({
-			$sku:{
-				isShow:0
-			},
-			$skuAnimation: hideAnimate()
-		});
-		if(type) {
-			this.$skuResolve(res);
-			return;
-		}
-		this.$skuReject(res);
 	},
 	/*计算库存*/
 	$skuStock(data){//商品的属性
@@ -218,17 +225,16 @@ const skuConfig = {
 		}
 		return {$skuUnStock};
 	},
-	$skuClose(event){
-		if(event.target.id =="close"){
-			this.$skuHide();
-		}
-	},
 	$skuHandleLabel(event){
 		const {$skuData,$skuState} = this.data;
 		const info = (event.currentTarget.id).split("_");
 		const type = info[0];
 		const id = info[1];
-		let selected =  Object.assign({},$skuState.selected,{[info[0]]: info[1]});
+		let selected =  Object.assign(
+				{},
+				$skuState.selected,
+				{[info[0]]: ($skuState.selected[info[0]]!=info[1]?info[1]:null)}
+			);
 		let stock = this.$getStock(selected,$skuData);
 		let selectInfo = this.$getSkuInfo(selected,$skuData);
 		const {$skuUnStock} =this.$getUnStock(selected,$skuData);
@@ -238,13 +244,97 @@ const skuConfig = {
 			},
 			$skuUnStock,
 			$skuState:{
-				//value:1,//需要调整
+				value:1,//需要调整
 				stock,
 				selected,
 				selectInfo
 			}
 		});
 		setItem('sku_selected',selected);
+	},
+	$skuHandleQuantity(event){
+		/*start*/
+		let type = event.target.id;
+		let quantity;
+		const {$skuState} =this.data;
+		if(type == 'minus'){
+			quantity = $skuState.value - 1;
+		}else if(type == 'plus'){
+			quantity = $skuState.value + 1;
+		}else{
+			quantity = parseInt(event.detail.value);
+		}
+		let {stock} = $skuState;
+		if(isNaN(quantity)||quantity <= 0){
+			this.$toastInfo('至少要购买1件');
+			quantity = 1;
+		}else if(quantity > stock){
+			this.$toastInfo('最多可购买'+stock+'件',1.5);
+			quantity = stock;
+		}
+		const nextSkuState = Object.assign({},$skuState,{value:Number(quantity)||""});
+		this.setData({
+			$skuState:nextSkuState
+		});
+	},
+	$skuValidateSelect(){
+		const {$skuData,$skuState} = this.data;
+		const {selectInfo} = $skuState;
+		if(selectInfo.sku_id==null&&$skuData.skus!=''){
+			this.$toastInfo('请选择');
+			return !0;
+		}
+		if(!$skuState.value){
+			this.$toastInfo('至少购买1件');
+			return !0;
+		}
+		return !1;
+	}, 
+	$skuHandleSure(event){
+		const {$skuState,$skuData,$skuOptions} = this.data;
+		let { selectInfo } = $skuState;
+		if(this.$skuValidateSelect()){return !1;}
+		let param = Object.assign({},selectInfo,{cart_id:$skuOptions.cart_id});
+		if($skuOptions.sku_id == selectInfo.sku_id){
+			this.$skuHide();
+			return !1;
+		}
+		net.ajax({
+			url: API_ROOT['_SKU_MAIN_PUT'],
+			type: 'POST',
+			param,
+			success: (res) => {
+				this.$skuHide(1,param);
+			},
+			error: (res) => {
+				this.$toastInfo(res.msg);
+			}
+		});
+	},
+	$skuHandleCartBuy(event){//立即购买（type=1），购物车（type=0）
+		const {$skuState,$skuData,$skuOptions} = this.data;
+		let { selectInfo } = $skuState;
+		if(this.$skuValidateSelect()){return !1;}
+		let type = parseInt(event.target.id);
+		let param = {
+			type:type?"buy":"addCart",
+			sku_id:selectInfo.sku_id||0,
+			product_id:$skuOptions.product_id,
+			quantity:$skuState.value
+		};
+		net.ajax({
+			url: type?API_ROOT['_SKU_MAIN_BUY']:API_ROOT['_SKU_MAIN_CART'],
+			type: 'POST',
+			param,
+			success: (res) => {
+				this.$skuHide(1);
+				type?wx.navigateTo({url:"/pages/order/order"}):this.$toastInfo(`加入购物车成功`);
+			},
+			error: (res) => {
+				this.$toastInfo(res.msg);
+				return !1;
+			}
+		});
 	}
 };
 export default skuConfig;

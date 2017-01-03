@@ -1,0 +1,10 @@
+<!-- search.wxml -->
+<template name="search">
+	<view class="diy-search g-pd g-br g-flex-cc">
+		<view class="g-flex-cc g-col g-pdr-15">
+			<input type="text" />
+			<text class="icon-search g-pdr-15 g-gray"></text>
+		</view>
+		<text class="g-bg-pink g-br g-pd-btn">搜索</text>
+	</view>
+</template>

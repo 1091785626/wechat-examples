@@ -1,6 +1,62 @@
 .diy-title-1{
-	color:red;
+	background: #28c192;
+	color: #fff;
 }
-.diy-title-2{
-	color:blue
+.diy-title-2 text{
+	padding: 20rpx;
+	border-bottom: 1rpx solid red;
+}
+.diy-title-3{
+	line-height:4rpx;
+	border-left:20vw solid #ddd;
+	border-right:20vw solid #ddd;
+	text-align:center;
+}
+.diy-title-4{
+	border-left:2px solid red;
+	margin-left:10rpx;
+	padding: 15rpx;
+}
+
+.diy-top-nav-1{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	text-align: center;
+}
+.diy-top-nav-1 navigator{
+	line-height: 45rpx;
+	padding:20rpx;
+	flex:1 0 auto;
+}
+.diy-top-nav-2{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	text-align: center;
+}
+.diy-top-nav-2 navigator{
+	line-height: 45rpx;
+	padding:20rpx;
+	flex:1 0 auto;
+}
+.diy-top-nav-2 navigator:not(:last-child){
+	margin-right: 5rpx;
+}
+
+.diy-goods-1 image{
+	width: 96vw;
+	height: 96vw;
+	padding:2vw;
+} 
+
+.diy-img-nav{
+	background: orange;
+	color: #fff;
+}
+.diy-img-nav text{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }

@@ -1,0 +1,15 @@
+<!-- top_nav.wxml -->
+<template name="top_nav">
+	<view class="diy-top-nav-1 g-m-b">
+		<navigator class="g-bg-pink">下单页面1</navigator>
+		<navigator class="g-bg-orange">下单页面2</navigator>
+		<navigator class="g-bg-green">下单页面3</navigator>
+		<navigator class="g-bg-blue">下单页面4</navigator>
+	</view>
+	<view class="diy-top-nav-2">
+		<navigator class="g-bg-pink">下单页面1</navigator>
+		<navigator class="g-bg-orange">下单页面2</navigator>
+		<navigator class="g-bg-green">下单页面3</navigator>
+		<navigator class="g-bg-blue">下单页面4</navigator>
+	</view>
+</template>

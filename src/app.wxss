@@ -7,10 +7,10 @@ page{
 	font-size:26rpx;
 	background:#EFEFF4;
 }
-image{
+ image{
 	width:auto;
-	height:auto;
-}
+	height: auto;
+} 
  /**
  * g-disabled 
  * 禁用事件
@@ -220,6 +220,11 @@ image{
 	justify-content:center;
 	align-items:center;
 }
+.g-flex-ac{
+	display:flex;
+	box-sizing: border-box;
+	align-items:center;
+}
 /**
  * 布局辅助
  */
@@ -236,8 +241,8 @@ image{
 	padding-right:20rpx;
 }
 .g-pd-lr {
-	padding-left:20rpx;
-	padding-right:20rpx;
+	padding-left:15rpx;
+	padding-right:15rpx;
 }
 .g-pd-t {
 	padding-top: 20rpx;
@@ -267,8 +272,22 @@ image{
 .g-pdr-15{
 	padding-right:15rpx;
 }
-.g-full-h{
+.g-h-600{
+	height:600rpx;
+	box-sizing: border-box;
+}
+.g-h-300{
+	height:300rpx;
+	box-sizing: border-box;
+}
+.g-h-full{
 	height:100vh
+}
+.g-h-5{
+	height:5vh
+}
+.g-h-95{
+	height:91.35vh;
 }
 /**
  * bd 辅助线
