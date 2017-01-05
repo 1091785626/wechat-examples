@@ -1,6 +1,6 @@
 <!-- voice.wxml -->
 <template name="voice">
-	<view class="diy-voice">
-		voice
+	<view class="diy-voice" style="margin: {{m_tb}} 0">
+		<audio src="{{src}}" poster="{{img}}" name=" " author=" " controls loop/>
 	</view>
 </template>

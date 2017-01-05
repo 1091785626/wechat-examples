@@ -1,0 +1,11 @@
+._prompt{
+	padding:50rpx 0;
+}
+._prompt text,._prompt navigator{
+	margin-top: 30rpx;
+}
+.v-tip .g-pd-btn,.v-tip .g-btn{
+	width: 70%;
+	padding:20rpx 25rpx;
+	text-align: center;
+}

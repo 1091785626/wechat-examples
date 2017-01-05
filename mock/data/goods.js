@@ -2,8 +2,8 @@ let data = {
 	data:{
         "id": "3767",
         "imgs": [
-            "http://osscdn.weiyian.com/image/zyz/160517/449444580176.jpg",
-            "http://osscdn.weiyian.com/image/zyz/160517/449444580176.jpg"
+            "http://wx.qlogo.cn/mmopen/6mXOeYa4HU856QyIE4wprRFhvpHafqX2H9icVQ5UPvhqhVOlBGHp2DQl2s9f6TVZg8amPyAiccluo3TTMYIQdVlg/0",
+            "http://wx.qlogo.cn/mmopen/6mXOeYa4HU856QyIE4wprRFhvpHafqX2H9icVQ5UPvhqhVOlBGHp2DQl2s9f6TVZg8amPyAiccluo3TTMYIQdVlg/0"
         ],
         "info":{//商品信息
             "title": "商品详情",
@@ -15,7 +15,7 @@ let data = {
         },
         "state":{},//营销活动，
         "shop":{
-            "photo":"http://osscdn.weiyian.com/image/zyz/160517/449444580176.jpg",//店铺头像
+            "photo":"http://wx.qlogo.cn/mmopen/6mXOeYa4HU856QyIE4wprRFhvpHafqX2H9icVQ5UPvhqhVOlBGHp2DQl2s9f6TVZg8amPyAiccluo3TTMYIQdVlg/0",//店铺头像
             "all":392,//全部商品
             "category":3,//分类商品
         },

@@ -1,11 +1,11 @@
 /* 确认订单样式 */
 .v-order image{
-	flex:0 0 145rpx;
-	height:145rpx;
+	flex:0 0 160rpx;
+	height:160rpx;
 }
 
 /*请选择地址样式*/
-.attr-lh{
+.v-order ._addr{
 	line-height: 125rpx;
 	height: 125rpx
 }

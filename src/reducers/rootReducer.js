@@ -1,5 +1,6 @@
 import { combineReducers } from '../libs/redux.js';
 import test from './test';
+import route from './route';
 import index from './index';
 import category from './category';
 import cart from './cart';
@@ -11,6 +12,7 @@ import orderDetail from './orderDetail';
 import goods from './goods';
 import list from './list';
 const rootReducer = combineReducers({
+	route,//路由层（扩展）
 	test,
 	index,
 	category,

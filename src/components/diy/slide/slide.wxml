@@ -1,6 +1,21 @@
 <!-- slide.wxml -->
 <template name="slide">
-	<view class="diy-slide">
-		slide
+	<!-- 轮播 -->
+	<view class="diy-slide" hidden="{{style!=1}}">
+		<swiper indicator-dots="{{true}}" autoplay="{{true}}" interval="{{5000}}" duration="{{duration}}" style="height:{{$slideHeight}}px">
+	  		<block wx:for="{{item_list}}" wx:key="{{index}}">
+				<swiper-item bindtap="$routeHandlePush" id="{{item.url}}">
+					<image src="{{item.img}}" mode="widthFix" style="width: 100%;" bindload="$slideLoad"/>
+				</swiper-item>
+	  		</block>
+		</swiper>
+	</view>
+	<!-- 大图模式 -->
+	<view class="diy-slide" hidden="{{style!=1}}">
+  		<block wx:for="{{item_list}}" wx:key="{{index}}">
+			<view bindtap="$routeHandlePush" id="{{item.url}}">
+				<image src="{{item.img}}" mode="widthFix" style="width: 100%;"/>
+			</view>
+  		</block>
 	</view>
 </template>

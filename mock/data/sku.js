@@ -1,16 +1,15 @@
 let data = {
-        "id": "2009",
+        "id": "2009",//商品的id，product_id
         "title": "翅中",
         "img": "http://wx.qlogo.cn/mmopen/6mXOeYa4HU856QyIE4wprRFhvpHafqX2H9icVQ5UPvhqhVOlBGHp2DQl2s9f6TVZg8amPyAiccluo3TTMYIQdVlg/0",
         "price": "1.53",
         "max_price": "17.00",
-        "stock": "99",
-        "show_inventory": 0,
-        "product_props": {
+        "stock": 99,
+        "show_inventory": 0,//是否显示库存
+        "product_props": {//商品属性规格列表，键值对
             "617": {
                 "id": "617",
                 "name": "呗",
-                "listorder": "1",
                 "gps": [
                     {
                         "prop_vid": "619",
@@ -29,7 +28,6 @@ let data = {
             "650": {
                 "id": "650",
                 "name": "引号测试的来的",
-                "listorder": "1",
                 "gps": [
                     {
                         "prop_vid": "655",
@@ -44,7 +42,6 @@ let data = {
             "651": {
                 "id": "651",
                 "name": "sd的dfd的",
-                "listorder": "1",
                 "gps": [
                     {
                         "prop_vid": "654",
@@ -53,15 +50,15 @@ let data = {
                 ]
             }
         },
-        "skus": [
+        "skus": [//skus
             {
-                "id": "167861",
+                "id": "167861",//sku_id
                 "product_id": "2009",
                 "img": "http://wx.qlogo.cn/mmopen/6mXOeYa4HU856QyIE4wprRFhvpHafqX2H9icVQ5UPvhqhVOlBGHp2DQl2s9f6TVZg8amPyAiccluo3TTMYIQdVlg/0",
                 "price": "17.00",
                 "stock": 0,
-                "props": "617:619;650:655;651:654",
-                "props_str": "啊:2:1"
+                "props": "617:619;650:655;651:654",//规格的vid，对应上面的product_props
+                "props_str": "啊:2:1"//规格
             },
             {
                 "id": "167864",

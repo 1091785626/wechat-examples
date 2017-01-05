@@ -167,6 +167,9 @@ page{
 .g-fd-c {
 	flex-direction: column;
 }
+.g-fd-re {
+	flex-direction: row-reverse;
+}
 .g-jc-sb{
 	justify-content: space-between;
 }
@@ -184,6 +187,9 @@ page{
 }
 .g-fw-w{
 	flex-wrap:wrap;
+}
+.g-ac-fs{
+	align-content: flex-start;
 }
 /*gird*/
 .g-col {
@@ -232,7 +238,7 @@ page{
 	padding: 20rpx;
 }
 .g-pd-btn{
-	padding: 15rpx 20rpx;
+	padding: 10rpx 15rpx;
 }
 .g-pd-l {
 	padding-left:20rpx;
@@ -251,8 +257,8 @@ page{
 	padding-bottom: 20rpx;
 }
 .g-pd-tb {
-	padding-top: 20rpx;
-	padding-bottom: 20rpx;
+	padding-top: 10rpx;
+	padding-bottom: 10rpx;
 }
 .g-pd-t-15{
 	padding-top: 15rpx;
@@ -260,7 +266,14 @@ page{
 .g-m-t {
 	margin-top:10rpx;
 }
+.g-m-l {
+	margin-left:20rpx;
+}
 .g-m-b {
+	margin-bottom:10rpx;
+}
+.g-m-tb{
+	margin-top:10rpx;
 	margin-bottom:10rpx;
 }
 .g-m-t-20{
@@ -286,8 +299,11 @@ page{
 .g-h-5{
 	height:5vh
 }
-.g-h-95{
+.g-h-91{
 	height:91.35vh;
+}
+.g-h-95{
+	height:93vh;
 }
 /**
  * bd 辅助线
@@ -303,4 +319,7 @@ page{
 }
 .g-bt{
 	border-top: 1rpx solid #d9d9d9;
+}
+.g-b-r{
+	border-right: 1rpx solid #f9f9f9;
 }

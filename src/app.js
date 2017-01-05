@@ -26,9 +26,9 @@ App({
 			typeof cb == "function" && cb(this.userInfo,sessionId);
 		}
 	},
-	getSystemInfo (){
+	getSystemInfo (cb){
 		//设备的长宽高
-		if (!this.userInfo) {
+		if (!this.systemInfo) {
 			wx.getSystemInfo({
 				success: (res) => {
 					this.systemInfo = res;

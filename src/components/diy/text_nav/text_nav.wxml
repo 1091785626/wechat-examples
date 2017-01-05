@@ -1,9 +1,11 @@
 <!-- text_nav.wxml -->
 <template name="text_nav">
-	<view class="diy-text-nav">
-		<navigator class="g-flex-ac g-jc-sb g-pd g-bg-white g-m-b-20" style="margin: 20px 0">
-			<text>文本导航</text>
-			<text class="icon-right"></text>
-		</navigator>
+	<view class="diy-text-nav" style="margin: {{m_tb}} 0">
+		<block wx:for="{{item_list}}" wx:key="{{index}}" wx:for-item="item">
+			<view bindtap="$routeHandlePush" id="{{item.url}}" class="g-flex-ac g-jc-sb g-pd g-bg-white g-m-b-20">
+				<text>{{item.title}}</text>
+				<text class="icon-right" />
+			</view>
+		</block>
 	</view>
 </template>

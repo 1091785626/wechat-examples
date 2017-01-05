@@ -3,7 +3,11 @@
  */
 export const API_REQUEST = 'API_REQUEST';
 /**
- * 路由跳转
+ * 页面跳转，用于传递query
+ */
+export const URL_PUSH = 'URL_PUSH';
+/**
+ * 路由跳转，用于清理数据
  */
 export const ROUTER_CHANGE = 'ROUTER_CHANGE';
 /**

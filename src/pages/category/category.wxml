@@ -1,61 +1,35 @@
+<import src="../../components/toast/toast.wxml" />
+<import src="../../components/diy/search/search.wxml" />
+<template is="toast" data="{{$toast}}"/>
 <view class="v-category">
-	<view class="g-search g-pd g-br g-flex-cc g-bb g-h-5">
-		<view class="g-flex-cc g-col g-pdr-15">
-			<input type="text" placeholder="搜索商品" />
-			<text class="icon-search g-pdr-15 g-gray" />
-		</view>
-		<text class="g-bg-pink g-br g-pd-btn">搜索</text>
-	</view>
+	<template is="search" data="{{$search}}" />
 	<view class="_nav g-flex">
-		<scroll-view scroll-y="true" class="g-1of4 g-flex g-fd-c g-ai-c g-tc g-h-95">
-			<view class="g-oneline g-bb _active">一级分类</view>
-			<view class="g-oneline g-bb">顶级分类</view>
-			<view class="g-oneline g-bb">最高级分类</view>
-			<view class="g-oneline g-bb">分类分类分类</view>
-			<view class="g-oneline g-bb">顶级分类</view>
-			<view class="g-oneline g-bb">最高级分类</view>
-			<view class="g-oneline g-bb">分类分类分类分类分类</view>
-			<view class="g-oneline g-bb">顶级分类</view>
-			<view class="g-oneline g-bb">最高级分类</view>
-			<view class="g-oneline g-bb">分类分类分类</view>
-			<view class="g-oneline g-bb">顶级分类</view>
-			<view class="g-oneline g-bb">最高级分类</view>
-			<view class="g-oneline g-bb">分类分类分类</view>
-			<view class="g-oneline g-bb">顶级分类</view>
-			<view class="g-oneline g-bb">最高级分类</view>
-			<view class="g-oneline g-bb">分类分类分类</view>
-			<view class="g-oneline g-bb">顶级分类</view>
-			<view class="g-oneline g-bb">最高级分类</view>
-			<view class="g-oneline g-bb">分类分类分类</view>
+		<scroll-view scroll-y="true" class="g-1of4 g-flex g-fd-c g-tc g-h-91">
+			<block wx:for="{{dataLeft}}" wx:key="{{item.id}}">
+				<view class="g-oneline g-bb {{item.id==curId?'_active':''}}" bindtap="handleChangeId" id="{{item.id}}">{{item.name}}</view>
+			</block>
 		</scroll-view>
 		<scroll-view class="_goods g-col g-h-95" scroll-y="true">
-			<view>
-				<view class="g-flex-ac g-jc-sb g-pd">
-					<text>二级分类</text>
-					<view>
-						<text>全部</text>
-						<text class="icon-right" />
+			<block wx:for="{{dataRight[curId].itemArr}}" wx:key="{{item}}" wx:for-item="dt">
+				<view>
+					<view class="g-flex-ac g-jc-sb g-pd" bindtap="$routeHandlePush" id="/pages/list/list?cat_id={{dt}}">
+						<text>{{dataRight[curId].itemObj[dt].name}}</text>
+						<view>
+							<text>全部</text>
+							<text class="icon-right" />
+						</view>
+					</view>
+					<view class="_list g-pd">
+						<block wx:for="{{dataRight[curId].itemObj[dt].itemArr}}" wx:key="{{dd}}" wx:for-item="dd">
+							<view class="_child" bindtap="$routeHandlePush" id="/pages/list/list?cat_id={{dd}}">
+								<image src="{{dataRight[curId].itemObj[dt].itemObj[dd].img}}" />
+								<view>{{dataRight[curId].itemObj[dt].itemObj[dd].name}}</view>
+							</view>
+						</block>		
 					</view>
 				</view>
-				<view class="_list g-pd">
-					<view class="_child">
-						<image src="http://wx.qlogo.cn/mmhead/Q3auHgzwzM5NdjgpiaEWCztrSDiaAOxuMORdont0TbtBp0wSH5OuG85Q/132" />
-						<view>三级分类</view>
-					</view>
-					<view class="_child">
-						<image src="http://wx.qlogo.cn/mmhead/Q3auHgzwzM5NdjgpiaEWCztrSDiaAOxuMORdont0TbtBp0wSH5OuG85Q/132" />
-						<view>三级分类</view>
-					</view>
-					<view class="_child">
-						<image src="http://wx.qlogo.cn/mmhead/Q3auHgzwzM5NdjgpiaEWCztrSDiaAOxuMORdont0TbtBp0wSH5OuG85Q/132" />
-						<view>三级分类</view>
-					</view>
-					<view class="_child">
-						<image src="http://wx.qlogo.cn/mmhead/Q3auHgzwzM5NdjgpiaEWCztrSDiaAOxuMORdont0TbtBp0wSH5OuG85Q/132" />
-						<view>三级分类</view>
-					</view>		
-				</view>
-			</view>
+			</block>
+
 		</scroll-view>		
 	</view>
 </view>

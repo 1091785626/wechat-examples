@@ -1,3 +1,60 @@
-<view>
-	order-list
+<import src="../../../components/toast/toast.wxml" />
+<import src="../../../components/pay/pay.wxml" />
+<import src="../../../components/loading/loading.wxml" />
+
+<template is="toast" data="{{$toast}}"/>
+<template is="pay" data="{{$pay,$payWay,$payOptions,$payAnimation,$payData}}"/>
+
+<view class="g-bg-white g-pd g-tab">
+	<view class="{{curTab=='all'&&'active'}}" bindtap="handleTab" id="all">
+		<text>全部</text>
+	</view>
+	<view class="{{curTab=='topay'&&'active'}}" bindtap="handleTab" id="topay">
+		<text>待付款</text>
+	</view>
+	<view class="{{curTab=='tosend'&&'active'}}" bindtap="handleTab" id="tosend">
+		<text>待发货</text>
+	</view>
+	<view class="{{curTab=='torec'&&'active'}}" bindtap="handleTab" id="torec">
+		<text>待收货</text>
+	</view>
+	<view class="{{curTab=='tocommend'&&'active'}}" bindtap="handleTab" id="tocommend">
+		<text>待评价</text>
+	</view>
 </view>
+<view class="_list g-m-b-20">
+	<view class="g-bg-white g-pd g-flex g-jc-sb g-bb">
+		<text>订单号：5698986545</text>
+		<text class="g-pink">等待代理发货</text>
+	</view>
+	<view class="g-bg-white g-pd g-flex g-bb">
+		<image src="http://wx.qlogo.cn/mmhead/Q3auHgzwzM5NdjgpiaEWCztrSDiaAOxuMORdont0TbtBp0wSH5OuG85Q/132" class="g-pdr-15"/>
+		<view class="g-col">
+			<view class="g-flex g-jc-sb">
+				<text class="g-twoline g-two-lh">两行文字两行文字两行文字两行文字两行文字两行文字文字两行文字文字两行文字</text>
+				<view class="g-flex g-fd-c g-pd-l">
+					<text class="g-m-b">￥15233.00</text>
+					<text class="g-td-lh g-gray">￥16000.00</text>
+				</view>
+				
+			</view>
+			<view class="g-flex g-jc-sb g-gray g-m-t-20">
+				<view class="">
+					<text class="g-pdr-15">净含量：120g</text>
+					<text>颜色：白色</text>
+				</view>
+				<text class="">X2</text>
+			</view>
+		</view>
+	</view>
+	<view class="g-bg-white g-pd g-tr g-bb">
+		共计1件商品 总计：￥9.9 （含运费<text>￥8</text>）
+	</view>
+	<view class="g-bg-white g-pd g-flex g-jc-fe">
+		<text class="g-btn">自己发货</text>
+		<text class="g-btn">立即支付</text>
+	</view>
+</view>
+<template is="loading" data="{{...list[curTab]}}"/>
+
+

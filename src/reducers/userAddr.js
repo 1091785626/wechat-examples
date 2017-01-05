@@ -7,6 +7,7 @@ const initialState = {
 };
 export default function(state = initialState, action) {
 	let newState,id,itemArr;
+	//因为es7 ...无法在微信小程序上使用，浅复制，深复制需要注意
 	switch (action.type) {
 		case types.USER_ADDR_GET + '_SUCCESS':
 			state = Object.assign(

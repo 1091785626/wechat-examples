@@ -1,0 +1,8 @@
+<template name="loading">
+	<view class="g-flex-cc g-pd">
+		<text wx:if="{{isEnd==0}}">上拉加载</text>
+		<text wx:elif="{{isEnd==1}}">加载中</text>
+		<text wx:elif="{{isEnd==2}}">已全部加载</text>
+		<text wx:elif="{{isEnd==2}}">数据异常，请刷新重试</text>
+	</view>
+</template>

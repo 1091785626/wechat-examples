@@ -9,7 +9,7 @@
 	height: 140rpx;
 	border-radius: 100%
 }
-.v-user ._order navigator{
+.v-user ._order ._navigator{
 	display: flex;
 	flex-direction:column;
 	justify-content: center;

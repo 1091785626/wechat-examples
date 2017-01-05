@@ -1,15 +1,13 @@
 <!-- top_nav.wxml -->
 <template name="top_nav">
-	<view class="diy-top-nav-1 g-m-b">
-		<navigator class="g-bg-pink">下单页面1</navigator>
-		<navigator class="g-bg-orange">下单页面2</navigator>
-		<navigator class="g-bg-green">下单页面3</navigator>
-		<navigator class="g-bg-blue">下单页面4</navigator>
-	</view>
-	<view class="diy-top-nav-2">
-		<navigator class="g-bg-pink">下单页面1</navigator>
-		<navigator class="g-bg-orange">下单页面2</navigator>
-		<navigator class="g-bg-green">下单页面3</navigator>
-		<navigator class="g-bg-blue">下单页面4</navigator>
+	<view class="diy-top-nav-{{style}}" style="margin:{{mt}} 0；padding: {{pd}}">
+		<block wx:for="{{item_list}}" wx:key="{{index}}" wx:for-item="item">
+			<view 
+				class="_navigator" 
+				bindtap="$routeHandlePush" 
+				id="{{item.url}}" 
+				style="box-shadow:inset 0 0 0 {{pd}} #EFEFF4;background: {{item.bg}};color:{{item.color}}"
+			>{{item.title}}</view>
+		</block>
 	</view>
 </template>

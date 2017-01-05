@@ -1,0 +1,36 @@
+<view class="v-tip">
+	<view class="g-bg-white g-bb g-flex-cc g-fd-c _prompt">
+		<text class="icon-success g-fs-100 g-pink" />
+		<text>恭喜您，操作成功</text>
+		<text class="g-gray">我们将尽快为您处理</text>
+		<navigator class="g-bg-pink g-pd-btn g-br">查看订单</navigator>
+		<navigator class="g-bg-white g-btn g-br">返回首页</navigator>
+	</view>
+	<view class="g-item g-bb g-pd g-m-b-20">
+		<view class="g-col g-pdr-15">
+			<view class="g-flex g-jc-sb g-ai-c">
+				<view class="g-1of2 g-flex-ac">
+					<text class="icon-location g-pdr-15"/>
+					<text>收货人：李清照</text>	
+				</view>
+				<text class="g-gray g-tr g-col">15986563322</text>
+			</view>
+			<view class="g-m-t-20">浙江省杭州市拱墅区浙报印务15号楼</view>
+		</view>
+	</view>
+	<view class="g-bg-white g-pd">
+		<view class="">
+			<text class="icon-warning g-pdr-15 g-orange" />
+			<text>安全提醒</text>
+		</view>
+		<view class="g-pd-t">
+			<text class="g-pink">1.支付成功后，一切以付款异常、系统升级、卡单、库存不足等为由联系您的均为诈骗，</text>
+			<text>请勿泄露银行卡号、手机验证码，以防带来不必要的损失！</text>
+		</view>
+		<view class="g-pd-t">
+			<text class="g-pink">2.商城不会主动让你发起退款，</text>
+			<text>所有的退款操作均在系统内由买家主动发起，请不要点击任何人发送的退款链接，以防造成经济损失！</text>
+		</view>
+		
+	</view>
+</view>

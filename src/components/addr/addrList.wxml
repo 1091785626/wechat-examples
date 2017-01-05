@@ -6,19 +6,21 @@
 				<view class="icon-false" id="close"/>
 			</view>
 			<scroll-view class="g-pd g-h-600 g-fd-c" scroll-y="true">
-				<view class="g-flex-ac g-bb g-pd">
-					<text class="icon-selected g-pink g-pd-lr"/>
-					<view class="g-flex g-fd-c g-pd-lr g-col">
-						<view class="g-flex g-jc-sb g-lh-44">
-							<text>收货人：2222222</text>
-							<text>22222</text>
+				<block wx:for="{{$addrListData.itemArr}}" wx:key="{{item}}_{{index}}" wx:for-index="index">
+					<view class="g-flex-ac g-bb g-pd">
+						<text class="icon-select{{item==$addrListOptions.addr_id?'ed':''}} g-pink g-pd-lr" bindtap="$addrListHandleSelectAddr" id="{{item}}"/>
+						<view class="g-flex g-fd-c g-pd-lr g-col" bindtap="$addrListHandleSelectAddr" id="{{item}}">
+							<view class="g-flex g-jc-sb g-lh-44">
+								<text>收货人：{{$addrListData.itemObj[item].consignee}}</text>
+								<text>{{$addrListData.itemObj[item].mobile}}</text>
+							</view>
+							<text class="g-twoline g-gray g-two-lh">{{$addrListData.itemObj[item].province_name}} {{$addrListData.itemObj[item].city_name}} {{$addrListData.itemObj[item].district_name}} {{$addrListData.itemObj[item].address}}</text>
 						</view>
-						<text class="g-twoline g-gray g-two-lh">sssss</text>
+						<text class="icon-edit g-orange g-pd-lr" bindtap="$addrListHandleEditAddr" id="{{item}}"/>
 					</view>
-					<text class="icon-edit g-orange g-pd-lr"/>
-				</view>
+				</block>
 			</scroll-view>
-			<view class="g-tc g-lh-80 g-bg-pink">新增地址</view>
+			<view class="g-tc g-lh-80 g-bg-pink" bindtap="$addrListHandleCreateAddr">新增地址</view>
 		</view>
 	</view>
 </template>

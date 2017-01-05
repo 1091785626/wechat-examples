@@ -1,6 +1,6 @@
 <!-- video.wxml -->
 <template name="video">
-	<view class="diy-video">
-		video
+	<view class="diy-video" style="margin: {{m_tb}} 0;">
+		<video src="{{src}}" style="height:50vw;width:100vw;"/>
 	</view>
 </template>

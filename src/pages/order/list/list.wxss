@@ -1,0 +1,4 @@
+.g-flex image{
+	flex:0 0 125rpx;
+	height: 125rpx;
+}

@@ -1,0 +1,14 @@
+.v-detail image{
+	flex:0 0 125rpx;
+	height:125rpx;
+}
+.v-detail ._state{
+	background: #FE665C;
+	padding:5% 10%;
+	color: #fff;
+	display: flex;
+	justify-content: space-between;
+}
+.v-detail .section{
+	width:100%;
+}

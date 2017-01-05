@@ -1,6 +1,4 @@
 <!-- cut_off.wxml -->
 <template name="cut_off">
-	<view class="diy-cut-off">
-		cut_off
-	</view>
+	<view class="diy-cut-off" style="margin:{{m_tb}} 0"/>
 </template>

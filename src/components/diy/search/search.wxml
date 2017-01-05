@@ -1,10 +1,10 @@
 <!-- search.wxml -->
 <template name="search">
-	<view class="diy-search g-pd g-br g-flex-cc">
+	<view class="diy-search g-pd g-br g-flex-cc {{$search.class}}" style="margin-top:{{m_tb}};margin-bottom:{{m_tb}}">
 		<view class="g-flex-cc g-col g-pdr-15">
-			<input type="text" />
-			<text class="icon-search g-pdr-15 g-gray"></text>
+			<input type="text" placeholder="{{$search.title}}" bindconfirm="$searchConfirm" bindinput = "$searchInput" value="{{$search.value||''}}"/>
+			<text class="icon-search g-pdr-15 g-gray" />
 		</view>
-		<text class="g-bg-pink g-br g-pd-btn">搜索</text>
+		<text class="g-bg-pink g-br g-pd-btn" bindtap="$searchHandleSubmit">搜索</text>
 	</view>
 </template>

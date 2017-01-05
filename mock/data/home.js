@@ -25,7 +25,7 @@ let data = {
 	                "item_list": [
 	                    {
 	                        "title": "购物车",
-	                        "url": "/cart"
+	                        "url": "/pages/cart/cart"
 	                    }
 	                ]
 	            }
@@ -38,27 +38,27 @@ let data = {
 	                "item_list": [
 	                    {
 	                        "title": "下单页面",
-	                        "img": "http://osscdn.weiyian.com/image/test/160421/200596115019.png",
+	                        "img": "http://wx.qlogo.cn/mmopen/6mXOeYa4HU856QyIE4wprRFhvpHafqX2H9icVQ5UPvhqhVOlBGHp2DQl2s9f6TVZg8amPyAiccluo3TTMYIQdVlg/0",
 	                        "bg": "#FE9303",
-	                        "url": "/order"
+	                        "url": "/pages/order/order"
 	                    },
 	                    {
 	                        "title": "下单页面",
-	                        "img": "http://osscdn.weiyian.com/image/test/160818/503430483246.png",
+	                        "img": "http://wx.qlogo.cn/mmopen/6mXOeYa4HU856QyIE4wprRFhvpHafqX2H9icVQ5UPvhqhVOlBGHp2DQl2s9f6TVZg8amPyAiccluo3TTMYIQdVlg/0",
 	                        "bg": "#FE9303",
-	                        "url": "/order"
+	                        "url": "/pages/order/order"
 	                    },
 	                    {
 	                        "title": "下单页面",
-	                        "img": "http://osscdn.weiyian.com/image/test/160818/503430483246.png",
+	                        "img": "http://wx.qlogo.cn/mmopen/6mXOeYa4HU856QyIE4wprRFhvpHafqX2H9icVQ5UPvhqhVOlBGHp2DQl2s9f6TVZg8amPyAiccluo3TTMYIQdVlg/0",
 	                        "bg": "#FE9303",
-	                        "url": "/order"
+	                        "url": "/pages/order/order"
 	                    },
 	                    {
 	                        "title": "下单页面",
-	                        "img": "http://osscdn.weiyian.com/image/test/160818/503430483246.png",
+	                        "img": "http://wx.qlogo.cn/mmopen/6mXOeYa4HU856QyIE4wprRFhvpHafqX2H9icVQ5UPvhqhVOlBGHp2DQl2s9f6TVZg8amPyAiccluo3TTMYIQdVlg/0",
 	                        "bg": "#FE9303",
-	                        "url": "/order"
+	                        "url": "/pages/order/order"
 	                    }
 	                ]
 	            }
@@ -72,29 +72,29 @@ let data = {
 	                "item_list": [
 	                    {
 	                        "title": "下单页面",
-	                        "img": "http://osscdn.weiyian.com/image/test/160509/757268322951.jpg",
-	                        "url": "/order",
+	                        "img": "http://wx.qlogo.cn/mmopen/6mXOeYa4HU856QyIE4wprRFhvpHafqX2H9icVQ5UPvhqhVOlBGHp2DQl2s9f6TVZg8amPyAiccluo3TTMYIQdVlg/0",
+	                        "url": "/pages/order/order",
 	                        "bg": "#07a0e7",
 	                        "color": "#fff"
 	                    },
 	                    {
 	                        "title": "下单页面",
-	                        "img": "http://osscdn.weiyian.com/image/test/160530/599475865928.jpg",
-	                        "url": "/order",
+	                        "img": "http://wx.qlogo.cn/mmopen/6mXOeYa4HU856QyIE4wprRFhvpHafqX2H9icVQ5UPvhqhVOlBGHp2DQl2s9f6TVZg8amPyAiccluo3TTMYIQdVlg/0",
+	                        "url": "/pages/order/order",
 	                        "bg": "#72c201",
 	                        "color": "#fff"
 	                    },
 	                    {
 	                        "title": "下单页面",
-	                        "img": "http://osscdn.weiyian.com/image/test/160421/208522258812.jpg",
-	                        "url": "/order",
+	                        "img": "http://wx.qlogo.cn/mmopen/6mXOeYa4HU856QyIE4wprRFhvpHafqX2H9icVQ5UPvhqhVOlBGHp2DQl2s9f6TVZg8amPyAiccluo3TTMYIQdVlg/0",
+	                        "url": "/pages/order/order",
 	                        "bg": "#ffa800",
 	                        "color": "#fff"
 	                    },
 	                    {
 	                        "title": "下单页面",
-	                        "img": "http://osscdn.weiyian.com/image/test/160421/205780460600.jpg",
-	                        "url": "/order",
+	                        "img": "http://wx.qlogo.cn/mmopen/6mXOeYa4HU856QyIE4wprRFhvpHafqX2H9icVQ5UPvhqhVOlBGHp2DQl2s9f6TVZg8amPyAiccluo3TTMYIQdVlg/0",
+	                        "url": "/pages/order/order",
 	                        "bg": "#d50303",
 	                        "color": "#fff"
 	                    }
@@ -111,20 +111,20 @@ let data = {
 	                    {
 	                        "title": "下单页面",
 	                        "show_title": 1,
-	                        "img": "http://osscdn.weiyian.com/image/test/160421/206389311681.jpg",
-	                        "url": "/order"
+	                        "img": "http://wx.qlogo.cn/mmopen/6mXOeYa4HU856QyIE4wprRFhvpHafqX2H9icVQ5UPvhqhVOlBGHp2DQl2s9f6TVZg8amPyAiccluo3TTMYIQdVlg/0",
+	                        "url": "/pages/order/order"
 	                    },
 	                    {
 	                        "title": "下单页面",
 	                        "show_title": 1,
-	                        "img": "http://osscdn.weiyian.com/image/test/160421/204471927708.jpg",
-	                        "url": "/order"
+	                        "img": "http://wx.qlogo.cn/mmopen/6mXOeYa4HU856QyIE4wprRFhvpHafqX2H9icVQ5UPvhqhVOlBGHp2DQl2s9f6TVZg8amPyAiccluo3TTMYIQdVlg/0",
+	                        "url": "/pages/order/order"
 	                    },
 	                    {
 	                        "title": "下单页面",
 	                        "show_title": 1,
-	                        "img": "http://osscdn.weiyian.com/image/test/160604/002049724973.jpg",
-	                        "url": "/order"
+	                        "img": "http://wx.qlogo.cn/mmopen/6mXOeYa4HU856QyIE4wprRFhvpHafqX2H9icVQ5UPvhqhVOlBGHp2DQl2s9f6TVZg8amPyAiccluo3TTMYIQdVlg/0",
+	                        "url": "/pages/order/order"
 	                    }
 	                ]
 	            }
@@ -138,13 +138,13 @@ let data = {
 	                "item_list": [
 	                    {
 	                        "title": "下单页面",
-	                        "img": "http://osscdn.weiyian.com/image/test/160510/873854719859.jpg",
-	                        "url": "/order"
+	                        "img": "http://wx.qlogo.cn/mmopen/6mXOeYa4HU856QyIE4wprRFhvpHafqX2H9icVQ5UPvhqhVOlBGHp2DQl2s9f6TVZg8amPyAiccluo3TTMYIQdVlg/0",
+	                        "url": "/pages/order/order"
 	                    },
 	                    {
 	                        "title": "下单页面",
-	                        "img": "http://osscdn.weiyian.com/image/test/160510/873853805602.jpg",
-	                        "url": "/order"
+	                        "img": "http://wx.qlogo.cn/mmopen/6mXOeYa4HU856QyIE4wprRFhvpHafqX2H9icVQ5UPvhqhVOlBGHp2DQl2s9f6TVZg8amPyAiccluo3TTMYIQdVlg/0",
+	                        "url": "/pages/order/order"
 	                    }
 	                ]
 	            }
@@ -165,12 +165,12 @@ let data = {
 	                    {
 	                        "id": "2426",
 	                        "title": "多运费模板测试汽车",
-	                        "img": "http://osscdn.weiyian.com/image/test/160414/596324974257.jpg",
-	                        "nowprice": "3.00",
+	                        "img": "http://wx.qlogo.cn/mmopen/6mXOeYa4HU856QyIE4wprRFhvpHafqX2H9icVQ5UPvhqhVOlBGHp2DQl2s9f6TVZg8amPyAiccluo3TTMYIQdVlg/0",
+	                        "price": "3.00",
 	                        "sales": 160,
 	                        "seckill": false,
-	                        "freesend": false,
-	                        "cutprice": false
+	                        "shipping": false,
+	                        "bargain": false
 	                    }
 	                ]
 	            }
@@ -208,15 +208,15 @@ let data = {
 	            "type": "video",
 	            "content": {
 	                "m_tb": "5px",
-	                "code": "vid=d01927nyq2j"
+	                "src": "http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400"
 	            }
 	        },
 	        {
 	            "type": "voice",
 	            "content": {
 	                "m_tb": "5px",
-	                "img": "http://osscdn.weiyian.com/image/test/160818/503430483246.png",
-	                "mp3": "http://osscdn.weiyian.com/audio/test/160615/980783232616.mp3"
+	                "img": "http://wx.qlogo.cn/mmopen/6mXOeYa4HU856QyIE4wprRFhvpHafqX2H9icVQ5UPvhqhVOlBGHp2DQl2s9f6TVZg8amPyAiccluo3TTMYIQdVlg/0",
+	                "src": "http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E06DCBDC9AB7C49FD713D632D313AC4858BACB8DDD29067D3C601481D36E62053BF8DFEAF74C0A5CCFADD6471160CAF3E6A&fromtag=46"
 	            }
 	        }
 	    ],
@@ -236,8 +236,8 @@ let data = {
 	        ],
 	        "activesign": 0,
 	        "signname": "店招一",
-	        "cover": "http://osscdn.weiyian.com/image/test/160518/534944537368.jpg",
-	        "avatar": "http://osscdn.weiyian.com/image/test/160421/205780460600.jpg",
+	        "cover": "http://wx.qlogo.cn/mmopen/6mXOeYa4HU856QyIE4wprRFhvpHafqX2H9icVQ5UPvhqhVOlBGHp2DQl2s9f6TVZg8amPyAiccluo3TTMYIQdVlg/0",
+	        "avatar": "http://wx.qlogo.cn/mmopen/6mXOeYa4HU856QyIE4wprRFhvpHafqX2H9icVQ5UPvhqhVOlBGHp2DQl2s9f6TVZg8amPyAiccluo3TTMYIQdVlg/0",
 	        "goods": {
 	            "all": "30",
 	            "new": "30",

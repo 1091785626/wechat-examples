@@ -1,6 +1,4 @@
 <!-- rtf.wxml -->
 <template name="rtf">
-	<view class="diy-rtf">
-		rtf
-	</view>
+	<view class="diy-rtf" style="margin:{{m_tb}} 0">{{html}}</view>
 </template>

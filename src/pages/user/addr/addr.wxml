@@ -1,7 +1,7 @@
 <import src="../../../components/toast/toast.wxml" />
 <import src="../../../components/addr/addr.wxml" />
 <template is="toast" data="{{$toast}}"/>
-<template is="addr" data="{{$addr,$addrOptions,$addrData,$addrAnimation,$addrDistrict,$addrPicker}}"/>
+<template is="addr" data="{{$addr,$addrOptions,$addrData,$addrAnimation,$addrDistrict,$addrPicker,$addrPickerView}}"/>
 <view class="v-user-addr">
 	<block wx:for="{{itemArr}}" wx:key="{{item}}_{{index}}" wx:for-index="index">
 		<view class="g-m-b">

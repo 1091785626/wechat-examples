@@ -7,16 +7,23 @@
 			</view>
 			<view class="g-flex g-jc-c">
 				<text>还需要支付</text>
-				<text class="g-pink">￥111.00</text>
+				<text class="g-pink">￥{{$payData.amount}}</text>
 			</view>
 			<scroll-view class="g-pd g-h-300 g-fd-c" scroll-y="true">
-				<view class="g-flex-ac g-bb g-lh-88">
-					<text class="icon-wechat g-green"/>
-					<text class="g-col g-pd-l">微信支付</text>
-					<text class="icon-past g-orange"/>
-				</view>
+				<block wx:for="{{$payData.pay}}" wx:key="{{item}}_{{index}}" wx:for-index="index">
+					<view wx:if="{{item=='wxpay'}}" class="g-flex-ac g-bb g-lh-88" bindtap="$payHandleSelect" id="{{item}}">
+						<text class="icon-wechat g-green" style="flex:0 0 50rpx"/>
+						<text class="g-col g-pd-l">微信支付</text>
+						<text class="icon-past g-orange" hidden="{{$payWay!='wxpay'}}"/>
+					</view>
+					<view wx:elif="{{item=='alipay'}}" class="g-flex-ac g-bb g-lh-88" bindtap="$payHandleSelect" id="{{item}}">
+						<text class="icon-alipay g-blue" style="flex:0 0 50rpx"/>
+						<text class="g-col g-pd-l">支付宝支付</text>
+						<text class="icon-past g-orange" hidden="{{$payWay!='alipay'}}"/>
+					</view>
+				</block>
 			</scroll-view>
-			<view class="g-tc g-lh-80 g-bg-pink">确认付款</view>
+			<view class="g-tc g-lh-80 g-bg-pink" bindtap="$payHandleSure">确认付款</view>
 		</view>
 	</view>
 </template>

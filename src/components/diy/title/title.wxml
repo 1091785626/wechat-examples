@@ -1,16 +1,6 @@
 <!-- title.wxml -->
 <template name="title">
-	<view class="g-pd diy-title-1" style="margin:20rpx 0">
-		<text>头部</text>
-	</view>
-	<view class="diy-title-2" style="margin:20rpx 0">
-		<text>头部</text>
-	</view>
-	<view style="margin-top:50rpx;"></view>
-	<view class="diy-title-3" style="margin:20rpx 0">
-		<text>标题名称</text>
-	</view>
-	<view class="diy-title-4" style="margin:20rpx 0">
-		<text>标题名称</text>
+	<view class="g-pd diy-title-{{style}} {{position==0?'g-tl':''}} {{position==1?'g-tc':''}} {{position==2?'g-tr':''}}" style="margin:{{m_tb}} 0">
+		<text>{{title}}</text>
 	</view>
 </template>

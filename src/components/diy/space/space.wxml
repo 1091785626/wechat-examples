@@ -1,6 +1,4 @@
 <!-- space.wxml -->
 <template name="space">
-	<view class="diy-space">
-		space
-	</view>
+	<view class="diy-space" style="height:{{height}}" />
 </template>

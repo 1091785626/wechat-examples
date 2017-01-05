@@ -1,0 +1,20 @@
+._shop image{
+	width: 120rpx;
+	height: 120rpx;
+	border-radius: 100%;
+}
+._all .g-pd-btn{
+	border:1px solid #F08D62;
+	color: #F08D62;
+}
+._record{
+	width: 350rpx;
+	height:60rpx;
+	overflow: hidden;
+}
+._record image,.buyer image{
+	width: 60rpx;
+	height: 60rpx;
+	border-radius: 100%;
+	margin-right:10rpx; 
+}

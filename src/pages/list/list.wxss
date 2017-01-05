@@ -1,0 +1,25 @@
+.v-list image{
+	flex:0 0 145rpx;
+	height:145rpx;
+}
+.v-list ._label{
+	padding:5rpx 10rpx;
+	border-radius: 5rpx;
+	margin-left: 20rpx;
+}
+.v-list .goods-2 image{
+	width: 46vw;
+	padding:1vw;
+}
+.v-list .goods-2>view{
+	width: 48vw;
+	margin:1vw;
+	box-sizing: border-box;
+	flex: 0 0 48%;
+}
+.v-list .g-tab ,.v-list .diy-search{
+	height:5vh
+}
+.v-list scroll-view{
+	height:85vh
+}

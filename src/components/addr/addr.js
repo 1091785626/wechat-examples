@@ -7,7 +7,7 @@ import { getItem, setItem ,delItem,showAnimate,hideAnimate,dataValidity } from '
 import API_ROOT from '../../constants/apiRoot';
 const addrConfig = {
 	$addrPopup(options){
-		console.log("options",options);
+		//console.log("options",options);
 		return new Promise((resolve, reject) => {
 			this.$addrResolve  = resolve;
 			this.$addrReject = reject;
@@ -32,8 +32,9 @@ const addrConfig = {
 					setItem('areaData', res);
 				},
 				error: (res) => {
-					reject();
-					return !1;
+					this.$toastInfo(res.msg);
+					this.$addrResolve  = null;
+					this.$addrReject = null;
 				}
 			});
 		});
@@ -123,6 +124,37 @@ const addrConfig = {
 		}
 		this.$addrReject(res);
 	},
+	$addrHandlePicker(event){
+		const {$addrPicker,$addrDistrict} = this.data;
+		this.$addrPickerCancel = $addrPicker;
+		this.$addrDistrictCancel = $addrDistrict;
+		this.setData({
+			$addrPickerView:{
+				animation:showAnimate(),
+				isShow:1
+			}
+		});
+	},
+	$addrHandlePickerClose(event){
+		let is = 0;
+		const {$addrPicker,$addrDistrict} = this.data;
+		switch(event.target.id){
+			case "pickerCancel":
+				is = 1;
+			case "pickerClose":
+				this.setData({
+					$addrPicker:is?this.$addrPickerCancel:$addrPicker,
+					$addrDistrict:is?this.$addrDistrictCancel:$addrDistrict,
+					$addrPickerView:{
+						animation:hideAnimate(),
+						isShow:0
+					}
+				});
+				return;
+			default:
+				return;
+		}
+	},
 	$addrHandleChange(event){
 		const values = event.detail.value;
 		let {$addrPicker,$addrDistrict} = this.data;
@@ -148,16 +180,16 @@ const addrConfig = {
 	// 	});
 	// },
 	$addrSubmit(event){
-
 		let value = event.detail.value;
+		let district = value.district.split(',');
 		let {$addrPicker,$addrDistrict} = this.data;
 		let formData = Object.assign(
 					{},
 					event.detail.value,
 					{
-						province:$addrDistrict[0][value.district[0]].value,
-						city:$addrDistrict[1][value.district[1]].value,
-						district:$addrDistrict[2][value.district[2]].value
+						province:$addrDistrict[0][district[0]].value,
+						city:$addrDistrict[1][district[1]].value,
+						district:$addrDistrict[2][district[2]].value
 					}
 				);
 		/**

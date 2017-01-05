@@ -1,11 +1,11 @@
 let data = {
     "status": 1,
     data:{
-        "order_id": "127840",
-        "amount": "11.96",
+        "order_id": "127840",//订单id
+        "amount": "11.96",//支付金额
         "pay": [
-            "wxpay",
-            "alipay"
+            "wxpay",//微信支付
+            "alipay",//阿里支付
         ]
     }
 };

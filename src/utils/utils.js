@@ -34,10 +34,40 @@ export function getItem(key) {
  */
 export function delItem(key) {
 	if (isAvailable) {
-		wx.removeStorageSync('key');
+		wx.removeStorageSync(key);
 	}
 }
+/**
+ * 解析url
+ * @param  {String} routeName
+ * @return {Object}
+ */
+export function parseUrl(routeName) { //解析url
+	let path = [];
+	let pathName = [];
+	const query = {};
+	const queryArr = routeName.replace('/', '').split('?');
+	path = queryArr[0].split('/');
+	pathName = '/'+path.join('/');
+	if (queryArr.length > 1) {
+		queryArr[1].split('&').forEach(str => {
+			const arr = str.split('=');
+			const key = arr[0];
+			const value = arr[1];
+			if (isNaN(value)) {
+				query[key] = value;
+			} else {
+				query[key] = Number(value);
+			}
+		});
+	}
 
+	return {
+		path,
+		pathName,
+		query
+	};
+}
 /**
  * 初始化数据
  * @param  {String} res 传入的数据

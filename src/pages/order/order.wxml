@@ -2,69 +2,87 @@
 <import src="../../components/pay/pay.wxml" />
 <import src="../../components/addr/addr.wxml" />
 <import src="../../components/addr/addrList.wxml" />
+<import src="../../components/logis/logis.wxml" />
 <template is="toast" data="{{$toast}}"/>
-<template is="addrList" data="{{$addrList}}"/>
+<template is="addr" data="{{$addr,$addrOptions,$addrData,$addrAnimation,$addrDistrict,$addrPicker,$addrPickerView}}"/>
+<template is="addrList" data="{{$addrList,$addrListOptions,$addrListAnimation,$addrListData}}"/>
+<template is="logis" data="{{$logis,$logisOptions,$logisAnimation,$logisData}}"/>
+<template is="pay" data="{{$pay,$payWay,$payOptions,$payAnimation,$payData}}"/>
 <view class="v-order">
-	<navigator class="g-bg-white g-m-b-20 g-bb g-pd attr-lh">
+	<view class="g-bg-white g-m-b-20 g-bb g-pd _addr" hidden="{{addr.id}}" bindtap="handleCreateAddr">
 		<view class="g-flex g-jc-sb">
 			<text class="icon-location g-pdr-15"/>
 			<text class="">请选择地址</text>
 			<text class="icon-right"/>
 		</view>
-	</navigator>
-	<navigator class="g-item g-bb g-pd">
+	</view>
+	<view class="g-item g-bb g-pd" hidden="{{!addr.id}}" bindtap="handleShowAddrList">
 		<view class="g-col g-pdr-15">
 			<view class="g-flex g-jc-sb g-ai-c">
 				<view class="g-1of2 g-flex-ac">
 					<text class="icon-location g-pdr-15"/>
-					<text>收货人：李清照</text>	
+					<text>收货人：{{addr.consignee}}</text>	
 				</view>
-				<text class="g-gray g-tr g-col">15267569852</text>
+				<text class="g-gray g-tr g-col">{{addr.mobile}}</text>
 			</view>
-			<view class="g-m-t-20">浙江省杭州市拱墅区祥园路浙报印务15号浙江省杭州市拱墅区祥园路浙报印务15号</view>
+			<view class="g-m-t-20">{{addr.province_name}} {{addr.city_name}} {{addr.district_name}} {{addr.address}}</view>
 		</view>
 		<text class="icon-right"/>
-	</navigator>
+	</view>
 	<view>
-		<view class="g-flex g-pd g-bg-white g-bb">
-			<image class="g-pdr-15" src="http://wx.qlogo.cn/mmhead/Q3auHgzwzM5NdjgpiaEWCztrSDiaAOxuMORdont0TbtBp0wSH5OuG85Q/132" />
-			<view class="g-col">
-				<view class="g-twoline g-two-lh">洗面奶洗面奶洗面奶洗面奶</view>
-				<view class="g-m-t g-oneline g-one-lh">
-					<text class="g-pdr-15 g-gray">净含量:120g</text>
+		<block wx:for="{{itemArr}}" wx:key="*this">
+			<view class="g-flex g-pd g-bg-white g-bb">
+				<image class="g-pdr-15" src="{{itemObj[item].img}}" />
+				<view class="g-col">
+					<view class="g-twoline g-two-lh">{{itemObj[item].title}}</view>
+					<view class="g-m-t g-oneline g-one-lh">
+						<text class="g-pdr-15 g-gray">{{itemObj[item].props_str}}</text>
+					</view>
+					<view class="g-flex g-jc-sb g-m-t">
+						<text class="g-pink">￥{{itemObj[item].price}}</text>
+						<view class="g-step">
+							<text class="icon-minus" bindtap="handleQuantity" id="minus_{{item}}"/>
+							<input 
+								type="number" 
+								value="{{itemObj[item].quantity}}" 
+								bindblur="handleQuantity" 
+								id="input_{{item}}"
+							/>
+							<text class="icon-plus" bindtap="handleQuantity" id="plus_{{item}}"/>
+						</view>
+					</view>
 				</view>
-				<view class="g-flex g-jc-sb g-m-t">
-					<text class="g-pink">￥460</text>
-					<text>X1</text>
+			</view>
+			<!-- 运费模板 -->
+			<block wx:if="{{(index==items||(items>0&&itemObj[item].template_id!=itemObj[itemArr[index+1]].template_id))}}">
+				<view class="g-item g-bb g-pd g-ai-c g-m-b" bindtap="handleLogis" id="{{logis[itemObj[item].template_id].value}}_{{itemObj[item].template_id}}">
+					<view class="g-col">
+						<text>配送方式</text>
+					</view>
+					<view class="g-gray g-tr g-flex-ac">
+						<text>{{logis[itemObj[item].template_id].name}} ￥{{logis[itemObj[item].template_id].price}}</text>
+						<text class="icon-right"/>
+					</view>
 				</view>
-			</view>
-		</view>
-		<navigator class="g-item g-bb g-pd g-ai-c">
-			<view class="g-col">
-				<text>配送方式</text>
-			</view>
-			<view class="g-gray g-tr g-flex-ac">
-				<text>快递 ￥5.00</text>
-				<text class="icon-right"/>
-			</view>
-		</navigator>
+			</block>
+		</block>
 		<view class="g-form g-bb">
-			<view>
+			<view class="_colum">
 				<text>买家留言：</text>
-				<input type="text" placeholder="选填，对本次交易的要求" />
+				<input type="text" placeholder="选填，对本次交易的要求" bindblur="handleInput"/>
 			</view>
 		</view>
 		<view class="g-pd g-bg-white g-col g-tr">
 			<text>共1件商品 小计:</text>
-			<text class="g-pink">￥155598.00</text>
+			<text class="g-pink">￥{{amounts.goods_amount}}</text>
 		</view>
 	</view>
-	<view style="height:88rpx"/>
+	<view style="height:120rpx"/>
 	<view class="g-item g-fixed">
 		<view class="g-tr g-pdr-15 g-flex g-fd-c g-col">
-			<text>合计：￥155598.00</text>
+			<text>合计：￥{{amounts.amount}}</text>
 			<text class="g-gray g-m-t g-fs-22">含运费</text>
 		</view>
-		<view class="g-bg-pink g-flex-cc g-1of4 g-lh-88">确认订单</view>
+		<view class="g-bg-pink g-flex-cc g-1of4 g-lh-88" bindtap="handleSureOrder">确认订单</view>
 	</view>
 </view>

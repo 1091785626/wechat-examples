@@ -1,6 +1,10 @@
 import {connect} from '../../libs/wechat-redux.js';
 import {bindActionCreators} from '../../libs/redux.js';
+import * as types from '../../constants/actions/category';
 import * as categoryActions from '../../actions/category';
+import searchConfig from '../../components/diy/search/search';
+import toastConfig from '../../components/toast/toast';
+import routeConfig from '../../components/route/route';
 function mapStateToData(state) {
 	return state.category;
 }
@@ -11,9 +15,51 @@ function mapDispatchToActions(dispatch) {
 	};
 }
 const pageConfig = {
-	onLoad(){
-		console.log(this.data);
+	data:{
+		$search:{title:"搜索商品",class:"g-h-5 g-bb"}
+	},
+	onShow(options){
+		console.log("category show");
+		if (this.data.isFetching === 0) {
+			let url = types.CATEGORY_MAIN_GET;
+			let param = {};
+			let params = {
+				param: param,
+				ajaxType: 'GET',
+				onSuccess: (res) => {
+					this.loadDataRight(res.data[0].id);
+				},
+				onError: (res) => {
+					this.$toastInfo(res.msg);
+				}
+			};
+			this.actions.request(url, params, {});
+		}
+	},
+	handleChangeId(event){
+		const id = event.currentTarget.id;
+		const {curId} =this.data;
+		if(curId==id){ return !1;}//id相同无视
+		this.actions.categoryChange(id);
+		this.loadDataRight(id);
+	},
+	loadDataRight(id){
+		if (!this.data.dataRight[id]) {
+			let url = types.CATEGORY_MAIN_LIST_GET;
+			let param = {id};
+			let params = {
+				param: param,
+				ajaxType: 'GET',
+				onSuccess: (res) => {
+				},
+				onError: (res) => {
+					this.$toastInfo(res.msg);
+				}
+			};
+			this.actions.request(url, params, {});
+		}
 	}
 };
-const resultConfig = connect(mapStateToData, mapDispatchToActions)(pageConfig);
+const combineConfig = Object.assign({},searchConfig,toastConfig,routeConfig,pageConfig);
+const resultConfig = connect(mapStateToData, mapDispatchToActions)(combineConfig);
 Page(resultConfig);

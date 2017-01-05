@@ -1,8 +1,8 @@
 <!-- tel.wxml -->
 <template name="tel">
-	<view class="diy-tel g-pd g-bg-white g-flex g-full g-ai-c">
-	<text class="icon-shop g-pdr-15"></text>
-	<text class="g-pdr-15">客服电话</text>
-	<navigator>15265469988</navigator>
+	<view class="diy-tel g-pd g-bg-white g-flex g-full g-ai-c" style="margin:{{m_tb}} 0" bindtap="$telHandleClick" id="{{tel}}">
+		<text class="icon-shop g-pdr-15" />
+		<text class="g-pdr-15">联系人：{{name}}</text>
+		<view>{{tel}}</view>
 	</view>
 </template>

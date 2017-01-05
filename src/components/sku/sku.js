@@ -48,8 +48,9 @@ const skuConfig = {
 					setItem('sku_goods', res);
 				},
 				error: (res) => {
-					reject();
-					return !1;
+					this.$toastInfo(res.msg);
+					this.$skuResolve  = null;
+					this.$skuReject = null;
 				}
 			});
 		});
@@ -327,6 +328,11 @@ const skuConfig = {
 			param,
 			success: (res) => {
 				this.$skuHide(1);
+				if(type==0){//其他地方清理数据用
+					this.$skuHide(1);
+				}else{
+					this.$skuHide();
+				}
 				type?wx.navigateTo({url:"/pages/order/order"}):this.$toastInfo(`加入购物车成功`);
 			},
 			error: (res) => {

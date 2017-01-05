@@ -1,31 +1,54 @@
 <!-- goods.wxml -->
 <template name="goods">
-	<view class="diy-goods-1">
-		<view class="g-col">
-			<navigator>
-				<image src="http://wx.qlogo.cn/mmhead/Q3auHgzwzM5NdjgpiaEWCztrSDiaAOxuMORdont0TbtBp0wSH5OuG85Q/132"></image>
-				<text class="g-twoline g-pd-lr">两行文字两行文字两行文字两行文字两行文字两行文字两行文字两行文字两行文字两行文字</text>
-			</navigator>
-			<view class="g-flex-cc g-pd-lr">
-				<view class="g-col g-flex g-fd-c">
-					<text class="g-pink">￥460</text>
-					<text class="g-gray">销量:152555</text>
+	<view class="diy-goods-1 g-bg-white" wx:if="{{style==1}}">
+		<block wx:for="{{item_list}}" wx:key="{{index}}" wx:for-item="item">
+			<view class="g-col">
+				<view bindtap="$routeHandlePush" id="/pages/goods/goods?id={{item.id}}">
+					<image src="{{item.img}}" />
+					<text class="g-twoline g-pd-lr">{{item.title}}</text>
 				</view>
-				<text class="icon-cart g-col g-tr g-pink"></text>
-			</view>
-		</view>
-		<view class="g-col">
-			<navigator>
-				<image src="http://wx.qlogo.cn/mmhead/Q3auHgzwzM5NdjgpiaEWCztrSDiaAOxuMORdont0TbtBp0wSH5OuG85Q/132"></image>
-				<text class="g-twoline g-pd-lr">两行文字两行文字两行文字两行文字两行文字两行文字两行文字两行文字两行文字两行文字</text>
-			</navigator>
-			<view class="g-flex-cc g-pd-lr">
-				<view class="g-col g-flex g-fd-c">
-					<text class="g-pink">￥460</text>
-					<text class="g-gray">销量:152555</text>
+				<view class="g-flex-cc g-pd-lr">
+					<view class="g-col g-flex g-fd-c">
+						<text class="g-pink">￥{{item.price}}</text>
+						<text class="g-gray">销量:{{item.sales}}</text>
+					</view>
+					<text class="icon-cart g-col g-tr g-pink" bindtap="$goodsHandleSku" id="{{item.id}}"/>
 				</view>
-				<text class="icon-cart g-col g-tr g-pink"></text>
 			</view>
-		</view>
+		</block>
+	</view>
+	<view class="diy-goods-2 g-flex g-ac-fs g-fw-w g-bg-white" wx:if="{{style==2}}">
+		<block wx:for="{{item_list}}" wx:key="{{index}}" wx:for-item="item">
+			<view>
+				<view bindtap="$routeHandlePush" id="/pages/goods/goods?id={{item.id}}">
+					<image src="{{item.img}}" mode="widthFix"/>
+					<text class="g-twoline g-pd-lr">{{item.title}}</text>
+				</view>
+				<view class="g-flex-cc g-pd-lr">
+					<view class="g-col g-flex g-fd-c">
+						<text class="g-pink">￥{{item.price}}</text>
+						<text class="g-gray">销量:{{item.sales}}</text>
+					</view>
+					<text class="icon-cart g-col g-tr g-pink" bindtap="$goodsHandleSku" id="{{item.id}}" />
+				</view>
+			</view>
+		</block>
+	</view>
+	<view class="diy-goods-3" wx:if="{{style==1}}">
+		<block wx:for="{{item_list}}" wx:key="{{index}}" wx:for-item="item">
+			<view class="g-pd g-flex g-bg-white">
+				<image src="{{item.img}}" class="g-pdr-15" bindtap="$routeHandlePush" id="/pages/goods/goods?id={{item.id}}"/>
+				<view class="g-col">
+					<text class="g-twoline g-two-lh" bindtap="$routeHandlePush" id="/pages/goods/goods?id={{item.id}}">{{item.title}}</text>
+					<view class="g-flex g-jc-sb g-m-t-20">
+						<view class="g-flex g-fd-c">
+							<text class="g-pink">￥{{item.price}}</text>
+							<text class="g-gray">销量:{{item.sales}}</text>
+						</view>
+						<view class="icon-cart g-pink g-flex g-ai-c" bindtap="$goodsHandleSku" id="{{item.id}}" />
+					</view>
+				</view>
+			</view>
+		</block>
 	</view>
 </template>

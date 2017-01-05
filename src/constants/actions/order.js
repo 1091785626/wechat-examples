@@ -3,9 +3,13 @@
  */
 export const ORDER_MAIN_GET = 'ORDER_MAIN_GET';
 /**
+ * 选择地址
+ */
+export const ORDER_MAIN_ADDR_SELECT_POST = 'ORDER_MAIN_ADDR_SELECT_POST';
+/**
  * 更新地址
  */
-export const ORDER_MAIN_ADDR_UPDATE = 'ORDER_MAIN_ADDR_UPDATE';
+export const ORDER_MAIN_ADDR_PUT = 'ORDER_MAIN_ADDR_PUT';
 /**
  * 商品数量更新
  */
@@ -20,11 +24,14 @@ export const ORDER_MAIN_LIST_UPDATE = 'ORDER_MAIN_LIST_UPDATE';
  * 订单列表
  */
 export const ORDER_LIST_GET = 'ORDER_LIST_GET';
+export const ORDER_LIST_INIT = 'ORDER_LIST_INIT';
+export const ORDER_LIST_CHANGE_TAB = 'ORDER_LIST_CHANGE_TAB';
 
 /**
  * 订单详情
  */
 export const ORDER_DETAIL_GET = 'ORDER_DETAIL_GET';
+export const ORDER_DETAIL_INIT = 'ORDER_DETAIL_INIT';
 
 /**
  * 订单列表详情统一按钮

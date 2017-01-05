@@ -1,7 +1,14 @@
 <!-- img_nav.wxml -->
 <template name="img_nav">
-	<view class="g-pd diy-img-nav">
-		<text class="g-fs-50">点击编辑图片广告</text>
-		<text class="g-fs-34 g-m-t-20">图片推荐宽度640px</text>	
+	<view class="diy-img-nav-{{style}}" style="margin:{{m_tb}} 0">
+		<view class="_imgs g-white {{style==1?'g-bg-white':''}}">
+			<block wx:for="{{item_list}}" wx:key="{{index}}" wx:for-item="item">
+				<view class="_navigator" bindtap="$routeHandlePush" id="{{item.url}}">
+					<image src="{{item.img}}" mode="widthFix"/>
+					<!-- diy-img-nav-2 判断文字在图片上还是在图片下边 -->
+					<text style="background:{{item.bg}}">{{item.title}}</text>
+				</view>
+			</block>
+		</view>
 	</view>
 </template>

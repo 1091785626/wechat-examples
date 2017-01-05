@@ -1,3 +1,119 @@
-<view>
-	goods
+<import src="../../components/toast/toast.wxml" />
+<import src="../../components/sku/sku.wxml" />
+<template is="toast" data="{{$toast}}"/>
+<template is="sku" data="{{$sku,$skuData,$skuState,$skuAnimation,$skuBtnType,$skuUnStock}}"/>
+<view class="v-goods">
+	<!-- 轮播 -->
+	<swiper indicator-dots="{{true}}" autoplay="{{true}}" interval="{{5000}}" duration="{{duration}}" style="height:100vw">
+  		<block wx:for="{{main[curId].imgs}}" wx:key="{{index}}">
+			<swiper-item>
+				<image src="{{item}}" mode="widthFix" style="width: 100%;"/>
+			</swiper-item>
+  		</block>
+	</swiper>
+	<view class="g-pd g-bg-white">
+		<view class="g-flex g-ai-c g-bb g-pd-b">
+			<text class="g-pink">￥{{main[curId].info.min_price}}~{{main[curId].info.max_price}}</text>
+			<text class="g-gray g-td-lh g-m-l">￥{{main[curId].info.old_min_price}}~{{main[curId].info.old_max_price}}</text>
+			<text class="g-bg-pink g-pd-btn g-br g-m-l" hidden="{{true}}">包邮</text>
+		</view>
+		<view class="g-m-t-20 g-flex g-fd-c">
+			<text class="">{{main[curId].info.title}}</text>
+			<text class="g-m-t-20 g-gray">已售：{{main[curId].info.csale}}</text>
+		</view>
+	</view>
+	<view class="g-bg-white g-pd g-m-t-20 g-flex g-ai-c g-jc-sb" bindtap="handleSku" id="{{curId}}_0">
+		<text>选择规格型号</text>
+		<text class="icon-right"/>
+	</view>
+<!-- 	<view class="g-bg-white g-pd g-m-t-20 g-flex g-ai-c g-jc-sb" hidden="{{true}}">
+		<view class="_record">
+			<image src=""/>
+			<image src=""/>
+			<image src=""/>
+			<image src=""/>
+			<image src=""/>
+			<image src=""/>
+		</view>
+		<view class="g-gray g-flex g-ai-c">
+			<text>近期成交12369单</text>
+			<text class="icon-right"/>
+		</view>
+	</view> -->
+	<view class="_shop g-pd g-bg-white g-m-t-20">
+		<view class="g-flex g-ai-c">
+			<image src="{{main[curId].shop.photo}}"/>
+			<text class="g-fs-40 g-pd-l">{{main[curId].shop.name}}</text>
+		</view>
+		<view class="_all g-flex g-m-t-20">
+			<view class="g-gray g-flex g-fd-c g-1of3 g-ai-c g-b-r" bindtap="$routeHandlePush" id="/pages/index/index">
+				<text>{{main[curId].shop.all}}</text>
+				<text>全部商品</text>
+			</view>
+			<view class="g-gray g-flex g-fd-c g-1of3 g-ai-c g-b-r" bindtap="$routeHandlePush" id="/pages/category/category">
+				<text>{{main[curId].shop.category}}</text>
+				<text>全部分类</text>
+			</view>
+			<view class="g-flex g-1of3 g-jc-fe" bindtap="$routeHandlePush" id="/pages/index/index">
+				<text class="g-pd-btn g-br">进店看看</text>
+			</view>
+		</view>
+	</view>
+
+	<view class="g-fixed g-bg-white g-item">
+		<view class="g-pd-tb g-flex-ac g-col g-fd-c g-b-r" bindtap="$routeHandlePush" id="/pages/index/index">
+			<text class="icon-home"></text>
+			<text class="g-m-t">首页</text>
+		</view>
+		<view class="g-pd-tb g-flex-ac g-col g-fd-c" bindtap="$routeHandlePush" id="/pages/cart/cart">
+			<text class="icon-cart"></text>
+			<text class="g-m-t">购物车</text>
+		</view>
+		<view class="g-bg-orange g-white g-pd g-flex-cc g-col" bindtap="handleSku" id="{{curId}}_4">
+		<text class="g-pd-tb">加入购物车</text>
+		</view>
+		<view class="g-bg-pink g-white g-pd g-flex-cc g-col" bindtap="handleSku" id="{{curId}}_5">
+		<text class="g-pd-tb">立即购买</text>
+		</view>
+	</view>
 </view>
+
+<view class="g-bg-white g-pd g-tab">
+	<view class="{{main[curId].curTab=='info'&&'active'}}" bindtap="handleTabs" id="info"><text>图文详情</text></view>
+	<view class="{{main[curId].curTab=='prop'&&'active'}}" bindtap="handleTabs" id="prop"><text>商品参数</text></view>
+	<!-- <view class="active"><text>成交记录</text></view> -->
+</view>
+<!-- 商品参数 -->
+<view class="g-bg-white" hidden="{{main[curId].curTab!='info'}}" style="min-height: 90vh">
+	{{main[curId].tabs.info}}
+</view>
+<!-- 商品参数 -->
+<view class="g-bg-white" hidden="{{main[curId].curTab!='prop'}}" style="min-height: 90vh">
+	<block wx:for="{{main[curId].tabs.prop}}" wx:key="{{index}}">
+		<view class="g-flex g-pd g-bb">
+			<text class="g-1of4 g-gray">{{item.name}}</text>
+			<text>{{item.props}}</text>
+		</view>
+	</block>
+</view>
+
+<!-- 成交记录 -->
+<!-- <view class="g-bg-white">
+	<view class="g-gray g-pd g-flex-cc g-bb">该商品共卖出3006件，近期有1569单成交</view>
+	<view class="g-bg-white g-pd g-flex g-jc-sb g-bb">
+		<view class="g-col g-tc">买家</view>
+		<view class="g-col g-tc">数量</view>
+		<view class="g-col g-tc">时间</view>
+	</view>
+	<view class="g-bg-white g-pd g-flex g-jc-sb g-ai-c g-bb buyer">
+		<view class="g-col g-flex-ac">
+			<image src="http://wx.qlogo.cn/mmhead/Q3auHgzwzM5NdjgpiaEWCztrSDiaAOxuMORdont0TbtBp0wSH5OuG85Q/132"/>
+			<text>二的一百次方</text>
+		</view>
+		<view class="g-col g-tc">1</view>
+		<view class="g-col g-tc g-flex g-fd-c">
+			<text>2016-12-12</text>
+			<text>16:05:05</text>
+		</view>
+	</view>
+</view> -->

@@ -1,3 +1,9 @@
+<import src="../../components/toast/toast.wxml" />
+<import src="../../components/sku/sku.wxml" />
+<template is="toast" data="{{$toast}}"/>
+<template is="sku" data="{{$sku,$skuData,$skuState,$skuAnimation,$skuBtnType,$skuUnStock}}"/>
+
+<!--模块代码-->
 <import src="../../components/diy/goods/goods.wxml" />
 <import src="../../components/diy/showcase/showcase.wxml" />
 <import src="../../components/diy/slide/slide.wxml" />
@@ -13,39 +19,70 @@
 <import src="../../components/diy/video/video.wxml" />
 <import src="../../components/diy/rtf/rtf.wxml" />
 <import src="../../components/diy/img_nav/img_nav.wxml" />
-<image src="http://wx.qlogo.cn/mmhead/Q3auHgzwzM5NdjgpiaEWCztrSDiaAOxuMORdont0TbtBp0wSH5OuG85Q/132" mode="widthFix" style="width:100%"></image>
-
 <view style="">
-	<!-- 图片广告 -->
-	<template is="img_nav" />
-	<!-- 标题 -->
-	<template is="title" />
-	<!-- 商品搜索 -->
-	<template is="search" />
-	<!-- 公告 -->
-	<template is="notice" />
-	<!-- 客服电话 -->
-	<template is="tel" />
-	<!-- 橱窗 -->
-	<template is="showcase" />
-	<!-- 顶部菜单 -->
-	<template is="top_nav" />
-	<!-- 文本导航 -->
-	<template is="text_nav" />
-	<!-- 商品 -->
-	<template is="goods" />
-	<!-- 富文本 -->
-	<template is="rtf" />
-	<!-- 音频 -->
-	<template is="voice" />
-	<!-- 分割线 -->
-	<template is="cut_off" />
-	<!-- 辅助空白 -->
-	<template is="space" />
-	<!-- 视频 -->
-	<template is="video" />
-	<!-- 轮播图 -->
-	<template is="slide" />
+	<block wx:for="{{itemArr}}" wx:key="{{item._type}}" wx:for-item="item">
+		
+		<block wx:if="{{item._type=='img_nav'}}">
+			<!-- 图片广告 -->
+			<template is="img_nav" data="{{...itemObj[item.type]}}" />
+		</block>
+		<block wx:elif="{{item._type=='title'}}">
+			<!-- 标题 -->
+			<template is="title" data="{{...itemObj[item.type]}}" />
+		</block>
+		<block wx:elif="{{item._type=='search'}}">
+			<!-- 商品搜索 -->
+			<template is="search" data="{{...itemObj[item.type]}}" />
+		</block>
+		<block wx:elif="{{item._type=='notice'}}">
+			<!-- 公告 -->
+			<template is="notice" data="{{...itemObj[item.type]}}" />
+		</block>
+		<block wx:elif="{{item._type=='tel'}}">
+			<!-- 客服电话 -->
+			<template is="tel" data="{{...itemObj[item.type]}}" />
+		</block>
+		<block wx:elif="{{item._type=='showcase'}}">
+			<!-- 橱窗 -->
+			<template is="showcase" data="{{...itemObj[item.type]}}" />
+		</block>
+		<block wx:elif="{{item._type=='top_nav'}}">
+			<!-- 顶部菜单 -->
+			<template is="top_nav" data="{{...itemObj[item.type]}}" />
+		</block>
+		<block wx:elif="{{item._type=='text_nav'}}">
+			<!-- 文本导航 -->
+			<template is="text_nav" data="{{...itemObj[item.type]}}" />
+		</block>
+		<block wx:elif="{{item._type=='goods'}}">
+			<!-- 商品 -->
+			<template is="goods" data="{{...itemObj[item.type]}}" />
+		</block>
+		<block wx:elif="{{item._type=='rtf'}}">
+			<!-- 富文本 -->
+			<template is="rtf" data="{{...itemObj[item.type]}}" />
+		</block>
+		<block wx:elif="{{item._type=='voice'}}">
+			<!-- 音频 -->
+			<template is="voice" data="{{...itemObj[item.type]}}" />
+		</block>
+		<block wx:elif="{{item._type=='cut_off'}}">
+			<!-- 分割线 -->
+			<template is="cut_off" data="{{...itemObj[item.type]}}" />
+		</block>
+		<block wx:elif="{{item._type=='space'}}">
+			<!-- 辅助空白 -->
+			<template is="space" data="{{...itemObj[item.type]}}" />
+		</block>
+		<block wx:elif="{{item._type=='video'}}">
+			<!-- 视频 -->
+			<template is="video" data="{{...itemObj[item.type]}}" />
+		</block>
+		<block wx:elif="{{item._type=='slide'}}">
+			<!-- 轮播图 -->
+			<template is="slide" data="{{...itemObj[item.type],$slideHeight}}" />
+		</block>
+	</block>
 </view>
 
 

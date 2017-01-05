@@ -90,6 +90,7 @@ function deleteCommon(itemArr,carts,carts_temp,carts_lose,_count,_invalid,id){
 }
 export default function(state = initialState, action) {
 	let newState, items, isTrue, carts, carts_temp, carts_lose, itemArr, id, sum, _count, _invalid, deleteData, quantity;
+	//因为es7 ...无法在微信小程序上使用，浅复制，深复制需要注意
 	switch (action.type) {
 		case types.CART_MAIN_GET + '_SUCCESS':
 			state = Object.assign(

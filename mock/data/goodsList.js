@@ -1,93 +1,103 @@
 let item_list =[
         {
-            "id": "1",//对应后端product_id，对于前端是goods_id,前端的product_id对应的是sku_id
-            product_name:"商品名称",//商品名称
-            sale_price:"10.00",//售价
-            market_price:"22.00",//市场价，原价
-            cover_img:"",//图片
-            base_sales_nums:"10",//销量
-            inventory:"22"//库存。其实我想换成stock
+            "id": "24216",
+            "title": "多运费模板测试汽车",
+            "img": "http://wx.qlogo.cn/mmopen/6mXOeYa4HU856QyIE4wprRFhvpHafqX2H9icVQ5UPvhqhVOlBGHp2DQl2s9f6TVZg8amPyAiccluo3TTMYIQdVlg/0",
+            "price": "3.00",
+            "sales": 160,
+            "seckill": false,
+            "shipping": false,
+            "bargain": false
         },
         {
-            "id": "2",//对应后端product_id，对于前端是goods_id,前端的product_id对应的是sku_id
-            product_name:"商品名称",//商品名称
-            sale_price:"10.00",//售价
-            market_price:"22.00",//市场价，原价
-            cover_img:"",//图片
-            base_sales_nums:"10",//销量
-            inventory:"22"//库存。其实我想换成stock
+            "id": "242236",
+            "title": "多运费模板测试汽车",
+            "img": "http://wx.qlogo.cn/mmopen/6mXOeYa4HU856QyIE4wprRFhvpHafqX2H9icVQ5UPvhqhVOlBGHp2DQl2s9f6TVZg8amPyAiccluo3TTMYIQdVlg/0",
+            "price": "3.00",
+            "sales": 160,
+            "seckill": false,
+            "shipping": false,
+            "bargain": false
         },
         {
-            "id": "3",//对应后端product_id，对于前端是goods_id,前端的product_id对应的是sku_id
-            product_name:"商品名称",//商品名称
-            sale_price:"10.00",//售价
-            market_price:"22.00",//市场价，原价
-            cover_img:"",//图片
-            base_sales_nums:"10",//销量
-            inventory:"22"//库存。其实我想换成stock
+            "id": "242436",
+            "title": "多运费模板测试汽车",
+            "img": "http://wx.qlogo.cn/mmopen/6mXOeYa4HU856QyIE4wprRFhvpHafqX2H9icVQ5UPvhqhVOlBGHp2DQl2s9f6TVZg8amPyAiccluo3TTMYIQdVlg/0",
+            "price": "3.00",
+            "sales": 160,
+            "seckill": false,
+            "shipping": false,
+            "bargain": false
         },
         {
-            "id": "4",//对应后端product_id，对于前端是goods_id,前端的product_id对应的是sku_id
-            product_name:"商品名称",//商品名称
-            sale_price:"10.00",//售价
-            market_price:"22.00",//市场价，原价
-            cover_img:"",//图片
-            base_sales_nums:"10",//销量
-            inventory:"22"//库存。其实我想换成stock
+            "id": "24254446",
+            "title": "多运费模板测试汽车",
+            "img": "http://wx.qlogo.cn/mmopen/6mXOeYa4HU856QyIE4wprRFhvpHafqX2H9icVQ5UPvhqhVOlBGHp2DQl2s9f6TVZg8amPyAiccluo3TTMYIQdVlg/0",
+            "price": "3.00",
+            "sales": 160,
+            "seckill": false,
+            "shipping": false,
+            "bargain": false
         },
         {
-            "id": "5",//对应后端product_id，对于前端是goods_id,前端的product_id对应的是sku_id
-            product_name:"商品名称",//商品名称
-            sale_price:"10.00",//售价
-            market_price:"22.00",//市场价，原价
-            cover_img:"",//图片
-            base_sales_nums:"10",//销量
-            inventory:"22"//库存。其实我想换成stock
+            "id": "2426666",
+            "title": "多运费模板测试汽车",
+            "img": "http://wx.qlogo.cn/mmopen/6mXOeYa4HU856QyIE4wprRFhvpHafqX2H9icVQ5UPvhqhVOlBGHp2DQl2s9f6TVZg8amPyAiccluo3TTMYIQdVlg/0",
+            "price": "3.00",
+            "sales": 160,
+            "seckill": false,
+            "shipping": false,
+            "bargain": false
         },
         {
-            "id": "6",//对应后端product_id，对于前端是goods_id,前端的product_id对应的是sku_id
-            product_name:"商品名称",//商品名称
-            sale_price:"10.00",//售价
-            market_price:"22.00",//市场价，原价
-            cover_img:"",//图片
-            base_sales_nums:"10",//销量
-            inventory:"22"//库存。其实我想换成stock
+            "id": "2423346",
+            "title": "多运费模板测试汽车",
+            "img": "http://wx.qlogo.cn/mmopen/6mXOeYa4HU856QyIE4wprRFhvpHafqX2H9icVQ5UPvhqhVOlBGHp2DQl2s9f6TVZg8amPyAiccluo3TTMYIQdVlg/0",
+            "price": "3.00",
+            "sales": 160,
+            "seckill": false,
+            "shipping": false,
+            "bargain": false
         },
         {
-            "id": "7",//对应后端product_id，对于前端是goods_id,前端的product_id对应的是sku_id
-            product_name:"商品名称",//商品名称
-            sale_price:"10.00",//售价
-            market_price:"22.00",//市场价，原价
-            cover_img:"",//图片
-            base_sales_nums:"10",//销量
-            inventory:"22"//库存。其实我想换成stock
+            "id": "241126",
+            "title": "多运费模板测试汽车",
+            "img": "http://wx.qlogo.cn/mmopen/6mXOeYa4HU856QyIE4wprRFhvpHafqX2H9icVQ5UPvhqhVOlBGHp2DQl2s9f6TVZg8amPyAiccluo3TTMYIQdVlg/0",
+            "price": "3.00",
+            "sales": 160,
+            "seckill": false,
+            "shipping": false,
+            "bargain": false
         },
         {
-            "id": "8",//对应后端product_id，对于前端是goods_id,前端的product_id对应的是sku_id
-            product_name:"商品名称",//商品名称
-            sale_price:"10.00",//售价
-            market_price:"22.00",//市场价，原价
-            cover_img:"",//图片
-            base_sales_nums:"10",//销量
-            inventory:"22"//库存。其实我想换成stock
+            "id": "2222426",
+            "title": "多运费模板测试汽车",
+            "img": "http://wx.qlogo.cn/mmopen/6mXOeYa4HU856QyIE4wprRFhvpHafqX2H9icVQ5UPvhqhVOlBGHp2DQl2s9f6TVZg8amPyAiccluo3TTMYIQdVlg/0",
+            "price": "3.00",
+            "sales": 160,
+            "seckill": false,
+            "shipping": false,
+            "bargain": false
         },
         {
-            "id": "9",//对应后端product_id，对于前端是goods_id,前端的product_id对应的是sku_id
-            product_name:"商品名称",//商品名称
-            sale_price:"10.00",//售价
-            market_price:"22.00",//市场价，原价
-            cover_img:"",//图片
-            base_sales_nums:"10",//销量
-            inventory:"22"//库存。其实我想换成stock
+            "id": "2444526",
+            "title": "多运费模板测试汽车",
+            "img": "http://wx.qlogo.cn/mmopen/6mXOeYa4HU856QyIE4wprRFhvpHafqX2H9icVQ5UPvhqhVOlBGHp2DQl2s9f6TVZg8amPyAiccluo3TTMYIQdVlg/0",
+            "price": "3.00",
+            "sales": 160,
+            "seckill": false,
+            "shipping": false,
+            "bargain": false
         },
         {
-            "id": "10",//对应后端product_id，对于前端是goods_id,前端的product_id对应的是sku_id
-            product_name:"商品名称",//商品名称
-            sale_price:"10.00",//售价
-            market_price:"22.00",//市场价，原价
-            cover_img:"",//图片
-            base_sales_nums:"10",//销量
-            inventory:"22"//库存。其实我想换成stock
+            "id": "242644",
+            "title": "多运费模板测试汽车",
+            "img": "http://wx.qlogo.cn/mmopen/6mXOeYa4HU856QyIE4wprRFhvpHafqX2H9icVQ5UPvhqhVOlBGHp2DQl2s9f6TVZg8amPyAiccluo3TTMYIQdVlg/0",
+            "price": "3.00",
+            "sales": 160,
+            "seckill": false,
+            "shipping": false,
+            "bargain": false
         }
     ];
 let data={

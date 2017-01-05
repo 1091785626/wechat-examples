@@ -3,19 +3,33 @@
  */
 import Promise from '../../libs/promise';
 import net from '../../utils/net';
-import { getItem, setItem ,delItem,showAnimate,hideAnimate } from '../../utils/utils';
+import { getItem, setItem ,delItem,showAnimate,hideAnimate,initItem } from '../../utils/utils';
 import API_ROOT from '../../constants/apiRoot';
 const addrListConfig = {
 	$addrListPopup(options){
 		return new Promise((resolve, reject) => {
 			this.$addrListResolve  = resolve;
 			this.$addrListReject = reject;
-			this.setData({
-				$addrList:{
-					isShow:1
+			let param = {};
+			net.ajax({
+				url: API_ROOT['_ADDR_LIST_GET'],
+				type: 'GET',
+				param,
+				success: (res) => {
+					this.setData({
+						$addrList:{
+							isShow:1
+						},
+						$addrListOptions:options,
+						$addrListData:initItem(res.data),
+						$addrListAnimation: showAnimate(),
+					});
 				},
-				$addrListOptions:options,
-				$addrListAnimation: showAnimate(),
+				error: (res) => {
+					this.$toastInfo(res.msg);
+					this.$addrListResolve  = null;
+					this.$addrListReject = null;
+				}
 			});
 		});
 	},
@@ -35,7 +49,26 @@ const addrListConfig = {
 			this.$addrListResolve(res);
 			return;
 		}
-		this.$addrListReject(res);
+		this.$addrListResolve(res);
+	},
+	$addrListHandleCreateAddr(){
+		this.$addrListHide();
+		this.handleCreateAddr&&this.handleCreateAddr();
+	},
+	$addrListHandleEditAddr(event){
+		const id = event.currentTarget.id;
+		const data = this.data.$addrListData.itemObj[id];
+		this.$addrListHide();
+		this.handleEditAddr&&this.handleEditAddr(data);
+	},
+	$addrListHandleSelectAddr(event){
+		const id = event.currentTarget.id;
+		const data = this.data.$addrListData.itemObj[id];
+		if(this.data.$addrListOptions.addr_id==id){
+			this.$addrListHide();
+		}else{
+			this.$addrListHide(1,data);
+		}
 	}
 };
 export default addrListConfig;

@@ -23,7 +23,7 @@ if (!DEV_WITH_PHP) {
 	baseUrl = 'http://localhost:3000';
 } else {
 	//开发环境-后端数据
-	baseUrl = 'http://test.ruishan66.com';
+	baseUrl = 'http://api.wds.com';
 }
 for (let i in API) {
 	API[i] = baseUrl + API[i];
