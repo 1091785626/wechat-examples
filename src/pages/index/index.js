@@ -24,6 +24,13 @@ const pageConfig = {
 				param: param,
 				ajaxType: 'GET',
 				onSuccess: (res) => {
+					let title = res.data.shop.title;
+					if(title){
+						wx.setNavigationBarTitle({
+							title: title
+						});	
+					}
+					
 				},
 				onError: (res) => {
 					this.$toastInfo(res.msg);

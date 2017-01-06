@@ -2,7 +2,7 @@
 <template name="notice">
 	<view 
 		class="diy-notice g-pd g-white" 
-		style="background: {{bgcolor}};margin:{{m_tb}} 0"
-		animation="{{$noticeAnimation}}"
-	>{{notice}}</view>
+		style="background: {{bgcolor}};margin:{{m_tb}} 0">
+		<view class="">{{notice}}</view>
+	</view>
 </template>

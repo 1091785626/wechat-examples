@@ -4,7 +4,7 @@
 <view class="v-category">
 	<template is="search" data="{{$search}}" />
 	<view class="_nav g-flex">
-		<scroll-view scroll-y="true" class="g-1of4 g-flex g-fd-c g-tc g-h-91">
+		<scroll-view scroll-y="true" class="g-1of4 g-flex g-fd-c g-tc">
 			<block wx:for="{{dataLeft}}" wx:key="{{item.id}}">
 				<view class="g-oneline g-bb {{item.id==curId?'_active':''}}" bindtap="handleChangeId" id="{{item.id}}">{{item.name}}</view>
 			</block>
@@ -14,7 +14,7 @@
 				<view>
 					<view class="g-flex-ac g-jc-sb g-pd" bindtap="$routeHandlePush" id="/pages/list/list?cat_id={{dt}}">
 						<text>{{dataRight[curId].itemObj[dt].name}}</text>
-						<view>
+						<view class="g-flex g-ai-c">
 							<text>全部</text>
 							<text class="icon-right" />
 						</view>

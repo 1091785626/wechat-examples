@@ -19,7 +19,11 @@
 <import src="../../components/diy/video/video.wxml" />
 <import src="../../components/diy/rtf/rtf.wxml" />
 <import src="../../components/diy/img_nav/img_nav.wxml" />
-<view style="">
+<import src="../../components/diy/header/header.wxml" />
+<view style="background: {{shop.bg}}">
+	<!-- 店招 -->
+	<template is="header" data="{{...header}}"/>
+	
 	<block wx:for="{{itemArr}}" wx:key="{{item._type}}" wx:for-item="item">
 		
 		<block wx:if="{{item._type=='img_nav'}}">

@@ -142,3 +142,54 @@
 .diy-cut-off{
 	border-bottom: 1px dashed red;
 }
+
+.diy-notice{
+	position: relative;
+	overflow: hidden;
+	height: 30rpx;
+}
+.diy-notice>view{
+	color: #e03696;
+	line-height: 30rpx;
+	width: 100%;
+	position: absolute;
+	/*animation: marquee 5s linear infinite;*/
+}
+@keyframes marquee {
+	0% {
+		left: 0
+	}
+	100% {
+		left: -100%
+	}
+}
+.diy-header {
+	position: relative;
+}
+.diy-header ._shade image{
+	width:100vw;
+	height: 33.3vw;
+	position: relative;
+}
+.diy-header ._shade:before{
+	content: '';
+	background-color: rgba(0,0,0,.4);
+	width:100vw;
+	height: 33.3vw;
+	position: absolute;
+	left: 0;
+	z-index: 9;
+	top: 0;
+}
+.diy-header ._caption{
+	z-index: 99;
+	position: absolute;
+	bottom: 5rpx;
+	left: 0;
+	right: 0;
+}
+.diy-header ._imgs{
+	height:15vw;
+	width:15vw;
+	margin-right: 15rpx;
+}

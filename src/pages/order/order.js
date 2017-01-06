@@ -125,11 +125,16 @@ const pageConfig = {
 				return;
 			}
 		}
+		const addr_id = this.data.addr.id;
+		if(!addr_id){
+			this.$toastInfo('请填写地址');
+			return;
+		}
 		let url = types.ORDER_MAIN_GOODS_PUT;
 		let param = {
 			id,
 			quantity,
-			addr_id:this.data.addr.id
+			addr_id
 		};
 
 		let params = {
@@ -160,12 +165,18 @@ const pageConfig = {
 		this.inputMemo = event.detail.value;
 	},
 	handleLogis(event){
+		const addr_id =this.data.addr.id;
+		if(!addr_id){
+			this.$toastInfo('请填写地址');
+			return;
+		}
 		const info = event.currentTarget.id.split('_');
 		const logis_id = info[0];
 		const template_id = info[1];
 		this.$logisPopup({
 			logis_id,
-			template_id
+			template_id,
+			addr_id
 		}).then((res)=>{
 			let url = types.ORDER_MAIN_LOGIS_PUT;
 			let param = {
@@ -196,6 +207,7 @@ const pageConfig = {
 		let template = {};
 		for(let i in logis){
 			template[i] = logis[i].id;
+			console.log(logis[i].id);
 		}
 		this.$payPopup({
 			addr_id: addr.id,

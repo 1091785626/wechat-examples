@@ -49,7 +49,7 @@ const pageConfig = {
 			direction
 		};
 		if(keyword!='all'){//如果是all，参数就不传递
-			if(keyword.indexOf('cat__')!=-1){
+			if(isNaN(keyword)&&keyword.indexOf('cat__')!=-1){
 				param.cat_id = keyword.split('cat__')[1];
 			}else{
 				param.keyword = keyword;

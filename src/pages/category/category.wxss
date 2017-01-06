@@ -33,3 +33,6 @@
 	height:5vh;
 	border-bottom: 1rpx solid #d9d9d9;
 }
+.v-category scroll-view{
+	height:91.2vh;
+}

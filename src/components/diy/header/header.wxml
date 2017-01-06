@@ -1,0 +1,31 @@
+<template name="header">
+	<view class="diy-header">
+		<view class="_shade">
+			<image src="{{cover}}" />
+		</view>
+		<view class="_caption">
+			<view class="g-flex g-ai-c">
+				<image src="{{avatar}}" class="_imgs" />
+				<text class="g-fs-28 g-white">{{name}}</text>
+			</view>
+			<!-- <view class="g-flex g-pd g-bb">
+				<view class="g-flex g-fd-c g-1of4 g-ai-c g-b-r" bindtap="$routeHandlePush" id="/pages/list/list">
+					<text>{{goods.all}}</text>
+					<text class="g-m-t-20">全部商品</text>
+				</view>
+				<view class="g-flex g-fd-c g-1of4 g-ai-c g-b-r">
+					<text class="icon-shop"/>
+					<text class="g-m-t">收藏店铺</text>
+				</view>
+				<view class="g-flex g-fd-c g-1of4 g-ai-c g-b-r" bindtap="$routeHandlePush" id="/pages/category/category">
+					<text class="icon-column"/>
+					<text class="g-m-t">商品分类</text>
+				</view>
+				<view class="g-flex g-fd-c g-1of4 g-ai-c">
+					<text class="icon-collect"/>
+					<text class="g-m-t">关注公众号</text>
+				</view>
+			</view> -->
+		</view>
+	</view>
+</template>

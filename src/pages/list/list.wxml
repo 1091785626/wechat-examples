@@ -7,14 +7,26 @@
 <view class="v-list">
 	<template is="search" data="{{$search}}"/>
 	<view class="g-tab g-flex-cc">
-		<view class="{{column=='default'&&'active'}}" bindtap="handleSort" id="defalut">
+		<view class="{{column=='default'&&'active'}}" bindtap="handleSort" id="default">
 			<text>默认</text>
 		</view>
-		<view class="{{column=='sales'&&'active'}}" bindtap="handleSort" id="sales">
-			<text>销量</text>
+		<view class="g-flex-cc" bindtap="handleSort" id="sales">
+			<view class="{{column=='sales'&&'active'}}">
+				<text>销量</text>
+			</view>
+			<view class="g-flex g-fd-c g-gray">
+				<text class="icon-trigon-top  {{(column=='sales'&&direction=='asc')&&'g-orange'}}" />
+				<text class="icon-trigon-down {{(column=='sales'&&direction=='desc')&&'g-orange'}}" />
+			</view>
 		</view>
-		<view class="{{column=='price'&&'active'}}" bindtap="handleSort" id="price">
-			<text>价格</text>
+		<view class="g-flex-cc" bindtap="handleSort" id="price">
+			<view class="{{column=='price'&&'active'}}">
+				<text>价格</text>
+			</view>
+			<view class="g-flex g-fd-c g-gray">
+				<text class="icon-trigon-top  {{(column=='price'&&direction=='asc')&&'g-orange'}}" />
+				<text class="icon-trigon-down {{(column=='price'&&direction=='desc')&&'g-orange'}}" />
+			</view>
 		</view>
 		<view bindtap="handleShowType">
 			<text class="{{style?'icon-row':'icon-column'}}" />

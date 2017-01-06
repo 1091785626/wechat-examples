@@ -117,7 +117,6 @@
 	color: #000;
 	height: 70rpx;
 	border-radius: 10rpx;
-	border-radius: 6rpx;
 	flex:1;
 	padding:0 80rpx;
 	position: relative;
@@ -232,7 +231,7 @@
 	flex:1;
 	text-align: center;
 }
-.g-tab .active text{
+.g-tab .active>text{
 	padding-bottom:20rpx;
 	color: #E64150;
 	border-bottom: 1px solid #E64150;
