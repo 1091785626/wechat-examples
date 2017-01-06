@@ -8,7 +8,7 @@
 			<scroll-view class="g-pd g-h-600 g-fd-c" scroll-y="true">
 				<block wx:for="{{$logisData.itemArr}}" wx:key="{{item}}_{{index}}" wx:for-index="index">
 					<view class="g-flex-ac g-bb g-pd" bindtap="$logisHandleSelect" id="{{item}}">
-						<text class="icon-select{{item==$logisOptions.logis_id?'ed'=''}} g-pink g-pd-lr" />
+						<text class="icon-select{{item==$logisOptions.logis_id?'ed':''}} g-pink g-pd-lr" />
 						<view class="g-flex g-fd-c g-pd-lr g-col">
 							{{$logisData.itemObj[item].name}}
 						</view>
