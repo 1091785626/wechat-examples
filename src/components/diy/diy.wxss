@@ -123,7 +123,7 @@
 
 .diy-showcase-1 image{
 	width:50vw;
-	height:64.5vh;
+	height:735rpx;
 	margin-right:1vw;
 }
 .diy-showcase-1 ._navigator{

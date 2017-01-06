@@ -10,9 +10,9 @@ export { route } from './_common/route';
 /**
  * 订单详情-立即支付
  */
-export function orderPay() {
+export function orderListDetail() {
 	return { 
-		type: types.ORDER_BTN_PAYMENT,
+		type: types.ORDER_BTN_LIST_DETAIL_INIT,
 	};
 }
 

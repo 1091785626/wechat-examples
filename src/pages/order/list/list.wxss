@@ -2,3 +2,9 @@
 	flex:0 0 125rpx;
 	height: 125rpx;
 }
+.v-order-list .g-tab{
+	height:5vh;
+}
+.v-order-list scroll-view{
+	height:92.5vh;
+}

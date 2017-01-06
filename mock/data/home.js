@@ -2,9 +2,12 @@ let data = {
 	data:{
 	    "diy": [
 		    {
-		        "type": "rtf",
+		        "type": "rtf",//富文本
 		        "content": {
-		            "html": '<div>123</div>',
+		            "html":[
+			            "http://wx.qlogo.cn/mmopen/6mXOeYa4HU856QyIE4wprRFhvpHafqX2H9icVQ5UPvhqhVOlBGHp2DQl2s9f6TVZg8amPyAiccluo3TTMYIQdVlg/0",
+			            "http://wx.qlogo.cn/mmopen/6mXOeYa4HU856QyIE4wprRFhvpHafqX2H9icVQ5UPvhqhVOlBGHp2DQl2s9f6TVZg8amPyAiccluo3TTMYIQdVlg/0"
+			        ],
 		            "m_tb": "16px"
 		        }
 		    },

@@ -201,12 +201,16 @@ const pageConfig = {
 			addr_id: addr.id,
 			memo: this.inputMemo||"",
 			template
-		}).then((resp)=>{
+		}).then((res={})=>{
 			this.actions.updateList();
-			wx.redirectTo({url:'/pages/order/list/list?type=end'});
+			if(res.is_btn){//点击确认离开
+				this.actions.route('/pages/order/list/list?type=topay');
+			}else{
+				this.actions.route('/pages/order/list/list?type=tosend');
+			}
 		}).catch(()=>{
 			this.actions.updateList();
-			wx.redirectTo({url:'/pages/order/list/list?type=topay'});
+			this.actions.route('/pages/order/list/list?type=topay');
 		});
 	}
 };

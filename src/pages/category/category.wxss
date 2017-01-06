@@ -29,3 +29,7 @@
 	width:140rpx;
 	height:140rpx;
 } 
+.v-category .diy-search{
+	height:5vh;
+	border-bottom: 1rpx solid #d9d9d9;
+}

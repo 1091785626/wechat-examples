@@ -1,4 +1,8 @@
 <!-- rtf.wxml -->
 <template name="rtf">
-	<view class="diy-rtf" style="margin:{{m_tb}} 0">{{html}}</view>
+	<view class="diy-rtf" style="margin:{{m_tb}} 0">
+		<block wx:for="{{html}}" wx:key="{{index}}">
+			<image src="{{item}}" mode="widthFix" style="width: 100%;"/>
+		</block>
+	</view>
 </template>

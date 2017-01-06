@@ -28,12 +28,12 @@ let item_list =[
                     "price": "17.00",
                     "quantity": "1",
                     "discount": "1700",
-                    "product_image": "http://osscdn.weiyian.com/image/test/160803/187924748642.jpg",
+                    "product_image": "http://wx.qlogo.cn/mmopen/6mXOeYa4HU856QyIE4wprRFhvpHafqX2H9icVQ5UPvhqhVOlBGHp2DQl2s9f6TVZg8amPyAiccluo3TTMYIQdVlg/0",
                     "refund_quantity": "0",
                     "refund_status": "0"
                 }
             ],
-            "button_list": [],
+            button_list:['confirm','paynow'],
             "status_text": "交易关闭"
         },
         {
@@ -65,12 +65,12 @@ let item_list =[
                     "price": "17.00",
                     "quantity": "1",
                     "discount": "1700",
-                    "product_image": "http://osscdn.weiyian.com/image/test/160803/187924748642.jpg",
+                    "product_image": "http://wx.qlogo.cn/mmopen/6mXOeYa4HU856QyIE4wprRFhvpHafqX2H9icVQ5UPvhqhVOlBGHp2DQl2s9f6TVZg8amPyAiccluo3TTMYIQdVlg/0",
                     "refund_quantity": "0",
                     "refund_status": "0"
                 }
             ],
-            "button_list": [],
+            button_list:['confirm','paynow'],
             "status_text": "交易关闭"
         },
         {
@@ -102,12 +102,12 @@ let item_list =[
                     "price": "27.20",
                     "quantity": "1",
                     "discount": "2720",
-                    "product_image": "http://osscdn.weiyian.com/image/test/160803/187924748642.jpg",
+                    "product_image": "http://wx.qlogo.cn/mmopen/6mXOeYa4HU856QyIE4wprRFhvpHafqX2H9icVQ5UPvhqhVOlBGHp2DQl2s9f6TVZg8amPyAiccluo3TTMYIQdVlg/0",
                     "refund_quantity": "0",
                     "refund_status": "0"
                 }
             ],
-            "button_list": [],
+            button_list:['confirm','paynow'],
             "status_text": "交易关闭"
         },
         {
@@ -139,12 +139,12 @@ let item_list =[
                     "price": "27.20",
                     "quantity": "1",
                     "discount": "2720",
-                    "product_image": "http://osscdn.weiyian.com/image/test/160803/187924748642.jpg",
+                    "product_image": "http://wx.qlogo.cn/mmopen/6mXOeYa4HU856QyIE4wprRFhvpHafqX2H9icVQ5UPvhqhVOlBGHp2DQl2s9f6TVZg8amPyAiccluo3TTMYIQdVlg/0",
                     "refund_quantity": "0",
                     "refund_status": "0"
                 }
             ],
-            "button_list": [],
+            button_list:['confirm','paynow'],
             "status_text": "交易关闭"
         },
         {
@@ -176,12 +176,12 @@ let item_list =[
                     "price": "27.20",
                     "quantity": "1",
                     "discount": "2720",
-                    "product_image": "http://osscdn.weiyian.com/image/test/160803/187924748642.jpg",
+                    "product_image": "http://wx.qlogo.cn/mmopen/6mXOeYa4HU856QyIE4wprRFhvpHafqX2H9icVQ5UPvhqhVOlBGHp2DQl2s9f6TVZg8amPyAiccluo3TTMYIQdVlg/0",
                     "refund_quantity": "0",
                     "refund_status": "0"
                 }
             ],
-            "button_list": [],
+            button_list:['confirm','paynow'],
             "status_text": "交易关闭"
         },
         {
@@ -213,12 +213,12 @@ let item_list =[
                     "price": "27.20",
                     "quantity": "1",
                     "discount": "2720",
-                    "product_image": "http://osscdn.weiyian.com/image/test/160803/187924748642.jpg",
+                    "product_image": "http://wx.qlogo.cn/mmopen/6mXOeYa4HU856QyIE4wprRFhvpHafqX2H9icVQ5UPvhqhVOlBGHp2DQl2s9f6TVZg8amPyAiccluo3TTMYIQdVlg/0",
                     "refund_quantity": "0",
                     "refund_status": "0"
                 }
             ],
-            "button_list": [],
+            button_list:['confirm','paynow'],
             "status_text": "交易关闭"
         },
         {
@@ -250,12 +250,12 @@ let item_list =[
                     "price": "27.20",
                     "quantity": "1",
                     "discount": "2720",
-                    "product_image": "http://osscdn.weiyian.com/image/test/160803/187924748642.jpg",
+                    "product_image": "http://wx.qlogo.cn/mmopen/6mXOeYa4HU856QyIE4wprRFhvpHafqX2H9icVQ5UPvhqhVOlBGHp2DQl2s9f6TVZg8amPyAiccluo3TTMYIQdVlg/0",
                     "refund_quantity": "0",
                     "refund_status": "0"
                 }
             ],
-            "button_list": [],
+            button_list:['confirm','paynow'],
             "status_text": "交易关闭"
         },
         {
@@ -287,12 +287,12 @@ let item_list =[
                     "price": "100.00",
                     "quantity": "1",
                     "discount": "10000",
-                    "product_image": "http://osscdn.weiyian.com/image/test/160727/607627900018.png",
+                    "product_image": "http://wx.qlogo.cn/mmopen/6mXOeYa4HU856QyIE4wprRFhvpHafqX2H9icVQ5UPvhqhVOlBGHp2DQl2s9f6TVZg8amPyAiccluo3TTMYIQdVlg/0",
                     "refund_quantity": "0",
                     "refund_status": "0"
                 }
             ],
-            "button_list": [],
+            button_list:['confirm','paynow'],
             "status_text": ""
         },
         {
@@ -324,12 +324,12 @@ let item_list =[
                     "price": "100.00",
                     "quantity": "1",
                     "discount": "10000",
-                    "product_image": "http://osscdn.weiyian.com/image/test/160727/607627900018.png",
+                    "product_image": "http://wx.qlogo.cn/mmopen/6mXOeYa4HU856QyIE4wprRFhvpHafqX2H9icVQ5UPvhqhVOlBGHp2DQl2s9f6TVZg8amPyAiccluo3TTMYIQdVlg/0",
                     "refund_quantity": "0",
                     "refund_status": "0"
                 }
             ],
-            "button_list": [],
+            button_list:['confirm','paynow'],
             "status_text": "已付款,待提货"
         },
         {
@@ -361,12 +361,12 @@ let item_list =[
                     "price": "100.00",
                     "quantity": "1",
                     "discount": "10000",
-                    "product_image": "http://osscdn.weiyian.com/image/test/160727/607627900018.png",
+                    "product_image": "http://wx.qlogo.cn/mmopen/6mXOeYa4HU856QyIE4wprRFhvpHafqX2H9icVQ5UPvhqhVOlBGHp2DQl2s9f6TVZg8amPyAiccluo3TTMYIQdVlg/0",
                     "refund_quantity": "0",
                     "refund_status": "0"
                 }
             ],
-            "button_list": [],
+            button_list:['confirm','paynow'],
             "status_text": "已付款,待提货"
         }
     ];

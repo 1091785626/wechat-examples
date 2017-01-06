@@ -16,10 +16,9 @@ function mapDispatchToActions(dispatch) {
 }
 const pageConfig = {
 	data:{
-		$search:{title:"搜索商品",class:"g-h-5 g-bb"}
+		$search:{title:"搜索商品"}
 	},
 	onShow(options){
-		console.log("category show");
 		if (this.data.isFetching === 0) {
 			let url = types.CATEGORY_MAIN_GET;
 			let param = {};

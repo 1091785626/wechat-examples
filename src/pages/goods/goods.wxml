@@ -85,11 +85,13 @@
 </view>
 <!-- 商品参数 -->
 <view class="g-bg-white" hidden="{{main[curId].curTab!='info'}}" style="min-height: 90vh">
-	{{main[curId].tabs.info}}
+	<block wx:for="{{main[curId].desc}}" wx:key="{{index}}">
+		<image src="{{item}}" mode="widthFix" style="width: 100%;"/>
+	</block>
 </view>
 <!-- 商品参数 -->
 <view class="g-bg-white" hidden="{{main[curId].curTab!='prop'}}" style="min-height: 90vh">
-	<block wx:for="{{main[curId].tabs.prop}}" wx:key="{{index}}">
+	<block wx:for="{{main[curId].sku}}" wx:key="{{index}}">
 		<view class="g-flex g-pd g-bb">
 			<text class="g-1of4 g-gray">{{item.name}}</text>
 			<text>{{item.props}}</text>

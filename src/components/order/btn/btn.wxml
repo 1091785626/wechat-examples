@@ -1,0 +1,13 @@
+<template name="orderBtn">
+	<block wx:for="{{button_list}}" wx:key="{{item}}">
+		<view class="g-btn" bindtap="$orderBtnHanleClick" id="{{item}}_{{id}}_{{'追加评价'}}" wx:if="{{item=='additional'&&false}}">追加评价</view>
+		<view class="g-btn" bindtap="$orderBtnHanleClick" id="{{item}}_{{id}}_{{'查看评价'}}" wx:elif="{{item=='ratedinfo'&&false}}">查看评价</view>
+		<view class="g-btn" bindtap="$orderBtnHanleClick" id="{{item}}_{{id}}_{{'我要评价'}}" wx:elif="{{item=='rated'&&false}}">我要评价</view>
+		<view class="g-btn" bindtap="$orderBtnHanleClick" id="{{item}}_{{id}}_{{'确认收货'}}" wx:elif="{{item=='confirm'}}">确认收货</view>
+		<view class="g-btn" bindtap="$orderBtnHanleClick" id="{{item}}_{{id}}_{{'立即支付'}}" wx:elif="{{item=='paynow'}}">立即支付</view>
+		<view class="g-btn" bindtap="$orderBtnHanleClick" id="{{item}}_{{id}}_{{'延长收货'}}" wx:elif="{{item=='extended'&&false}}">延长收货</view>
+		<view class="g-btn" bindtap="$orderBtnHanleClick" id="{{item}}_{{id}}_{{'查看物流'}}" wx:elif="{{item=='logistics'&&false}}">查看物流</view>
+		<view class="g-btn" bindtap="$orderBtnHanleClick" id="{{item}}_{{id}}_{{'删除订单'}}" wx:elif="{{item=='delete'}}">删除订单</view>
+		<view class="g-btn" bindtap="$orderBtnHanleClick" id="{{item}}_{{id}}_{{'取消订单'}}" wx:elif="{{item=='cancel'}}">取消订单</view>
+	</block>
+</template>

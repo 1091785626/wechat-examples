@@ -36,7 +36,7 @@
 		</block>
 		<block wx:elif="{{item._type=='notice'}}">
 			<!-- 公告 -->
-			<template is="notice" data="{{...itemObj[item.type]}}" />
+			<template is="notice" data="{{...itemObj[item.type],$noticeAnimation}}" />
 		</block>
 		<block wx:elif="{{item._type=='tel'}}">
 			<!-- 客服电话 -->

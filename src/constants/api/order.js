@@ -10,11 +10,11 @@ const api = {
 	/**
 	 * 订单列表
 	 */
-	'ORDER_LIST_GET'			:'/member-order/order-list',
+	'ORDER_LIST_GET'			:'/api/orderlist',
 	/**
 	 * 订单详情
 	 */
-	'ORDER_DETAIL_GET'			:'/member-order/detail',
+	'ORDER_DETAIL_GET'			:'/api/orderdetail',
 	/**
 	 * 订单列表详情统一按钮
 	 */

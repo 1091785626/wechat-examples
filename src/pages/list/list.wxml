@@ -6,7 +6,7 @@
 <template is="sku" data="{{$sku,$skuData,$skuState,$skuAnimation,$skuBtnType,$skuUnStock}}"/>
 <view class="v-list">
 	<template is="search" data="{{$search}}"/>
-	<view class="g-tab">
+	<view class="g-tab g-flex-cc">
 		<view class="{{column=='default'&&'active'}}" bindtap="handleSort" id="defalut">
 			<text>默认</text>
 		</view>
@@ -21,26 +21,25 @@
 		</view>
 	</view>
 	<scroll-view scroll-y="true" bindscrolltolower="scrollBottom" lower-threshold="100">
-		<block wx:for="{{list[keyword].itemArr}}" wx:key="{{item}}" wx:for-item="item">
-			<view class="g-bg-white g-pd g-flex g-bb goods-1" hidden="{{style}}">
-				<image src="{{list[keyword].itemObj[item].img}}" class="g-pdr-15" bindtap="$routeHandlePush" id="/pages/goods/goods?id={{list[keyword].itemObj[item].id}}"/>
-				<view class="g-col">
-					<text class="g-twoline g-two-lh">{{list[keyword].itemObj[item].title}}</text>
-					<view class="g-flex g-jc-sb g-m-t-20">
-						<view class="g-flex g-fd-c" bindtap="$routeHandlePush" id="/pages/goods/goods?id={{list[keyword].itemObj[item].id}}">
-							<view class="g-pink">
-								<text>￥{{list[keyword].itemObj[item].price}}</text>
-								<text class="g-bg-orange _label">包邮</text>
+		<view class="{{style&&'g-flex g-ac-fs g-fw-w goods-2'}}">
+			<block wx:for="{{list[keyword].itemArr}}" wx:key="{{item}}" wx:for-item="item">
+				<view class="g-bg-white g-pd g-flex g-bb goods-1" hidden="{{style}}">
+					<image src="{{list[keyword].itemObj[item].img}}" class="g-pdr-15" bindtap="$routeHandlePush" id="/pages/goods/goods?id={{list[keyword].itemObj[item].id}}"/>
+					<view class="g-col">
+						<text class="g-twoline g-two-lh">{{list[keyword].itemObj[item].title}}</text>
+						<view class="g-flex g-jc-sb g-m-t-20">
+							<view class="g-flex g-fd-c" bindtap="$routeHandlePush" id="/pages/goods/goods?id={{list[keyword].itemObj[item].id}}">
+								<view class="g-pink">
+									<text>￥{{list[keyword].itemObj[item].price}}</text>
+									<text class="g-bg-orange _label" hidden="{{!list[keyword].itemObj[item].freesend}}">包邮</text>
+								</view>
+								<text class="g-gray g-m-t">销量:{{list[keyword].itemObj[item].sales}}</text>
 							</view>
-							<text class="g-gray g-m-t">销量:{{list[keyword].itemObj[item].sales}}</text>
+							<view class="icon-cartadd g-pink g-flex g-ai-fe" bindtap="handleSku" id="{{list[keyword].itemObj[item].id}}"/>
 						</view>
-						<view class="icon-cartadd g-pink g-flex g-ai-fe" bindtap="handleSku" id="{{list[keyword].itemObj[item].id}}"/>
 					</view>
 				</view>
-			</view>
-
-			<view class="g-flex g-ac-fs g-fw-w goods-2" hidden="{{!style}}">
-				<view class="g-bg-white">
+				<view class="g-bg-white" hidden="{{!style}}">
 					<view bindtap="$routeHandlePush" id="/pages/goods/goods?id={{list[keyword].itemObj[item].id}}">
 						<image src="{{list[keyword].itemObj[item].img}}" mode="widthFix"/>
 						<text class="g-twoline g-pd-lr">{{list[keyword].itemObj[item].title}}</text>
@@ -56,8 +55,8 @@
 						<text class="icon-cartadd g-col g-tr g-pink" bindtap="handleSku" id="{{list[keyword].itemObj[item].id}}"/>
 					</view>
 				</view>
-			</view>
-		</block>
+			</block>
+		</view>
 		<template is="loading" data="{{...list[keyword]}}"/>
 	</scroll-view>
 </view>

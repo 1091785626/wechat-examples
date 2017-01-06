@@ -4,6 +4,8 @@ import * as orderListActions from '../../../actions/order';
 import * as types from '../../../constants/actions/order';
 import toastConfig from '../../../components/toast/toast';
 import payConfig from '../../../components/pay/pay';
+import routeConfig from '../../../components/route/route';
+import orderBtnConfig from '../../../components/order/btn/btn';
 function mapStateToData(state) {
 	return Object.assign({},state.orderList,{$route:state.route});;
 }
@@ -51,6 +53,9 @@ const pageConfig = {
 		};
 		this.actions.request(url, params, {});
 	},
+	scrollBottom(){
+		this.loadDataForScroll();
+	},
 	handleTab(event){
 		let tab = event.currentTarget.id;
 		
@@ -62,6 +67,6 @@ const pageConfig = {
 		}
 	}
 };
-const combineConfig = Object.assign({},toastConfig,payConfig,pageConfig);
+const combineConfig = Object.assign({},toastConfig,payConfig,routeConfig,orderBtnConfig,pageConfig);
 const resultConfig = connect(mapStateToData, mapDispatchToActions)(combineConfig);
 Page(resultConfig);

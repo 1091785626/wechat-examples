@@ -16,7 +16,7 @@ export default function(state = initialState, action) {
 	/**
 	 * orderlist
 	 */
-	let type,curPage,totalPage,isEnd,tab;
+	let items,type,curPage,totalPage,isEnd,tab;
 	switch (action.type) {
 		case types.ORDER_LIST_INIT:
 		case types.ORDER_LIST_CHANGE_TAB:
@@ -28,7 +28,7 @@ export default function(state = initialState, action) {
 			state.list[type].isEnd = 1;
 			return state;
 		case types.ORDER_LIST_GET + '_SUCCESS':
-			type = action.opts.type;
+			type = action.param.type;
 			//curPage = action.data.curPage;
 			curPage = state.list[type].curPage+1;
 			totalPage = action.data.totalPage;
@@ -43,12 +43,21 @@ export default function(state = initialState, action) {
 			type = action.param.type;
 			state.list[type].isEnd = 3;
 			return state;		
-		case types.ORDER_BTN_PAYMENT:
-		case types.ORDER_BTN_POST + '_SUCCESS':
+		case types.ORDER_BTN_LIST_DETAIL_INIT:
 		case types.ORDER_MAIN_LIST_UPDATE://rder中触发list变化
 		case ROUTER_CHANGE:
 			//为了方便，直接清理数据
-			state = initialState;
+			state = {
+				curTab:'all',
+				list:{
+					all:JSON.parse(notShadowObj),
+					tosend:JSON.parse(notShadowObj),
+					topay:JSON.parse(notShadowObj),
+					torec:JSON.parse(notShadowObj),
+					tocomment:JSON.parse(notShadowObj)
+				}
+			};
+			return state;
 		default:
 			return state;
 	}

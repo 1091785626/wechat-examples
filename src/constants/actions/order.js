@@ -40,7 +40,7 @@ export const ORDER_BTN_POST = 'ORDER_BTN_POST';
 /**
  * 订单中立即支付成功的回调
  */
-export const ORDER_BTN_PAYMENT = 'ORDER_BTN_PAYMENT';
+export const ORDER_BTN_LIST_DETAIL_INIT = 'ORDER_BTN_LIST_DETAIL_INIT';
 
 /**
  * 评论模块

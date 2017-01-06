@@ -32,6 +32,11 @@ const pageConfig = {
 			this.actions.request(url, params, {});
 		}
 	},
+	onReady(){
+		setTimeout(()=>{
+			this.$noticeStart();
+		},5000);
+	}
 };
 const combineConfig = Object.assign({},diyConfig,skuConfig,toastConfig,routeConfig,pageConfig);
 const resultConfig = connect(mapStateToData, mapDispatchToActions)(combineConfig);

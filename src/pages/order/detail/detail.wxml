@@ -1,11 +1,15 @@
 <import src="../../../components/toast/toast.wxml" />
 <import src="../../../components/pay/pay.wxml" />
+<import src="../../../components/order/btn/btn.wxml" />
 
 <template is="toast" data="{{$toast}}"/>
 <template is="pay" data="{{$pay,$payWay,$payOptions,$payAnimation,$payData}}"/>
 <view class="v-detail">
 	<view class="_state">
-		<text class="g-flex-cc g-fs-34">等待买家收货</text>
+		<view class="g-flex-cc g-fd-c">
+			<text class="g-fs-34 g-pd">{{main[curId].state[0]}}</text>
+			<text class="g-fs-24">{{main[curId].state[1]}}</text>
+		</view>
 		<text class="icon-edit g-fs-100"/>
 	</view>
 	<view class="g-item g-bb g-pd">
@@ -13,49 +17,51 @@
 			<view class="g-flex g-jc-sb g-ai-c">
 				<view class="g-1of2 g-flex-ac">
 					<text class="icon-location g-pdr-15"/>
-					<text>收货人：李清照</text>	
+					<text>收货人：{{main[curId].addr.consignee}}</text>	
 				</view>
-				<text class="g-gray g-tr g-col">15986563322</text>
+				<text class="g-gray g-tr g-col">{{main[curId].addr.mobile}}</text>
 			</view>
-			<view class="g-m-t-20">浙江省杭州市拱墅区浙报印务15号楼</view>
+			<view class="g-m-t-20">{{main[curId].addr.province_name}} {{main[curId].addr.city_name}} {{main[curId].addr.district_name}} {{main[curId].addr.address}}</view>
 		</view>
 	</view>
+
 	<view class="g-pd g-bg-white g-flex g-full g-ai-c g-m-t-20">
 		<text class="icon-shop g-pdr-15"></text>
-		<text class="g-pdr-15">长相知工厂旗舰店</text>
+		<text class="g-pdr-15">{{main[curId].shop.name}}</text>
 	</view>
-	<view class="g-bg-gray g-pd g-flex g-bb">
-		<image src="http://wx.qlogo.cn/mmhead/Q3auHgzwzM5NdjgpiaEWCztrSDiaAOxuMORdont0TbtBp0wSH5OuG85Q/132" class="g-pdr-15"/>
-		<view class="g-col">
-			<view class="g-flex g-jc-sb">
-				<text class="g-twoline g-two-lh">两行文字两行文字两行文字两行文字两行文字两行文字文字两行文字文字两行文字</text>
-				<text class="g-pink g-pd-l">￥15233.00</text>
-			</view>
-			<view class="g-flex g-jc-sb g-gray g-m-t-20">
-				<view class="">
-					<text>净含量：120g</text>
-					<text>颜色：白色</text>
+	<block wx:for="{{main[curId].orders_items}}" wx:key="{{item.order_id}}" wx:for-item="item" wx:for-index="dd">
+		<view class="g-bg-gray g-pd g-flex g-bb">
+			<image src="{{main[curId].orders_items[dd].product_image}}" class="g-pdr-15"/>
+			<view class="g-col">
+				<view class="g-flex g-jc-sb">
+					<text class="g-twoline g-two-lh">{{main[curId].orders_items[dd].product_name}}</text>
+					<text class="g-pink g-pd-l">￥{{main[curId].orders_items[dd].price}}</text>
 				</view>
-				<text class="">X2</text>
+				<view class="g-flex g-jc-sb g-gray g-m-t-20">
+					<view class="">
+						<text>{{main[curId].orders_items[dd].sku_value}}</text>
+					</view>
+					<text class="">X{{main[curId].orders_items[dd].quantity}}</text>
+				</view>
 			</view>
 		</view>
-	</view>
+	</block>
 	<view class="g-bg-white g-pd">
 		<view class="g-gray g-flex g-jc-sb">
 			<text>商品总价：</text>
-			<text>￥45.00</text>
+			<text>￥{{main[curId].amounts.goods_amount}}</text>
 		</view>
 		<view class="g-gray g-flex g-jc-sb g-m-t">
 			<text class="">买家留言：</text>
-			<text>很好用</text>
+			<text>{{main[curId].memo}}</text>
 		</view>
 		<view class="g-gray g-flex g-jc-sb g-m-t">
 			<text>实付款：</text>
-			<text class="g-pink">￥45.00</text>
+			<text class="g-pink">￥{{main[curId].amounts.amount}}</text>
 		</view>
 	</view>
-	<view class="g-fixed g-bg-white g-pd g-flex g-jc-fe">
-		<text class="g-btn">查看物流</text>
-		<text class="g-btn">确定收货</text>
+
+	<view class="g-fixed g-bg-white g-pd g-flex g-jc-fe" wx:if="{{main[curId]}}">
+		<template is="orderBtn" data="{{...main[curId]}}"/>
 	</view>
 </view>

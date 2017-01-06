@@ -1,6 +1,6 @@
 <!-- goods.wxml -->
 <template name="goods">
-	<view class="diy-goods-1 g-bg-white" wx:if="{{style==1}}">
+	<view class="diy-goods-1 g-bg-white g-m-b g-pd-b" wx:if="{{style==1}}">
 		<block wx:for="{{item_list}}" wx:key="{{index}}" wx:for-item="item">
 			<view class="g-col">
 				<view bindtap="$routeHandlePush" id="/pages/goods/goods?id={{item.id}}">

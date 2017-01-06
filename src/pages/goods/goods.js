@@ -20,7 +20,7 @@ const pageConfig = {
 		if(query.pathName==="/pages/goods/goods") return;
 		let { id } = query;
 		this.actions.initMain(id);
-		if(!this.data.main.id){
+		if(!this.data.main[id]){
 			let url = types.GOODS_MAIN_GET;
 			let param = {id};
 			let params = {

@@ -41,9 +41,9 @@ const payConfig = {
 				content: '确定离开么?',
 				success: (res)=> {
 					if(res.confirm){
-						this.$payHide(1,'success');
+						this.$payHide(1,{is_btn:1});
 					}else{
-						this.$payHide();
+						//this.$payHide();
 					}
 				}
 			});
@@ -88,17 +88,21 @@ const payConfig = {
 							'package': '',
 							'signType': 'MD5',
 							'paySign': '',
-							success: (res) => {this.$toastInfo('已取消支付');},
-							fail: (res) => {this.$toastInfo('微信支付失败');}
+							success: (res) => {
+								this.$payHide(1,{is_btn:0});
+							},
+							fail: (res) => {
+								this.$toastInfo('微信支付失败');
+							}
 						});
 						return false;
 					case 'alipay':
 						this.$toastInfo('支付宝成功');
-						this.$payHide(1,'success');
+						this.$payHide(1,{is_btn:0});
 						return false;
 					case 'income':
 						this.$toastInfo('货款支付成功');
-						this.$payHide(1,'success');
+						this.$payHide(1,{is_btn:0});
 						return false;
 					default:
 						return false;

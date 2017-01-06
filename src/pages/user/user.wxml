@@ -3,7 +3,7 @@
 		<image src="{{user.avatar}}"/>
 		<text>{{user.name}}</text>
 	</view>
-	<view bindtap="$routeHandlePush" class="g-flex-ac g-jc-sb g-bg-white g-pd g-bb _navigator" id="/pages/order/order?type=all">
+	<view bindtap="$routeHandlePush" class="g-flex-ac g-jc-sb g-bg-white g-pd g-bb _navigator" id="/pages/order/list/list?type=all">
 		<text>我的订单</text>
 		<view class="g-flex-ac">
 			<text class="g-gray">全部订单</text>
@@ -26,11 +26,11 @@
 			<text class="g-m-t">待收货</text>
 			<text class="_num" hidden="{{!order.torec}}">{{order.torec}}</text>
 		</view>
-		<view bindtap="$routeHandlePush" id="/pages/order/list/list?type=tocomment" class="_navigator">
+		<!-- <view bindtap="$routeHandlePush" id="/pages/order/list/list?type=tocomment" class="_navigator">
 			<text class="icon-tocomment"/>
 			<text class="g-m-t">待评价</text>
 			<text class="_num" hidden="{{!order.tocomment}}">{{order.tocomment}}</text>
-		</view>
+		</view> -->
 	</view>	
 	<view class="g-item g-m-t g-bb g-pd">
 		<navigator url="/pages/user/addr/addr" class="g-col g-flex-ac _navigator">

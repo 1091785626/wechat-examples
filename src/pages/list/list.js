@@ -76,7 +76,7 @@ const pageConfig = {
 		const btnType = info[1];
 		this.$skuPopup({
 			product_id,
-			btnType
+			btnType:0
 		}).then((res)=>{
 			this.actions.addUserCart();
 		}).catch((res)=>{

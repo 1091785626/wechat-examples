@@ -1,4 +1,8 @@
 <!-- notice.wxml -->
 <template name="notice">
-	<view class="diy-notice g-pd g-white" style="background: {{bgcolor}};margin:{{m_tb}} 0">{{notice}}</view>
+	<view 
+		class="diy-notice g-pd g-white" 
+		style="background: {{bgcolor}};margin:{{m_tb}} 0"
+		animation="{{$noticeAnimation}}"
+	>{{notice}}</view>
 </template>
