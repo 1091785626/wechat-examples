@@ -39,6 +39,7 @@ function ajax(options) {
 	}
 	let onDataReturn = data => {
 		wx.hideToast();
+		wx.hideNavigationBarLoading();
 		data.sessionId&&setItem('sessionId',data.sessionId);
 		switch (data.status) {
 			case 1:
@@ -78,6 +79,7 @@ function ajax(options) {
 			  icon: 'loading',
 			  duration: 10000
 			});
+			wx.showNavigationBarLoading();
 			let header;
 			if(sessionId){
 				header={

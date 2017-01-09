@@ -31,6 +31,13 @@ const pageConfig = {
 	},
 	handleCalling(){
 		wx.makePhoneCall({phoneNumber: this.data.shop.tel});
+	},
+	onShareAppMessage(){
+		return {
+			title: '店铺首页',
+			desc: '',
+			path: '/pages/index/index'
+		};
 	}
 };
 const combineConfig = Object.assign({},toastConfig,pageConfig);
