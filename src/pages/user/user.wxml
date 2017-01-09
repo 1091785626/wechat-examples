@@ -3,34 +3,34 @@
 		<image src="{{user.avatar}}"/>
 		<text>{{user.name}}</text>
 	</view>
-	<view bindtap="$routeHandlePush" class="g-flex-ac g-jc-sb g-bg-white g-pd g-bb _navigator" id="/pages/order/list/list?type=all">
+	<navigator class="g-flex-ac g-jc-sb g-bg-white g-pd g-bb _navigator" url="/pages/order/list/list?type=all">
 		<text>我的订单</text>
 		<view class="g-flex-ac">
 			<text class="g-gray">全部订单</text>
 			<text class="icon-right g-gray"/>
 		</view>	
-	</view>
+	</navigator>
 	<view class="_order g-flex g-pd g-jc-sb g-bg-white">
-		<view bindtap="$routeHandlePush" id="/pages/order/list/list?type=topay" class="_navigator">
+		<navigator url="/pages/order/list/list?type=topay" class="_navigator">
 			<text class="icon-topay"/>
 			<text class="g-m-t">待付款</text>
 			<text class="_num" hidden="{{!order.topay}}">{{order.topay}}</text>
-		</view>
-		<view bindtap="$routeHandlePush" id="/pages/order/list/list?type=tosend" class="_navigator">
+		</navigator>
+		<navigator url="/pages/order/list/list?type=tosend" class="_navigator">
 			<text class="icon-tosend"/>
 			<text class="g-m-t">待发货</text>
 			<text class="_num" hidden="{{!order.tosend}}">{{order.tosend}}</text>
-		</view>
-		<view bindtap="$routeHandlePush" id="/pages/order/list/list?type=torec" class="_navigator">
+		</navigator>
+		<navigator url="/pages/order/list/list?type=torec" class="_navigator">
 			<text class="icon-torec"/>
 			<text class="g-m-t">待收货</text>
 			<text class="_num" hidden="{{!order.torec}}">{{order.torec}}</text>
-		</view>
-		<!-- <view bindtap="$routeHandlePush" id="/pages/order/list/list?type=tocomment" class="_navigator">
+		</navigator>
+		<!-- <navigator url="/pages/order/list/list?type=tocomment" class="_navigator">
 			<text class="icon-tocomment"/>
 			<text class="g-m-t">待评价</text>
 			<text class="_num" hidden="{{!order.tocomment}}">{{order.tocomment}}</text>
-		</view> -->
+		</navigator> -->
 	</view>	
 	<view class="g-item g-m-t g-bb g-pd">
 		<navigator url="/pages/user/addr/addr" class="g-col g-flex-ac _navigator">

@@ -1,3 +1,6 @@
+/**
+ * 商城首页需要自定义链接，navigetor组件的type不好判断，统一写以个路由跳转事件以及中间件
+ */
 import {parseUrl} from '../utils/utils';
 export default store => next => action => {
 	let API_OPT = action['URL'];

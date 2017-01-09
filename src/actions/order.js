@@ -4,9 +4,6 @@ import * as types from '../constants/actions/order';
  * ajax
  */
 export { request } from './_common/request';
-export { route } from './_common/route';
-
-
 /**
  * 订单详情-立即支付
  */

@@ -4,7 +4,6 @@ import * as types from '../constants/actions/cart';
  * ajax
  */
 export { request } from './_common/request';
-export { route } from './_common/route';
 
 /**
  * 购物车选择

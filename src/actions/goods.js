@@ -4,8 +4,6 @@ import * as types from '../constants/actions/goods';
  * ajax
  */
 export { request } from './_common/request';
-export { route } from './_common/route';
-
 /**
  * 初始化数据
  */

@@ -46,29 +46,29 @@
 			<text class="g-fs-40 g-pd-l">{{main[curId].shop.name}}</text>
 		</view>
 		<view class="_all g-flex g-m-t-20">
-			<view class="g-gray g-flex g-fd-c g-1of3 g-ai-c g-b-r" bindtap="$routeHandlePush" id="/pages/index/index">
+			<navigator class="g-gray g-flex g-fd-c g-1of3 g-ai-c g-b-r" url="/pages/index/index" open-type="switchTab">
 				<text>{{main[curId].shop.all}}</text>
 				<text>全部商品</text>
-			</view>
-			<view class="g-gray g-flex g-fd-c g-1of3 g-ai-c g-b-r" bindtap="$routeHandlePush" id="/pages/category/category">
+			</navigator>
+			<navigator class="g-gray g-flex g-fd-c g-1of3 g-ai-c g-b-r" url="/pages/category/category" open-type="switchTab">
 				<text>{{main[curId].shop.category}}</text>
 				<text>全部分类</text>
-			</view>
-			<view class="g-flex g-1of3 g-jc-fe" bindtap="$routeHandlePush" id="/pages/index/index">
+			</navigator>
+			<navigator class="g-flex g-1of3 g-jc-fe" url="/pages/index/index" open-type="switchTab">
 				<text class="g-pd-btn g-br">进店看看</text>
-			</view>
+			</navigator>
 		</view>
 	</view>
 
 	<view class="g-fixed g-bg-white g-item">
-		<view class="g-pd-tb g-flex-ac g-col g-fd-c g-b-r" bindtap="$routeHandlePush" id="/pages/index/index">
+		<navigator class="g-pd-tb g-flex-ac g-col g-fd-c g-b-r" url="/pages/index/index" open-type="switchTab">
 			<text class="icon-home"></text>
 			<text class="g-m-t">首页</text>
-		</view>
-		<view class="g-pd-tb g-flex-ac g-col g-fd-c" bindtap="$routeHandlePush" id="/pages/cart/cart">
+		</navigator>
+		<navigator class="g-pd-tb g-flex-ac g-col g-fd-c" url="/pages/cart/cart" open-type="switchTab">
 			<text class="icon-cart"></text>
 			<text class="g-m-t">购物车</text>
-		</view>
+		</navigator>
 		<view class="g-bg-orange g-white g-pd g-flex-cc g-col" bindtap="handleSku" id="{{curId}}_4">
 		<text class="g-pd-tb">加入购物车</text>
 		</view>

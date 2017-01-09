@@ -3,10 +3,10 @@
 	<view class="diy-goods-1 g-bg-white g-m-b g-pd-b" wx:if="{{style==1}}">
 		<block wx:for="{{item_list}}" wx:key="{{index}}" wx:for-item="item">
 			<view class="g-col">
-				<view bindtap="$routeHandlePush" id="/pages/goods/goods?id={{item.id}}">
+				<navigator url="/pages/goods/goods?id={{item.id}}">
 					<image src="{{item.img}}" />
 					<text class="g-twoline g-pd-lr">{{item.title}}</text>
-				</view>
+				</navigator>
 				<view class="g-flex-cc g-pd-lr">
 					<view class="g-col g-flex g-fd-c">
 						<text class="g-pink">￥{{item.price}}</text>
@@ -20,10 +20,10 @@
 	<view class="diy-goods-2 g-flex g-ac-fs g-fw-w g-bg-white" wx:if="{{style==2}}">
 		<block wx:for="{{item_list}}" wx:key="{{index}}" wx:for-item="item">
 			<view>
-				<view bindtap="$routeHandlePush" id="/pages/goods/goods?id={{item.id}}">
+				<navigator url="/pages/goods/goods?id={{item.id}}">
 					<image src="{{item.img}}" mode="widthFix"/>
 					<text class="g-twoline g-pd-lr">{{item.title}}</text>
-				</view>
+				</navigator>
 				<view class="g-flex-cc g-pd-lr">
 					<view class="g-col g-flex g-fd-c">
 						<text class="g-pink">￥{{item.price}}</text>
@@ -37,9 +37,13 @@
 	<view class="diy-goods-3" wx:if="{{style==1}}">
 		<block wx:for="{{item_list}}" wx:key="{{index}}" wx:for-item="item">
 			<view class="g-pd g-flex g-bg-white">
-				<image src="{{item.img}}" class="g-pdr-15" bindtap="$routeHandlePush" id="/pages/goods/goods?id={{item.id}}"/>
+				<navigator url="/pages/goods/goods?id={{item.id}}">
+					<image src="{{item.img}}" class="g-pdr-15"/>
+				</navigator>
 				<view class="g-col">
-					<text class="g-twoline g-two-lh" bindtap="$routeHandlePush" id="/pages/goods/goods?id={{item.id}}">{{item.title}}</text>
+					<navigator url="/pages/goods/goods?id={{item.id}}">
+						<text class="g-twoline g-two-lh">{{item.title}}</text>
+					</navigator>
 					<view class="g-flex g-jc-sb g-m-t-20">
 						<view class="g-flex g-fd-c">
 							<text class="g-pink">￥{{item.price}}</text>

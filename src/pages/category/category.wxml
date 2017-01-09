@@ -12,19 +12,19 @@
 		<scroll-view class="_goods g-col g-h-95" scroll-y="true">
 			<block wx:for="{{dataRight[curId].itemArr}}" wx:key="{{item}}" wx:for-item="dt">
 				<view>
-					<view class="g-flex-ac g-jc-sb g-pd" bindtap="$routeHandlePush" id="/pages/list/list?cat_id={{dt}}">
+					<navigator class="g-flex-ac g-jc-sb g-pd" url="/pages/list/list?cat_id={{dt}}">
 						<text>{{dataRight[curId].itemObj[dt].name}}</text>
 						<view class="g-flex g-ai-c">
 							<text>全部</text>
 							<text class="icon-right" />
 						</view>
-					</view>
+					</navigator>
 					<view class="_list g-pd">
 						<block wx:for="{{dataRight[curId].itemObj[dt].itemArr}}" wx:key="{{dd}}" wx:for-item="dd">
-							<view class="_child" bindtap="$routeHandlePush" id="/pages/list/list?cat_id={{dd}}">
+							<navigator class="_child" url="/pages/list/list?cat_id={{dd}}">
 								<image src="{{dataRight[curId].itemObj[dt].itemObj[dd].img}}" />
 								<view>{{dataRight[curId].itemObj[dt].itemObj[dd].name}}</view>
-							</view>
+							</navigator>
 						</block>		
 					</view>
 				</view>

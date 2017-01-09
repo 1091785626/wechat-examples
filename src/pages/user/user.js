@@ -3,7 +3,6 @@ import {bindActionCreators} from '../../libs/redux.js';
 import * as types from '../../constants/actions/user';
 import * as userActions from '../../actions/user';
 import toastConfig from '../../components/toast/toast';
-import routeConfig from '../../components/route/route';
 function mapStateToData(state) {
 	return state.user;
 }
@@ -34,6 +33,6 @@ const pageConfig = {
 		wx.makePhoneCall({phoneNumber: this.data.shop.tel});
 	}
 };
-const combineConfig = Object.assign({},toastConfig,routeConfig,pageConfig);
+const combineConfig = Object.assign({},toastConfig,pageConfig);
 const resultConfig = connect(mapStateToData, mapDispatchToActions)(combineConfig);
 Page(resultConfig);

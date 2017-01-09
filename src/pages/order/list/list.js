@@ -4,10 +4,9 @@ import * as orderListActions from '../../../actions/order';
 import * as types from '../../../constants/actions/order';
 import toastConfig from '../../../components/toast/toast';
 import payConfig from '../../../components/pay/pay';
-import routeConfig from '../../../components/route/route';
 import orderBtnConfig from '../../../components/order/btn/btn';
 function mapStateToData(state) {
-	return Object.assign({},state.orderList,{$route:state.route});;
+	return state.orderList;
 }
 
 function mapDispatchToActions(dispatch) {
@@ -16,13 +15,13 @@ function mapDispatchToActions(dispatch) {
 	};
 }
 const pageConfig = {
-	onShow(){
-		const {query} = this.data.$route;
-		if(query.pathName==="/pages/order/list/list") return;
-		let { type='all' } = query;
+	onLoad(query = {}) {
+		let {
+			type = 'all'
+		} = query;
 		this.actions.initList(type);
 		//setData是同步的
-		if(this.data.list[type].curPage==0){
+		if (this.data.list[type].curPage == 0) {
 			this.loadDataForScroll();
 		}
 	},
@@ -65,8 +64,15 @@ const pageConfig = {
 		if(list[curTab].curPage==0){
 			this.loadDataForScroll();
 		}
+	},
+	onShareAppMessage(){
+		return {
+			title: '店铺首页',
+			desc: '',
+			path: '/pages/index/index'
+		};
 	}
 };
-const combineConfig = Object.assign({},toastConfig,payConfig,routeConfig,orderBtnConfig,pageConfig);
+const combineConfig = Object.assign({},toastConfig,payConfig,orderBtnConfig,pageConfig);
 const resultConfig = connect(mapStateToData, mapDispatchToActions)(combineConfig);
 Page(resultConfig);

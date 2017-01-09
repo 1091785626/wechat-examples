@@ -4,9 +4,8 @@ import * as goodsActions from '../../actions/goods';
 import * as types from '../../constants/actions/goods';
 import skuConfig from '../../components/sku/sku';
 import toastConfig from '../../components/toast/toast';
-import routeConfig from '../../components/route/route';
 function mapStateToData(state) {
-	return Object.assign({},state.goods,{$route:state.route});
+	return state.goods;
 }
 
 function mapDispatchToActions(dispatch) {
@@ -15,19 +14,20 @@ function mapDispatchToActions(dispatch) {
 	};
 }
 const pageConfig = {
-	onShow(){
-		const {query} = this.data.$route;
-		if(query.pathName==="/pages/goods/goods") return;
-		let { id } = query;
+	onLoad(query = {}) {
+		let {
+			id
+		} = query;
 		this.actions.initMain(id);
-		if(!this.data.main[id]){
+		if (!this.data.main[id]) {
 			let url = types.GOODS_MAIN_GET;
-			let param = {id};
+			let param = {
+				id
+			};
 			let params = {
 				param: param,
 				ajaxType: 'GET',
-				onSuccess: (res) => {
-				},
+				onSuccess: (res) => {},
 				onError: (res) => {
 					this.$toastInfo(res.msg);
 				}
@@ -36,7 +36,8 @@ const pageConfig = {
 		}
 	},
 	handleSku(event){
-		const product_id = event.currentTarget.id;
+		const info = event.currentTarget.id.split('_');
+		const product_id = info[0];
 		this.$skuPopup({
 			product_id,
 			btnType:0
@@ -48,7 +49,14 @@ const pageConfig = {
 	handleTabs(event){
 		this.actions.changeTab(event.currentTarget.id);
 	},
+	onShareAppMessage(){
+		return {
+			title: '店铺首页',
+			desc: '',
+			path: '/pages/index/index'
+		};
+	}
 };
-const combineConfig = Object.assign({},skuConfig,toastConfig,routeConfig,pageConfig);
+const combineConfig = Object.assign({},skuConfig,toastConfig,pageConfig);
 const resultConfig = connect(mapStateToData, mapDispatchToActions)(combineConfig);
 Page(resultConfig);

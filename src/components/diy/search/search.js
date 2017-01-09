@@ -9,7 +9,7 @@ const searchConfig = {
 		this.coverSearchSubmit(value);
 	},
 	$searchInput(event){
-		this.$searchInfo = event.detail.value;
+		this.$searchInfo = event.detail.value||null;
 	},
 	$searchHandleSubmit(){
 		this.coverSearchSubmit(this.$searchInfo);
@@ -19,7 +19,9 @@ const searchConfig = {
 	 */
 	coverSearchSubmit(value){
 		const url = '/pages/list/list?keyword='+this.$searchInfo;
-		this.actions.route(url);
+		wx.navigateTo({
+			url
+		});
 	}
 };
 export default searchConfig;

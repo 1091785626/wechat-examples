@@ -58,7 +58,7 @@
 	flex: 0 0 50%;
 }
 .diy-goods-3 image{
-	flex:0 0 145rpx;
+	width:145rpx;
 	height:145rpx;
 }
 

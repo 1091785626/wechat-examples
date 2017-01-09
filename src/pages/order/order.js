@@ -61,10 +61,10 @@ const pageConfig = {
 			addr_id:this.data.addr.id
 		}).then((res)=>{
 			let url = types.ORDER_MAIN_ADDR_SELECT_POST;
-			let param = Object.assign({},{id:res.id});
+			let param = Object.assign({},{addr_id:res.id});
 			let params = {
 				param: param,
-				ajaxType: 'POST',//编辑地址
+				ajaxType: 'PUT',//编辑地址
 				onSuccess: (res)=> {
 					console.log('传回完整的单条数据');
 				},
@@ -139,7 +139,7 @@ const pageConfig = {
 
 		let params = {
 			param: param,
-			ajaxType: 'POST',
+			ajaxType: 'PUT',
 			onSuccess: (res) => {
 			},
 			onError: (res) => {
@@ -185,7 +185,7 @@ const pageConfig = {
 				};
 			let params = {
 				param: param,
-				ajaxType: 'POST',//物流选择
+				ajaxType: 'PUT',//物流选择
 				onSuccess: (res)=> {
 					console.log('传回完整的单条数据');
 				},
@@ -216,14 +216,27 @@ const pageConfig = {
 		}).then((res={})=>{
 			this.actions.updateList();
 			if(res.is_btn){//点击确认离开
-				this.actions.route('/pages/order/list/list?type=topay');
+				wx.navigateTo({
+					url:'/pages/order/list/list?type=topay'
+				});
 			}else{
-				this.actions.route('/pages/order/list/list?type=tosend');
+				wx.navigateTo({
+					url:'/pages/order/list/list?type=tosend'
+				});
 			}
 		}).catch(()=>{
 			this.actions.updateList();
-			this.actions.route('/pages/order/list/list?type=topay');
+			wx.navigateTo({
+				url:'/pages/order/list/list?type=topay'
+			});
 		});
+	},
+	onShareAppMessage(){
+		return {
+			title: '店铺首页',
+			desc: '',
+			path: '/pages/index/index'
+		};
 	}
 };
 const combineConfig = Object.assign({},toastConfig,payConfig,addrConfig,addrListConfig,logisConfig,pageConfig);

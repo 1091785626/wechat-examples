@@ -48,7 +48,7 @@ const pageConfig = {
 		};
 		let params = {
 			param: param,
-			ajaxType: 'POST',
+			ajaxType: 'DELETE',
 			onSuccess: (res) => {
 			},
 			onError: (res) => {
@@ -105,7 +105,7 @@ const pageConfig = {
 
 		let params = {
 			param: param,
-			ajaxType: 'POST',
+			ajaxType: 'PUT',
 			onSuccess: (res) => {
 			},
 			onError: (res) => {
@@ -161,6 +161,13 @@ const pageConfig = {
 			quantity = stock;
 		}
 		return quantity;
+	},
+	onShareAppMessage(){
+		return {
+			title: '店铺首页',
+			desc: '',
+			path: '/pages/index/index'
+		};
 	}
 };
 const combineConfig = Object.assign({},skuConfig,toastConfig,pageConfig);

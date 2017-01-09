@@ -4,7 +4,6 @@ import * as types from '../constants/actions/list';
  * ajax
  */
 export { request } from './_common/request';
-export { route } from './_common/route';
 export { addUserCart } from './_common/addUserCart';
 
 

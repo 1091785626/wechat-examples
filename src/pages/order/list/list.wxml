@@ -31,7 +31,7 @@
 					<text class="g-pink">{{list[curTab].itemObj[dt].status_text}}</text>
 				</view>
 				<block wx:for="{{list[curTab].itemObj[dt].orders_items}}" wx:key="{{ddd.rid}}" wx:for-item="ddd" wx:for-index="dd">
-					<view class="g-bg-white g-pd g-flex g-bb" bindtap="$routeHandlePush" id="/pages/order/detail/detail?id={{dt}}">
+					<navigator class="g-bg-white g-pd g-flex g-bb" url="/pages/order/detail/detail?id={{dt}}">
 						<image src="{{list[curTab].itemObj[dt].orders_items[dd].product_image}}" class="g-pdr-15"/>
 						<view class="g-col">
 							<view class="g-flex g-jc-sb">
@@ -49,7 +49,7 @@
 								<text class="">X{{list[curTab].itemObj[dt].orders_items[dd].quantity}}</text>
 							</view>
 						</view>
-					</view>
+					</navigator>
 				</block>
 				<view class="g-bg-white g-pd g-tr g-bb">
 					共计1件商品 总计：￥{{list[curTab].itemObj[dt].order_amount}} （含运费<text>￥{{list[curTab].itemObj[dt].shipping_fee}}</text>）

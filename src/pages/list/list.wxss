@@ -1,5 +1,5 @@
 .v-list image{
-	flex:0 0 145rpx;
+	width:145rpx;
 	height:145rpx;
 }
 .v-list ._label{

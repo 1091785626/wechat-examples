@@ -8,13 +8,13 @@
 		"pages/goods/goods",
 		"pages/category/category",
 		"pages/order/tip/tip",
-		"pages/cart/cart",
 		"pages/user/addr/addr",
 		"pages/user/user",
+		"pages/cart/cart",
 		"pages/test/test"
 	],
 	"window":{
-		"backgroundTextStyle":"light",
+		"backgroundTextStyle":"dark",
 		"navigationBarBackgroundColor": "#eb4f38",
     	"navigationBarTextStyle":"white"
 	},

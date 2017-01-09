@@ -119,11 +119,14 @@
 	border-radius: 10rpx;
 	flex:1;
 	padding:0 80rpx;
+}
+.g-search>view,.diy-search>view{
 	position: relative;
 }
 .g-search .icon-search,.diy-search .icon-search{
 	position: absolute;
-	left:5%;
+	left:20rpx;
+	top:15rpx;
 }
 /**
  * 按钮
@@ -232,9 +235,9 @@
 	text-align: center;
 }
 .g-tab .active>text{
-	padding-bottom:20rpx;
+	padding-bottom:16rpx;
 	color: #E64150;
-	border-bottom: 1px solid #E64150;
+	border-bottom: 1rpx solid #E64150;
 }
 
 /**

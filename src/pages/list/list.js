@@ -5,9 +5,8 @@ import * as types from '../../constants/actions/list';
 import searchConfig from '../../components/diy/search/search';
 import skuConfig from '../../components/sku/sku';
 import toastConfig from '../../components/toast/toast';
-import routeConfig from '../../components/route/route';
 function mapStateToData(state) {
-	return Object.assign({},state.list,{$route:state.route});
+	return state.list;
 }
 
 function mapDispatchToActions(dispatch) {
@@ -16,18 +15,18 @@ function mapDispatchToActions(dispatch) {
 	};
 }
 const pageConfig = {
-	onShow(){
-		const {query} = this.data.$route;
-		if(query.pathName==="/pages/list/list") return;
-		let { keyword='all',cat_id } = query;
-		if(cat_id){
+	onLoad(query = {}) {
+		let {
+			keyword = 'all', cat_id
+		} = query;
+		if (cat_id) {
 			keyword = `cat__${cat_id}`;
 		}
-		if(!this.data.list[keyword]){
+		if (!this.data.list[keyword]) {
 			this.actions.initMain(keyword);
 		}
 		//setData是同步的
-		if(this.data.list[keyword].curPage==0){
+		if (this.data.list[keyword].curPage == 0) {
 			this.loadDataForScroll();
 		}
 	},
@@ -108,8 +107,15 @@ const pageConfig = {
 		if(list[keyword].curPage==0){
 			this.loadDataForScroll();
 		}
+	},
+	onShareAppMessage(){
+		return {
+			title: '店铺首页',
+			desc: '',
+			path: '/pages/index/index'
+		};
 	}
 };
-const combineConfig = Object.assign({},searchConfig,skuConfig,toastConfig,routeConfig,pageConfig);
+const combineConfig = Object.assign({},searchConfig,skuConfig,toastConfig,pageConfig);
 const resultConfig = connect(mapStateToData, mapDispatchToActions)(combineConfig);
 Page(resultConfig);

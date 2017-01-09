@@ -118,6 +118,13 @@ const pageConfig = {
 				res.confirm&&this.actions.request(url, params);
 			}
 		});
+	},
+	onShareAppMessage(){
+		return {
+			title: '店铺首页',
+			desc: '',
+			path: '/pages/index/index'
+		};
 	}
 };
 const combineConfig = Object.assign({},toastConfig,addrConfig,pageConfig);

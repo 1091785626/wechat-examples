@@ -48,7 +48,7 @@ export default function(state = initialState, action) {
 						{isFetching: 1}
 					);
 			return state;
-		case types.ORDER_MAIN_SELECT_POST + '_SUCCESS'://需要返回的数据
+		case types.ORDER_MAIN_ADDR_SELECT_POST + '_SUCCESS'://需要返回的数据
 		case types.ORDER_MAIN_ADDR_PUT + '_SUCCESS'://需要返回的数据
 			state = Object.assign(
 						{}, 

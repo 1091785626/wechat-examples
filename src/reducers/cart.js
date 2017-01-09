@@ -12,6 +12,7 @@ const initialState = {
 	_quantity:null,
 	_select:!0//默认全选
 };
+const notShadowObj = JSON.stringify(initialState);
 function initItemMain (data){
 	let _select = !0;//默认全选
 	let itemArr = [];
@@ -162,7 +163,7 @@ export default function(state = initialState, action) {
 		case USER_CART_ADD:
 		case types.CART_MAIN_POST + '_SUCCESS':
 			//结算；为了方便，暂时考虑是清空购物车数据
-			return initialState;
+			return JSON.parse(notShadowObj);
 		default:
 			return state;
 	}

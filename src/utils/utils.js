@@ -55,7 +55,11 @@ export function parseUrl(routeName) { //解析url
 			const key = arr[0];
 			const value = arr[1];
 			if (isNaN(value)) {
-				query[key] = value;
+				if(value=='undefined'||value=='null'){
+					query[key] = undefined;
+				}else{
+					query[key] = value;
+				}
 			} else {
 				query[key] = Number(value);
 			}

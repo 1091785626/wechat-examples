@@ -4,7 +4,6 @@ import * as types from '../../constants/actions/category';
 import * as categoryActions from '../../actions/category';
 import searchConfig from '../../components/diy/search/search';
 import toastConfig from '../../components/toast/toast';
-import routeConfig from '../../components/route/route';
 function mapStateToData(state) {
 	return state.category;
 }
@@ -57,8 +56,15 @@ const pageConfig = {
 			};
 			this.actions.request(url, params, {});
 		}
+	},
+	onShareAppMessage(){
+		return {
+			title: '店铺首页',
+			desc: '',
+			path: '/pages/index/index'
+		};
 	}
 };
-const combineConfig = Object.assign({},searchConfig,toastConfig,routeConfig,pageConfig);
+const combineConfig = Object.assign({},searchConfig,toastConfig,pageConfig);
 const resultConfig = connect(mapStateToData, mapDispatchToActions)(combineConfig);
 Page(resultConfig);
