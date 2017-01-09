@@ -34,7 +34,7 @@ const pageConfig = {
 						title: title
 					});	
 				}
-				
+				wx.stopPullDownRefresh();
 			},
 			onError: (res) => {
 				this.$toastInfo(res.msg);
