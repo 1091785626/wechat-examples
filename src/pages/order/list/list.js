@@ -19,11 +19,18 @@ const pageConfig = {
 		let {
 			type = 'all'
 		} = query;
-		this.actions.initList(type);
+		this.actions.initListTab(type);
 		//setData是同步的
 		if (this.data.list[type].curPage == 0) {
 			this.loadDataForScroll();
 		}
+	},
+	onPullDownRefresh(){
+		const {
+			curTab
+		} = this.data;
+		this.actions.initList(curTab);
+		this.loadDataForScroll();
 	},
 	loadDataForScroll(){
 		const {
@@ -44,7 +51,7 @@ const pageConfig = {
 			param: param,
 			ajaxType: 'GET',
 			onSuccess: (res)=> {
-				//console.log(data);
+				wx.stopPullDownRefresh();
 			},
 			onError: (res)=> {
 				this.$toastInfo(res.msg);

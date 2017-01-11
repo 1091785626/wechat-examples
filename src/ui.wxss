@@ -23,7 +23,7 @@
 	width: 100%;
 	height: 100%;
 	z-index: 999;
-	background:rgba(0,0,0,0);
+	background:rgba(0,0,0,0.4);
 	top:0
 }
 .g-popup {
@@ -208,7 +208,7 @@
 	box-sizing: border-box;
 	flex-direction: column;
 	width: 100%; 
-	height: 400rpx;
+	height: 300px;
 	background:white;
 }
 .g-picker-view picker-view-column{
@@ -216,9 +216,14 @@
 }
 .g-picker-view view{
 	width:100%;
-	line-height:68rpx;
+	line-height:34px;
+	height:34px;
 	text-align:center;
-	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
 }
 
 /**

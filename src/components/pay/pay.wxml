@@ -1,4 +1,5 @@
 <template name="pay">
+	<view class="g-popup-bg" hidden="{{!$pay.isShow}}"/>
 	<view class="g-popup" animation="{{$payAnimation}}" bindtap="$payClose" id="close">
 		<view class="g-col g-bg-white">
 			<view class="__title">

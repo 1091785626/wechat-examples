@@ -1,7 +1,7 @@
 <template name="header">
 	<view class="diy-header">
 		<view class="_shade">
-			<image src="{{cover}}" />
+			<image src="{{cover}}!1-2" />
 		</view>
 		<view class="_caption">
 			<view class="g-flex g-ai-c">

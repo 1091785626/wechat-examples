@@ -169,7 +169,7 @@ const skuConfig = {
 		prop = this.$changeArray(prop);
 		let skus = data.skus,
 		selectInfo = null;
-		if(skus===''){//没有规格
+		if(skus==''){//没有规格
 			selectInfo = {
 				product_id: data.id, //选中商品的id product_id
 				price: data.price, //价格
@@ -294,14 +294,14 @@ const skuConfig = {
 		const {$skuState,$skuData,$skuOptions} = this.data;
 		let { selectInfo } = $skuState;
 		if(this.$skuValidateSelect()){return !1;}
-		let param = Object.assign({},selectInfo,{cart_id:$skuOptions.cart_id});
+		let param = Object.assign({},selectInfo,{id:$skuOptions.cart_id});
 		if($skuOptions.sku_id == selectInfo.sku_id){
 			this.$skuHide();
 			return !1;
 		}
 		net.ajax({
 			url: API_ROOT['_SKU_MAIN_PUT'],
-			type: 'POST',
+			type: 'PUT',
 			param,
 			success: (res) => {
 				this.$skuHide(1,param);

@@ -4,6 +4,8 @@ import * as types from '../constants/actions/goods';
  * ajax
  */
 export { request } from './_common/request';
+export { addUserCart } from './_common/addUserCart';
+
 /**
  * 初始化数据
  */

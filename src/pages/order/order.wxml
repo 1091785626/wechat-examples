@@ -32,7 +32,7 @@
 	<view>
 		<block wx:for="{{itemArr}}" wx:key="*this">
 			<view class="g-flex g-pd g-bg-white g-bb">
-				<image class="g-pdr-15" src="{{itemObj[item].img}}" />
+				<image class="g-pdr-15" src="{{itemObj[item].img}}!4-4" />
 				<view class="g-col">
 					<view class="g-twoline g-two-lh">{{itemObj[item].title}}</view>
 					<view class="g-m-t g-oneline g-one-lh">
@@ -55,7 +55,7 @@
 			</view>
 			<!-- 运费模板 -->
 			<block wx:if="{{(index==items||(items>0&&itemObj[item].template_id!=itemObj[itemArr[index+1]].template_id))}}">
-				<view class="g-item g-bb g-pd g-ai-c g-m-b" bindtap="handleLogis" id="{{logis[itemObj[item].template_id].value}}_{{itemObj[item].template_id}}">
+				<view class="g-item g-bb g-pd g-ai-c g-m-b" bindtap="handleLogis" id="{{logis[itemObj[item].template_id].id}}_{{itemObj[item].template_id}}">
 					<view class="g-col">
 						<text>配送方式</text>
 					</view>
@@ -73,7 +73,7 @@
 			</view>
 		</view>
 		<view class="g-pd g-bg-white g-col g-tr">
-			<text>共1件商品 小计:</text>
+			<text>商品合计:</text>
 			<text class="g-pink">￥{{amounts.goods_amount}}</text>
 		</view>
 	</view>

@@ -13,7 +13,7 @@ const payConfig = {
 			let param = Object.assign({},options);
 			net.ajax({
 				url: API_ROOT['_PAYMENT_ORDER_POST'],
-				type: 'GET',
+				type: 'POST',
 				param,
 				success: (res) => {
 					this.setData({
@@ -68,10 +68,10 @@ const payConfig = {
 		});
 	},
 	$payHandleSure(){
-		const {$payWay,$payOptions} =this.data;
+		const {$payWay,$payOptions,$payData} =this.data;
 		let param = {
-			order_id:$payOptions.order_id,
-			amount:$payOptions.amount,
+			order_id:$payData.order_id,
+			amount:$payData.amount,
 			payway:$payWay
 		};
 		net.ajax({
@@ -81,18 +81,30 @@ const payConfig = {
 			success: (res) => {
 				switch(param.payway){
 					case 'wxpay':
-						console.log(res.data);
+						const payData = res.data||{};
 						wx.requestPayment({
-							'timeStamp': '',
-							'nonceStr': '',
-							'package': '',
+							'timeStamp':payData.timeStamp,
+							'nonceStr':payData.nonceStr,
+							'package':payData.package,
 							'signType': 'MD5',
-							'paySign': '',
+							'paySign':payData.paySign,
 							success: (res) => {
-								this.$payHide(1,{is_btn:0});
+								if(res.errMsg=='requestPayment:ok'){//调用支付成功
+									this.$toastInfo('微信支付成功');
+									this.$payHide(1,{is_btn:0});
+								}
 							},
 							fail: (res) => {
-								this.$toastInfo('微信支付失败');
+								if(res.errMsg=='requestPayment:fail cancel'){//调用支付成功
+									this.$toastInfo('您已取消支付');
+								}else{
+									this.$toastInfo('微信支付失败');
+								}
+							},
+							complete:(res) =>{
+								if(res.errMsg=='requestPayment:cancel'){//调用支付成功
+									this.$toastInfo('您已取消支付');
+								}
 							}
 						});
 						return false;

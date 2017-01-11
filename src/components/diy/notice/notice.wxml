@@ -1,8 +1,12 @@
 <!-- notice.wxml -->
 <template name="notice">
 	<view 
-		class="diy-notice g-pd g-white" 
-		style="background: {{bgcolor}};margin:{{m_tb}} 0">
-		<view class="">{{notice}}</view>
+		class="diy-notice g-pd g-white " 
+		style="background: {{bgcolor}};margin:{{m_tb}} 0"
+	>
+		<view class="g-flex g-nowrap">
+			<text class="icon-laba g-pdr-15 g-fs-34" />
+			<view>{{notice}}</view>
+		</view>
 	</view>
 </template>

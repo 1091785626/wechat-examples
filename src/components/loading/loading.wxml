@@ -1,7 +1,10 @@
 <template name="loading">
 	<view class="g-flex-cc g-pd">
 		<text wx:if="{{isEnd==0}}">上拉加载</text>
-		<text wx:elif="{{isEnd==1}}">加载中</text>
+		<view wx:elif="{{isEnd==1}}" class="g-flex-cc">
+			<image src="../../img/loading.gif" style="width:16px;height:16px"/>
+			<text> 加载中 </text>
+		</view>
 		<text wx:elif="{{isEnd==2}}">已全部加载</text>
 		<text wx:elif="{{isEnd==2}}">数据异常，请刷新重试</text>
 	</view>

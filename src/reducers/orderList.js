@@ -18,7 +18,7 @@ export default function(state = initialState, action) {
 	 */
 	let items,type,curPage,totalPage,isEnd,tab;
 	switch (action.type) {
-		case types.ORDER_LIST_INIT:
+		case types.ORDER_LIST_INIT_TAB:
 		case types.ORDER_LIST_CHANGE_TAB:
 			tab = action.tab;
 			state.curTab = tab;
@@ -42,13 +42,14 @@ export default function(state = initialState, action) {
 		case types.ORDER_LIST_GET + '_ERROR':
 			type = action.param.type;
 			state.list[type].isEnd = 3;
-			return state;		
+			return state;
+		case types.ORDER_LIST_INIT:
 		case types.ORDER_BTN_LIST_DETAIL_INIT:
 		case types.ORDER_MAIN_LIST_UPDATE://rder中触发list变化
 		case ROUTER_CHANGE:
 			//为了方便，直接清理数据
 			state = {
-				curTab:'all',
+				curTab:action.tab||'all',
 				list:{
 					all:JSON.parse(notShadowObj),
 					tosend:JSON.parse(notShadowObj),

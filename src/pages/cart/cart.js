@@ -19,20 +19,27 @@ const pageConfig = {
 		edit:!1,//编辑状态
 	},
 	onShow(){
-		console.log("cart show");
 		if (this.data.isFetching === 0) {
-			let url = types.CART_MAIN_GET;
-			let param = {};
-			let params = {
-				param: param,
-				ajaxType: 'GET',
-				onSuccess: (res) => {
-				},
-				onError: (res) => {
-				}
-			};
-			this.actions.request(url, params, {});
+			this.loadData();
 		}
+	},
+	loadData(){
+		let url = types.CART_MAIN_GET;
+		let param = {};
+		let params = {
+			param: param,
+			ajaxType: 'GET',
+			onSuccess: (res) => {
+				wx.stopPullDownRefresh();
+			},
+			onError: (res) => {
+				this.$toastInfo(res.msg);
+			}
+		};
+		this.actions.request(url, params, {});
+	},
+	onPullDownRefresh(){
+		this.loadData();
 	},
 	handleEdit(){
 		this.setData({
@@ -161,6 +168,11 @@ const pageConfig = {
 			quantity = stock;
 		}
 		return quantity;
+	},
+	onHide(){
+		this.setData({
+			edit:!1,//编辑状态
+		});
 	},
 	onShareAppMessage(){
 		return {

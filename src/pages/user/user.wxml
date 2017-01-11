@@ -14,22 +14,22 @@
 		<navigator url="/pages/order/list/list?type=topay" class="_navigator">
 			<text class="icon-topay"/>
 			<text class="g-m-t">待付款</text>
-			<text class="_num" hidden="{{!order.topay}}">{{order.topay}}</text>
+			<text class="_num" hidden="{{order.topay==0}}">{{order.topay}}</text>
 		</navigator>
 		<navigator url="/pages/order/list/list?type=tosend" class="_navigator">
 			<text class="icon-tosend"/>
 			<text class="g-m-t">待发货</text>
-			<text class="_num" hidden="{{!order.tosend}}">{{order.tosend}}</text>
+			<text class="_num" hidden="{{order.tosend==0}}">{{order.tosend}}</text>
 		</navigator>
 		<navigator url="/pages/order/list/list?type=torec" class="_navigator">
 			<text class="icon-torec"/>
 			<text class="g-m-t">待收货</text>
-			<text class="_num" hidden="{{!order.torec}}">{{order.torec}}</text>
+			<text class="_num" hidden="{{!order.torec==0}}">{{order.torec}}</text>
 		</navigator>
 		<!-- <navigator url="/pages/order/list/list?type=tocomment" class="_navigator">
 			<text class="icon-tocomment"/>
 			<text class="g-m-t">待评价</text>
-			<text class="_num" hidden="{{!order.tocomment}}">{{order.tocomment}}</text>
+			<text class="_num" hidden="{{order.tocomment==0}}">{{order.tocomment}}</text>
 		</navigator> -->
 	</view>	
 	<view class="g-item g-m-t g-bb g-pd">

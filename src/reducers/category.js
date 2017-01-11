@@ -32,7 +32,7 @@ export default function(state = initialState, action) {
 							id:items.itemObj[key].id,
 							name:items.itemObj[key].name,
 						},
-						initItem(items.itemObj[key].children)
+						initItem(items.itemObj[key].child)
 					);
 			}
 			state.dataRight[id] = items;

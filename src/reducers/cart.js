@@ -51,8 +51,8 @@ function sumCommon(carts,carts_temp,itemObj){
 	let _quantity = 0;
 	let _select = carts.sort().toString() == carts_temp.sort().toString();//是否全选
 	for (let i = 0; i < carts.length; i++) { //选中的商品
-		_price += itemObj[carts[i]].price * itemObj[carts[i]].quantity;
-		_quantity += itemObj[carts[i]].quantity;
+		_price += itemObj[carts[i]].price * Number(itemObj[carts[i]].quantity);
+		_quantity += Number(itemObj[carts[i]].quantity);
 	}
 	for (let i = 0; i < carts_temp.length; i++) { //选中的商品
 		if(carts.includes(carts_temp[i])){
@@ -149,7 +149,7 @@ export default function(state = initialState, action) {
 			return state;
 		case types.CART_MAIN_PROPS:
 			//更新数据
-			id = parseInt(action.param.cart_id);
+			id = parseInt(action.param.id);
 			//暂时先用浅复制
 			state.itemObj[id].img = action.param.img;
 			state.itemObj[id].props_str = action.param.props_str;

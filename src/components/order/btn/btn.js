@@ -39,7 +39,7 @@ const orderBtnConfig = {
 							};
 							let params = {
 								param:param,
-								ajaxType:'POST',
+								ajaxType:'PUT',
 								onSuccess: (res)=> {
 									this.actions.orderListDetail();
 									this.handleTab&&this.handleTab({currentTarget:{id:"all"}});

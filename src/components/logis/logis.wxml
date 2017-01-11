@@ -1,4 +1,5 @@
 <template name="logis">
+	<view class="g-popup-bg" hidden="{{!$logis.isShow}}"/>
 	<view class="g-popup" animation="{{$logisAnimation}}" bindtap="$logisClose" id="close">
 		<view class="g-col g-bg-white">
 			<view class="__title">

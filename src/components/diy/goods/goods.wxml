@@ -1,10 +1,10 @@
 <!-- goods.wxml -->
 <template name="goods">
-	<view class="diy-goods-1 g-bg-white g-m-b g-pd-b" wx:if="{{style==1}}">
+	<view class="diy-goods-2 g-bg-white g-m-b g-pd-b" wx:if="{{style==2}}">
 		<block wx:for="{{item_list}}" wx:key="{{index}}" wx:for-item="item">
 			<view class="g-col">
 				<navigator url="/pages/goods/goods?id={{item.id}}">
-					<image src="{{item.img}}" />
+					<image src="{{item.img}}!1-1" />
 					<text class="g-twoline g-pd-lr">{{item.title}}</text>
 				</navigator>
 				<view class="g-flex-cc g-pd-lr">
@@ -17,11 +17,11 @@
 			</view>
 		</block>
 	</view>
-	<view class="diy-goods-2 g-flex g-ac-fs g-fw-w g-bg-white" wx:if="{{style==2}}">
+	<view class="diy-goods-1 g-flex g-ac-fs g-fw-w g-bg-white" wx:if="{{style==1}}">
 		<block wx:for="{{item_list}}" wx:key="{{index}}" wx:for-item="item">
 			<view>
 				<navigator url="/pages/goods/goods?id={{item.id}}">
-					<image src="{{item.img}}" mode="widthFix"/>
+					<image src="{{item.img}}!2-2" mode="widthFix"/>
 					<text class="g-twoline g-pd-lr">{{item.title}}</text>
 				</navigator>
 				<view class="g-flex-cc g-pd-lr">
@@ -38,7 +38,7 @@
 		<block wx:for="{{item_list}}" wx:key="{{index}}" wx:for-item="item">
 			<view class="g-pd g-flex g-bg-white">
 				<navigator url="/pages/goods/goods?id={{item.id}}">
-					<image src="{{item.img}}" class="g-pdr-15"/>
+					<image src="{{item.img}}!4-4" class="g-pdr-15"/>
 				</navigator>
 				<view class="g-col">
 					<navigator url="/pages/goods/goods?id={{item.id}}">

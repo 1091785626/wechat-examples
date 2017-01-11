@@ -130,7 +130,7 @@ export function showAnimate(){
         timingFunction: 'easa-in',
     });
 	animation.top(0).step();
-	animation.backgroundColor("rgba(0,0,0,.5)").step();
+	//animation.backgroundColor("rgba(0,0,0,.5)").step();
 
 	return animation.export();
 }
@@ -139,7 +139,8 @@ export function hideAnimate(){
       	duration: 600,
         timingFunction: 'ease',
     });
-	animation.backgroundColor("rgba(0,0,0,0)").top("100vh").step();
+	//animation.backgroundColor("rgba(0,0,0,0)").top("100vh").step();
+	animation.top("100vh").step();
 	return animation.export();
 }
 function validity(rule) {
@@ -166,7 +167,7 @@ let obj = {
     },
     validZipCode:{
         regex: /^\d{6}$/,
-        error: "请输入6位邮政编console.log(result)码"
+        error: "请输入6位邮政编码"
     },
     validWeChat: {
 		regex: /^[a-zA-Z\d_]{5,}$/,

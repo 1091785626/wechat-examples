@@ -1,4 +1,5 @@
 <template name="addrList">
+	<view class="g-popup-bg" hidden="{{!$addrList.isShow}}"/>
 	<view class="g-popup" animation="{{$addrListAnimation}}" bindtap="$addrListClose" id="close">
 		<view class="g-col g-bg-white">
 			<view class="__title">

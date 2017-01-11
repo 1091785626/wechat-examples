@@ -5,12 +5,21 @@
 .diy-title-2 text{
 	padding: 20rpx;
 	border-bottom: 1rpx solid red;
+	color: #fff;
 }
-.diy-title-3{
-	line-height:4rpx;
-	border-left:20vw solid #ddd;
-	border-right:20vw solid #ddd;
-	text-align:center;
+.diy-title-3 {
+	text-align: center;
+	background: #F6F7F8;
+}
+.diy-title-3 text:before{
+	content: '——————————';
+	letter-spacing: -10rpx;
+	padding:0rpx 40rpx;
+}
+.diy-title-3 text:after{
+	content: '——————————';
+	letter-spacing: -10rpx;
+	padding:0rpx 40rpx;
 }
 .diy-title-4{
 	border-left:2px solid red;
@@ -44,16 +53,16 @@
 	margin-right: 5rpx;
 }
 
-.diy-goods-1 image{
+.diy-goods-2 image{
 	width: 96vw;
 	height: 96vw;
 	padding:2vw;
 }
-.diy-goods-2 image{
+.diy-goods-1 image{
 	width: 46vw;
 	padding:2vw;
 }
-.diy-goods-2>view{
+.diy-goods-1>view{
 	box-sizing: border-box;
 	flex: 0 0 50%;
 }
@@ -122,9 +131,11 @@
 }
 
 .diy-showcase-1 image{
-	width:50vw;
-	height:735rpx;
-	margin-right:1vw;
+	width:49vw;
+	height:745rpx;
+}
+.diy-showcase-1 ._img{
+	padding-right:1vw;
 }
 .diy-showcase-1 ._navigator{
 	position: relative;
@@ -132,9 +143,9 @@
 .diy-showcase-1 ._navigator text{
 	background:rgba(0,0,0,.5);
 	position:absolute;
-	bottom:8rpx;
+	bottom:7rpx;
 	left:0;
-	width:93%;
+	width:94%;
 	padding:10rpx;
 	text-align: center;
 	color: #fff;

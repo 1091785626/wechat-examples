@@ -10,6 +10,7 @@ const initialState = {
 	itemArr:[],        //拆分出来的id
 	itemObj:{} 
 };
+const notShadowObj = JSON.stringify(initialState);
 function initItemMain (data){
 	let itemArr = [];
 	let itemObj = {};
@@ -41,6 +42,7 @@ export default function(state = initialState, action) {
 		 * order
 		 */
 		case types.ORDER_MAIN_GET + '_SUCCESS':
+			state = JSON.parse(notShadowObj);
 			state = Object.assign(
 						{}, 
 						state, 
@@ -92,8 +94,7 @@ export default function(state = initialState, action) {
 		case types.ORDER_MAIN_LIST_UPDATE:
 		case ROUTER_CHANGE:
 			//为了方便，直接清理数据
-			state = initialState;
-			return state;
+			return JSON.parse(notShadowObj);
 		default:
 			return state;
 	}

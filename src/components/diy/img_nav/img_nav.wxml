@@ -4,9 +4,9 @@
 		<view class="_imgs {{style==1?'g-bg-white':''}}">
 			<block wx:for="{{item_list}}" wx:key="{{index}}" wx:for-item="item">
 				<view class="_navigator" bindtap="$routeHandlePush" id="{{item.url}}">
-					<image src="{{item.img}}" mode="widthFix"/>
+					<image src="{{item.img}}!2-2" mode="widthFix"/>
 					<!-- diy-img-nav-2 判断文字在图片上还是在图片下边 -->
-					<text style="color:{{style==2&&'g-white'}};background:{{style==2&&item.bg}}">{{item.title}}</text>
+					<text class="g-oneline" style="color:{{style==2&&'g-white'}};background:{{style==2&&item.bg}}">{{item.title}}</text>
 				</view>
 			</block>
 		</view>

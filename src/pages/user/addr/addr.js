@@ -16,19 +16,26 @@ function mapDispatchToActions(dispatch) {
 const pageConfig = {
 	onShow(){
 		if (this.data.isFetching === 0) {
-			let url = types.USER_ADDR_GET;
-			let param = {};
-			let params = {
-				param: param,
-				ajaxType: 'GET',
-				onSuccess: (res) => {
-				},
-				onError: (res) => {
-					this.$toastInfo(res.msg);
-				}
-			};
-			this.actions.request(url, params, {});
+			this.loadData();
 		}
+	},
+	loadData(){
+		let url = types.USER_ADDR_GET;
+		let param = {};
+		let params = {
+			param: param,
+			ajaxType: 'GET',
+			onSuccess: (res) => {
+				wx.stopPullDownRefresh();
+			},
+			onError: (res) => {
+				this.$toastInfo(res.msg);
+			}
+		};
+		this.actions.request(url, params, {});
+	},
+	onPullDownRefresh(){
+		this.loadData();
 	},
 	handleEdit(event){
 		const id = event.currentTarget.id;
@@ -42,7 +49,7 @@ const pageConfig = {
 			let param = Object.assign({},{id},res);
 			let params = {
 				param: param,
-				ajaxType: 'POST',
+				ajaxType: 'PUT',
 				onSuccess: (res)=> {
 					console.log('传回完整的单条数据');
 				},
@@ -87,7 +94,7 @@ const pageConfig = {
 		};
 		let params = {
 			param: param,
-			ajaxType: 'POST',
+			ajaxType: 'PUT',
 			onSuccess: (res)=> {
 			},
 			onError: (res)=> {
@@ -104,7 +111,7 @@ const pageConfig = {
 		};
 		let params = {
 			param: param,
-			ajaxType: 'POST',
+			ajaxType: 'DELETE',
 			onSuccess: (res)=> {
 			},
 			onError: (res)=> {

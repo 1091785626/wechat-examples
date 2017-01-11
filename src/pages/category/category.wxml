@@ -22,8 +22,8 @@
 					<view class="_list g-pd">
 						<block wx:for="{{dataRight[curId].itemObj[dt].itemArr}}" wx:key="{{dd}}" wx:for-item="dd">
 							<navigator class="_child" url="/pages/list/list?cat_id={{dd}}">
-								<image src="{{dataRight[curId].itemObj[dt].itemObj[dd].img}}" />
-								<view>{{dataRight[curId].itemObj[dt].itemObj[dd].name}}</view>
+								<image src="{{dataRight[curId].itemObj[dt].itemObj[dd].img}}!4-4" />
+								<view class="g-oneline">{{dataRight[curId].itemObj[dt].itemObj[dd].name}}</view>
 							</navigator>
 						</block>		
 					</view>

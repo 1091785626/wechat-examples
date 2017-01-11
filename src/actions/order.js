@@ -4,6 +4,7 @@ import * as types from '../constants/actions/order';
  * ajax
  */
 export { request } from './_common/request';
+export { navigator } from './_common/navigator';
 /**
  * 订单详情-立即支付
  */
@@ -22,11 +23,20 @@ export function updateList(){
 	};
 }
 /**
- * 初始化
+ * 初始化数据
  */
 export function initList(tab) {
 	return { 
 		type: types.ORDER_LIST_INIT,
+		tab
+	};
+}
+/**
+ * 初始化tab
+ */
+export function initListTab(tab) {
+	return { 
+		type: types.ORDER_LIST_INIT_TAB,
 		tab
 	};
 }

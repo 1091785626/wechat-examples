@@ -3,7 +3,7 @@
 	<view class="g-popup" animation="{{$skuAnimation}}" bindtap="$skuClose" id="close">
 		<view class="g-bg-white c-sku g-col">
 			<view class="g-flex _header">
-				<image src="{{$skuState.selectInfo.img}}"/>
+				<image src="{{$skuState.selectInfo.img}}!4-4"/>
 				<view class="g-col g-flex g-fd-c g-pd">
 					<text class="g-oneline">{{$skuData.title}}</text>
 					<text class="g-pink g-fs-24 g-lh-44">￥{{$skuState.selectInfo.price}}</text>

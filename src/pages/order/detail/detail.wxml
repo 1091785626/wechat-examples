@@ -31,7 +31,7 @@
 	</view>
 	<block wx:for="{{main[curId].orders_items}}" wx:key="{{item.order_id}}" wx:for-item="item" wx:for-index="dd">
 		<view class="g-bg-gray g-pd g-flex g-bb">
-			<image src="{{main[curId].orders_items[dd].product_image}}" class="g-pdr-15"/>
+			<image src="{{main[curId].orders_items[dd].product_image}}!4-4" class="g-pdr-15"/>
 			<view class="g-col">
 				<view class="g-flex g-jc-sb">
 					<text class="g-twoline g-two-lh">{{main[curId].orders_items[dd].product_name}}</text>

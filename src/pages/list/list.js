@@ -16,6 +16,7 @@ function mapDispatchToActions(dispatch) {
 }
 const pageConfig = {
 	onLoad(query = {}) {
+		console.log(query);
 		let {
 			keyword = 'all', cat_id
 		} = query;
@@ -27,8 +28,16 @@ const pageConfig = {
 		}
 		//setData是同步的
 		if (this.data.list[keyword].curPage == 0) {
+			this.actions.initMain(keyword);
 			this.loadDataForScroll();
 		}
+	},
+	onPullDownRefresh(){
+		const {
+			keyword
+		} = this.data;
+		this.actions.initMain(keyword);
+		this.loadDataForScroll();
 	},
 	loadDataForScroll(){
 		const {
@@ -58,7 +67,7 @@ const pageConfig = {
 			param: param,
 			ajaxType: 'GET',
 			onSuccess: (res)=> {
-				//console.log(data);
+				wx.stopPullDownRefresh();
 			},
 			onError: (res)=> {
 				this.$toastInfo(res.msg);

@@ -3,16 +3,16 @@
 	<view class="diy-showcase-{{style}}" style="margin:{{m_tb}} 0">
 		<view class="g-flex-ac">
 			<view class="g-col _navigator" bindtap="$routeHandlePush" id="{{item_list[0].url}}">
-				<image src="{{item_list[0].img}}"/>
+				<image src="{{item_list[0].img}}!2-1" class="_img"/>
 				<text>{{item_list[0].title}}</text>
 			</view>
 			<view class="g-col _navigator">
 				<view class="" bindtap="$routeHandlePush" id="{{item_list[1].url}}">
-					<image src="{{item_list[1].img}}" mode="widthFix"/>
+					<image src="{{item_list[1].img}}!2-2" mode="widthFix"/>
 					<text style="bottom: 51%">{{item_list[1].title}}</text>
 				</view>
 				<view class="" bindtap="$routeHandlePush" id="{{item_list[2].url}}">
-					<image src="{{item_list[2].img}}" mode="widthFix"/>
+					<image src="{{item_list[2].img}}!2-2" mode="widthFix"/>
 					<text>{{item_list[2].title}}</text>
 				</view>
 			</view>

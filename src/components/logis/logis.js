@@ -10,7 +10,7 @@ const logisConfig = {
 		return new Promise((resolve, reject) => {
 			this.$logisResolve  = resolve;
 			this.$logisReject = reject;
-			let param = {template_id:options.template_id};
+			let param = {template_id:options.template_id,addr_id:options.addr_id};
 			net.ajax({
 				url: API_ROOT['_LOGIS_LIST_GET'],
 				type: 'GET',

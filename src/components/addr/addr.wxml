@@ -37,6 +37,7 @@
 			<view class="g-tc g-lh-80 g-bg-deep g-m-t" hidden="{{true}}">删除</view>
 		</view>
 	</view>
+	<view class="g-popup-bg" hidden="{{!$addrPickerView.isShow}}"/>
 	<view class="g-popup __index_add" animation="{{$addrPickerView.animation}}" bindtap="$addrHandlePickerClose" id="pickerCancel">
 		<view class="g-col g-flex g-fd-c">
 			<view class="g-pd g-flex g-jc-sb g-bg-white g-bb">

@@ -4,7 +4,7 @@ let data = {
         {
             id: "18",//二级分类id
             name: "二级分类1",//二级名称
-            children: [
+            child: [
                 {
                     id: "3",//三级分类id
                     name: "三级分类1",//三级名称
@@ -21,7 +21,7 @@ let data = {
         {
             id: "17",
             name: "二级分类1",
-            children: [
+            child: [
                 {
                     id: "3",
                     name: "三级分类4",

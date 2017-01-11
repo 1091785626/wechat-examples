@@ -19,7 +19,7 @@ const addrConfig = {
 				param,
 				localData,
 				success: (res) => {
-					this.$addrAllDistrict = res.data;
+					this.$addrAllDistrict = JSON.stringify(res.data);
 					const {$addrDistrict,$addrPicker} = this.$addrInit(options.data);
 					this.setData({
 						$addr:{isShow:1},
@@ -55,7 +55,7 @@ const addrConfig = {
 		/**
 		 * 一级
 		 */
-		itemData[0] = this.$addrAllDistrict;
+		itemData[0] = JSON.parse(this.$addrAllDistrict);
 		for (let select_0 in itemData[0]){
 			if(itemData[0][select_0].value==value[0]){
 				itemData[1] = itemData[0][select_0].children;
@@ -103,7 +103,17 @@ const addrConfig = {
 				break;
 			}
 		}
-
+		/*让数据简洁，对微信做一个hack*/
+		for (let i = 0; i < itemData.length; i++) {
+			for (let j = 0; j < itemData[i].length; j++) {
+				try{
+					delete itemData[i][j].children;
+					delete itemData[i][j].parent_id;
+				}catch(err){
+					console.error(err);
+				}
+			}
+		}
 		return {$addrDistrict:itemData,$addrPicker:{value,label,index}};
 	},
 	$addrClose(event){
@@ -224,6 +234,11 @@ const addrConfig = {
 			address:{
 				name: "地址",
 				value: formData.address,
+				required: !0
+			},
+			zipcode:{
+				type: "validZipCode",
+				value: formData.zipcode,
 				required: !0
 			}
 		};

@@ -15,19 +15,26 @@ function mapDispatchToActions(dispatch) {
 const pageConfig = {
 	onShow(){
 		if (this.data.isFetching === 0) {
-			let url = types.USER_MAIN_GET;
-			let param = {};
-			let params = {
-				param: param,
-				ajaxType: 'GET',
-				onSuccess: (res) => {
-				},
-				onError: (res) => {
-					this.$toastInfo(res.msg);
-				}
-			};
-			this.actions.request(url, params, {});
+			this.loadData();
 		}
+	},
+	loadData(){
+		let url = types.USER_MAIN_GET;
+		let param = {};
+		let params = {
+			param: param,
+			ajaxType: 'GET',
+			onSuccess: (res) => {
+				wx.stopPullDownRefresh();
+			},
+			onError: (res) => {
+				this.$toastInfo(res.msg);
+			}
+		};
+		this.actions.request(url, params, {});
+	},
+	onPullDownRefresh(){
+		this.loadData();
 	},
 	handleCalling(){
 		wx.makePhoneCall({phoneNumber: this.data.shop.tel});

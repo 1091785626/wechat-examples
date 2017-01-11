@@ -18,21 +18,23 @@ function mapDispatchToActions(dispatch) {
 }
 const pageConfig = {
 	inputMemo:null,
-	onShow(){
-		if (this.data.isFetching === 0) {
-			let url = types.ORDER_MAIN_GET;
-			let param = {};
-			let params = {
-				param: param,
-				ajaxType: 'GET',
-				onSuccess: (res) => {
-				},
-				onError: (res) => {
-					this.$toastInfo(res.msg);
-				}
-			};
-			this.actions.request(url, params, {});
-		}
+	onShow(){//每次都要更新订单数据
+		let url = types.ORDER_MAIN_GET;
+		let param = {};
+		let params = {
+			param: param,
+			ajaxType: 'GET',
+			onSuccess: (res) => {
+			},
+			onError: (res) => {
+				this.$toastInfo(res.msg,()=>{
+					wx.navigateBack({
+						delta: 1
+					});
+				});
+			}
+		};
+		this.actions.request(url, params, {});
 	},
 	handleCreateAddr(){
 		this.$addrPopup({
@@ -41,7 +43,7 @@ const pageConfig = {
 			type:"create"
 		}).then((res)=>{
 			let url = types.ORDER_MAIN_ADDR_PUT;
-			let param = Object.assign({},res);
+			let param = Object.assign({},res,{action:"buy"});
 			let params = {
 				param: param,
 				ajaxType: 'POST',//创建地址
@@ -59,14 +61,13 @@ const pageConfig = {
 	handleShowAddrList(){
 		this.$addrListPopup({
 			addr_id:this.data.addr.id
-		}).then((res)=>{
+		}).then((res)=>{//选择地址
 			let url = types.ORDER_MAIN_ADDR_SELECT_POST;
-			let param = Object.assign({},{addr_id:res.id});
+			let param = Object.assign({},{addr_id:res.id},{action:"buy"});
 			let params = {
 				param: param,
 				ajaxType: 'PUT',//编辑地址
 				onSuccess: (res)=> {
-					console.log('传回完整的单条数据');
 				},
 				onError: (res)=> {
 					this.$toastInfo(res.msg);
@@ -84,12 +85,11 @@ const pageConfig = {
 			type:"edit"
 		}).then((res)=>{
 			let url = types.ORDER_MAIN_ADDR_PUT;
-			let param = Object.assign({},{id},res);
+			let param = Object.assign({},{id},res,{action:"buy"});
 			let params = {
 				param: param,
-				ajaxType: 'POST',//编辑地址
+				ajaxType: 'PUT',//编辑地址
 				onSuccess: (res)=> {
-					console.log('传回完整的单条数据');
 				},
 				onError: (res)=> {
 					this.$toastInfo(res.msg);
@@ -216,17 +216,17 @@ const pageConfig = {
 		}).then((res={})=>{
 			this.actions.updateList();
 			if(res.is_btn){//点击确认离开
-				wx.navigateTo({
+				wx.redirectTo({
 					url:'/pages/order/list/list?type=topay'
 				});
 			}else{
-				wx.navigateTo({
+				wx.redirectTo({
 					url:'/pages/order/list/list?type=tosend'
 				});
 			}
 		}).catch(()=>{
 			this.actions.updateList();
-			wx.navigateTo({
+			wx.redirectTo({
 				url:'/pages/order/list/list?type=topay'
 			});
 		});

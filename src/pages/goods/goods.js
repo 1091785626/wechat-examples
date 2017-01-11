@@ -20,20 +20,29 @@ const pageConfig = {
 		} = query;
 		this.actions.initMain(id);
 		if (!this.data.main[id]) {
-			let url = types.GOODS_MAIN_GET;
-			let param = {
-				id
-			};
-			let params = {
-				param: param,
-				ajaxType: 'GET',
-				onSuccess: (res) => {},
-				onError: (res) => {
-					this.$toastInfo(res.msg);
-				}
-			};
-			this.actions.request(url, params, {});
+			this.loadData(id);
 		}
+	},
+	loadData(id){
+		let url = types.GOODS_MAIN_GET;
+		let param = {
+			id
+		};
+		let params = {
+			param: param,
+			ajaxType: 'GET',
+			onSuccess: (res) => {
+				wx.stopPullDownRefresh();
+			},
+			onError: (res) => {
+				this.$toastInfo(res.msg);
+			}
+		};
+		this.actions.request(url, params, {});
+	},
+	onPullDownRefresh(){
+		const {curId} = this.data;
+		this.loadData(curId);
 	},
 	handleSku(event){
 		const info = event.currentTarget.id.split('_');

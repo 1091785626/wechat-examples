@@ -21,23 +21,28 @@ const pageConfig = {
 			id
 		} = query;
 		this.actions.initDetail(id);
-		this.loadDetailInfo(id);
-	},
-	loadDetailInfo(id){
 		if(!this.data.main[id]){
-			let url = types.ORDER_DETAIL_GET;
-			let param = {id};
-			let params = {
-				param: param,
-				ajaxType: 'GET',
-				onSuccess: (res) => {
-				},
-				onError: (res) => {
-					this.$toastInfo(res.msg);
-				}
-			};
-			this.actions.request(url, params, {});
+			this.loadData(id);
 		}
+	},
+	loadData(id){
+		let url = types.ORDER_DETAIL_GET;
+		let param = {id};
+		let params = {
+			param: param,
+			ajaxType: 'GET',
+			onSuccess: (res) => {
+				wx.stopPullDownRefresh();
+			},
+			onError: (res) => {
+				this.$toastInfo(res.msg);
+			}
+		};
+		this.actions.request(url, params, {});
+	},
+	onPullDownRefresh(){
+		const {curId} = this.data;
+		this.loadData(curId);
 	},
 	onShareAppMessage(){
 		return {

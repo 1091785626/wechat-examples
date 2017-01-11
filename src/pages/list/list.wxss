@@ -23,3 +23,7 @@
 .v-list scroll-view{
 	height:85vh
 }
+
+.v-list .g-tab .active >text {
+	border-bottom:none;
+}
